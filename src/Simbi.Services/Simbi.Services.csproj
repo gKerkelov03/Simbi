@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Simbi.Common\Simbi.Common.csproj" />
+    <ProjectReference Include="..\Simbi.Data\Simbi.Data.csproj" />
+  </ItemGroup>
+
+</Project>
