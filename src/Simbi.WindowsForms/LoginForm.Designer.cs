@@ -7,6 +7,7 @@ namespace Simbi.WindowsForms
         
         protected override void Dispose(bool disposing)
         {
+            this.Text = "called";
             if (disposing && (components != null))
             {
                 components.Dispose();
@@ -33,6 +34,7 @@ namespace Simbi.WindowsForms
             this.exitLabel = new System.Windows.Forms.Label();
             this.usernameTextBox = new System.Windows.Forms.TextBox();
             this.passwordTextBox = new System.Windows.Forms.TextBox();
+            this.ErrorMessageLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -44,7 +46,7 @@ namespace Simbi.WindowsForms
             this.SubmitCredentialsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.SubmitCredentialsButton.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.SubmitCredentialsButton.ForeColor = System.Drawing.Color.White;
-            this.SubmitCredentialsButton.Location = new System.Drawing.Point(24, 384);
+            this.SubmitCredentialsButton.Location = new System.Drawing.Point(24, 396);
             this.SubmitCredentialsButton.Name = "SubmitCredentialsButton";
             this.SubmitCredentialsButton.Size = new System.Drawing.Size(264, 51);
             this.SubmitCredentialsButton.TabIndex = 1;
@@ -112,9 +114,10 @@ namespace Simbi.WindowsForms
             // exitLabel
             // 
             this.exitLabel.AutoSize = true;
+            this.exitLabel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.exitLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.exitLabel.ForeColor = System.Drawing.Color.Goldenrod;
-            this.exitLabel.Location = new System.Drawing.Point(130, 450);
+            this.exitLabel.Location = new System.Drawing.Point(130, 457);
             this.exitLabel.Name = "exitLabel";
             this.exitLabel.Size = new System.Drawing.Size(37, 20);
             this.exitLabel.TabIndex = 8;
@@ -132,9 +135,9 @@ namespace Simbi.WindowsForms
             this.usernameTextBox.Name = "usernameTextBox";
             this.usernameTextBox.Size = new System.Drawing.Size(216, 35);
             this.usernameTextBox.TabIndex = 9;
-            this.usernameTextBox.Text = "Username ";
-            this.usernameTextBox.GotFocus += new System.EventHandler(this.passwordTextBox_Focus);
-            this.usernameTextBox.LostFocus += new System.EventHandler(this.passwordTextBox_Focus);
+            this.usernameTextBox.Text = "Username";
+            this.usernameTextBox.GotFocus += new System.EventHandler(this.usernameTextBox_Focus);
+            this.usernameTextBox.LostFocus += new System.EventHandler(this.usernameTextBox_Blur);
             // 
             // passwordTextBox
             // 
@@ -145,10 +148,24 @@ namespace Simbi.WindowsForms
             this.passwordTextBox.Location = new System.Drawing.Point(84, 322);
             this.passwordTextBox.Multiline = true;
             this.passwordTextBox.Name = "passwordTextBox";
-            this.passwordTextBox.PasswordChar = '*';
+            //this.passwordTextBox.PasswordChar = '';
             this.passwordTextBox.Size = new System.Drawing.Size(216, 32);
             this.passwordTextBox.TabIndex = 10;
-            this.passwordTextBox.Text = "Password ";
+            this.passwordTextBox.Text = "Password";
+            this.passwordTextBox.GotFocus += new System.EventHandler(this.passwordTextBox_Focus);
+            this.passwordTextBox.LostFocus += new System.EventHandler(this.passwordTextBox_Blur);
+
+            // 
+            // label2
+            // 
+            this.ErrorMessageLabel.AutoSize = true;
+            this.ErrorMessageLabel.ForeColor = System.Drawing.Color.Red;
+            this.ErrorMessageLabel.Location = new System.Drawing.Point(49, 368);
+            this.ErrorMessageLabel.Name = "ErrorMessageLabel";
+            this.ErrorMessageLabel.Size = new System.Drawing.Size(221, 17);
+            this.ErrorMessageLabel.TabIndex = 11;
+            this.ErrorMessageLabel.Text = "* Wrong username or password.";
+            this.ErrorMessageLabel.Hide();
             // 
             // LoginForm
             // 
@@ -156,6 +173,7 @@ namespace Simbi.WindowsForms
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Linen;
             this.ClientSize = new System.Drawing.Size(308, 486);
+            this.Controls.Add(this.ErrorMessageLabel);
             this.Controls.Add(this.passwordTextBox);
             this.Controls.Add(this.usernameTextBox);
             this.Controls.Add(this.exitLabel);
@@ -190,5 +208,6 @@ namespace Simbi.WindowsForms
         private System.Windows.Forms.Label exitLabel;
         private System.Windows.Forms.TextBox usernameTextBox;
         private System.Windows.Forms.TextBox passwordTextBox;
+        private System.Windows.Forms.Label ErrorMessageLabel;
     }
 }

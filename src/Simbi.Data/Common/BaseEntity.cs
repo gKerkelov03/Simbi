@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Simbi.Services.Data
+namespace Simbi.Data.Common
 {
-    class Class1
+    public class BaseEntity<TKey>
     {
+        public TKey Id { get; set; }
     }
 }

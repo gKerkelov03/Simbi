@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Simbi.Data.Data.Seeding
+namespace Simbi.Data.Seeding
 {
-    class Class1
+    class AppSeeder
     {
     }
 }
