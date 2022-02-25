@@ -1,0 +1,12 @@
+D:\repos\kursovi raboti\Simbi\Simbi.Common\bin\Debug\net5.0\Simbi.Common.deps.json
+D:\repos\kursovi raboti\Simbi\Simbi.Common\bin\Debug\net5.0\Simbi.Common.dll
+D:\repos\kursovi raboti\Simbi\Simbi.Common\bin\Debug\net5.0\ref\Simbi.Common.dll
+D:\repos\kursovi raboti\Simbi\Simbi.Common\bin\Debug\net5.0\Simbi.Common.pdb
+D:\repos\kursovi raboti\Simbi\Simbi.Common\obj\Debug\net5.0\Simbi.Common.csproj.AssemblyReference.cache
+D:\repos\kursovi raboti\Simbi\Simbi.Common\obj\Debug\net5.0\Simbi.Common.GeneratedMSBuildEditorConfig.editorconfig
+D:\repos\kursovi raboti\Simbi\Simbi.Common\obj\Debug\net5.0\Simbi.Common.AssemblyInfoInputs.cache
+D:\repos\kursovi raboti\Simbi\Simbi.Common\obj\Debug\net5.0\Simbi.Common.AssemblyInfo.cs
+D:\repos\kursovi raboti\Simbi\Simbi.Common\obj\Debug\net5.0\Simbi.Common.csproj.CoreCompileInputs.cache
+D:\repos\kursovi raboti\Simbi\Simbi.Common\obj\Debug\net5.0\Simbi.Common.dll
+D:\repos\kursovi raboti\Simbi\Simbi.Common\obj\Debug\net5.0\ref\Simbi.Common.dll
+D:\repos\kursovi raboti\Simbi\Simbi.Common\obj\Debug\net5.0\Simbi.Common.pdb
