@@ -22,7 +22,7 @@ namespace Simbi.WindowsForms
         private void OpenLoginFormButton_Click(object sender, EventArgs e)
         {
             this.testLabel.Text = "here i was";
-            new LoginForm().Show();
+            new LoginForm(this).Show();
             this.Hide();
         }
 

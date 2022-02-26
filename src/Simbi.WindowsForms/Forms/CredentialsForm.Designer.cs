@@ -186,7 +186,8 @@ namespace Simbi.WindowsForms
             this.Controls.Add(this.SubmitCredentialsButton);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "LoginForm";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
+            this.Location = new System.Drawing.Point(this.parent.Size.Width / 2 - this.Width / 2, this.parent.Size.Height / 2 - this.Height / 2);
             this.Text = "LoginForm";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();

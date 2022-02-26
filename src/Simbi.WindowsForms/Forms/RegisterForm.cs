@@ -14,7 +14,7 @@ namespace Simbi.WindowsForms
 {
     public partial class RegisterForm : CredentialsForm
     {
-        public RegisterForm()
+        public RegisterForm(Form parent) : base(parent)
         {
             this.InitializeComponent();
         }

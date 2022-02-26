@@ -14,7 +14,7 @@ namespace Simbi.WindowsForms
 {
     public partial class LoginForm : CredentialsForm
     {
-        public LoginForm()
+        public LoginForm(Form parent) : base (parent)
         {
             InitializeComponent();
         }

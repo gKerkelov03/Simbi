@@ -21,6 +21,7 @@ namespace Simbi.WindowsForms
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CashierPage));
             this.openLoginFormButton = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.testLabel = new System.Windows.Forms.Label();
@@ -62,14 +63,14 @@ namespace Simbi.WindowsForms
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(694, 35);
-            this.button1.Name = "LogoutButton";
+            this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(94, 29);
             this.button1.TabIndex = 3;
             this.button1.Text = "Logout";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.LogoutButton_Click);
             // 
-            // CashierForm
+            // CashierPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -78,7 +79,8 @@ namespace Simbi.WindowsForms
             this.Controls.Add(this.testLabel);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.openLoginFormButton);
-            this.Name = "CashierForm";
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Name = "CashierPage";
             this.Text = "Form1";
             this.ResumeLayout(false);
             this.PerformLayout();

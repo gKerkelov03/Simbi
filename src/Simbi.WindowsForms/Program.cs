@@ -17,7 +17,7 @@ namespace Simbi.WindowsForms
             Application.SetCompatibleTextRenderingDefault(false);
             #endregion            
 
-            Application.Run(new CashierPage());
+            Application.Run(new HomePage());
         }
     }
 }
