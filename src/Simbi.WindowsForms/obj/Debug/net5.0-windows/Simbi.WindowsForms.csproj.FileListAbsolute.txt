@@ -149,8 +149,6 @@ D:\repos\kursovi raboti\Simbi\src\Simbi.WindowsForms\bin\Debug\net5.0-windows\Si
 D:\repos\kursovi raboti\Simbi\src\Simbi.WindowsForms\bin\Debug\net5.0-windows\ref\Simbi.WindowsForms.dll
 D:\repos\kursovi raboti\Simbi\src\Simbi.WindowsForms\bin\Debug\net5.0-windows\Simbi.WindowsForms.pdb
 D:\repos\kursovi raboti\Simbi\src\Simbi.WindowsForms\obj\Debug\net5.0-windows\Simbi.WindowsForms.csproj.AssemblyReference.cache
-D:\repos\kursovi raboti\Simbi\src\Simbi.WindowsForms\obj\Debug\net5.0-windows\Simbi.WindowsForms.LoginForm.resources
-D:\repos\kursovi raboti\Simbi\src\Simbi.WindowsForms\obj\Debug\net5.0-windows\Simbi.WindowsForms.MainForm.resources
 D:\repos\kursovi raboti\Simbi\src\Simbi.WindowsForms\obj\Debug\net5.0-windows\Simbi.WindowsForms.Properties.Resources.resources
 D:\repos\kursovi raboti\Simbi\src\Simbi.WindowsForms\obj\Debug\net5.0-windows\Simbi.WindowsForms.csproj.GenerateResource.cache
 D:\repos\kursovi raboti\Simbi\src\Simbi.WindowsForms\obj\Debug\net5.0-windows\Simbi.WindowsForms.GeneratedMSBuildEditorConfig.editorconfig
@@ -203,3 +201,9 @@ D:\repos\kursovi raboti\Simbi\src\Simbi.WindowsForms\bin\Debug\net5.0-windows\Si
 D:\repos\kursovi raboti\Simbi\src\Simbi.WindowsForms\bin\Debug\net5.0-windows\Simbi.Data.pdb
 D:\repos\kursovi raboti\Simbi\src\Simbi.WindowsForms\bin\Debug\net5.0-windows\Simbi.Services.pdb
 D:\repos\kursovi raboti\Simbi\src\Simbi.WindowsForms\obj\Debug\net5.0-windows\Simbi.WindowsForms.csproj.CopyComplete
+D:\repos\kursovi raboti\Simbi\src\Simbi.WindowsForms\obj\Debug\net5.0-windows\Simbi.WindowsForms.CredentialsForm.resources
+D:\repos\kursovi raboti\Simbi\src\Simbi.WindowsForms\obj\Debug\net5.0-windows\Simbi.WindowsForms.LoginForm.resources
+D:\repos\kursovi raboti\Simbi\src\Simbi.WindowsForms\obj\Debug\net5.0-windows\Simbi.WindowsForms.RegisterForm.resources
+D:\repos\kursovi raboti\Simbi\src\Simbi.WindowsForms\obj\Debug\net5.0-windows\Simbi.WindowsForms.AdminPage.resources
+D:\repos\kursovi raboti\Simbi\src\Simbi.WindowsForms\obj\Debug\net5.0-windows\Simbi.WindowsForms.CashierPage.resources
+D:\repos\kursovi raboti\Simbi\src\Simbi.WindowsForms\obj\Debug\net5.0-windows\Simbi.WindowsForms.HomePage.resources

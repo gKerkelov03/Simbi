@@ -1,5 +1,6 @@
 ﻿using Simbi.Data;
 using Simbi.Data.Common;
+using Simbi.Services.Data;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,31 +8,32 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Simbi.Services.Data
+namespace Simbi.Services
 {
     public sealed class SignInManager
     {
         private static readonly SignInManager instance = new SignInManager();
         public ApplicationUser CurrentUser { get; private set; }
 
-        private ApplicationDbContext dbContext = null;
+        private ApplicationDbContext dbContext = new ApplicationDbContext();
         private SignInManager()
         {
-            this.dbContext = new ApplicationDbContext();
         }
+
         public void TrySignIn(string username, string password)
         {
-            using var sha = SHA256.Create();
-            string hash = string.Join("", sha.ComputeHash(Encoding.UTF8.GetBytes(password)));
+            this.CurrentUser = UserManager.Instance.TryGetUserWithCredentials(username, password);
 
-            this.CurrentUser = UserManager.Instance.TryGetUserMatchingCredentials(username, hash);
+            //redirect to cashier or admin page
         }
-        public static SignInManager Instance
+
+        public void Logout()
         {
-            get
-            {
-                return instance;
-            }
+            this.CurrentUser = null;
+
+            //redirect to home page
         }
+
+        public static SignInManager Instance => instance;
     }
 }

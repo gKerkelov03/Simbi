@@ -1,12 +1,13 @@
-﻿using Simbi.Services.Data;
+﻿using Simbi.Services;
+using Simbi.Services.Data;
 using System;
 using System.Windows.Forms;
 
 namespace Simbi.WindowsForms
 {
-    public partial class LoginForm : Form
+    public partial class CredentialsForm : Form
     {
-        public LoginForm()
+        public CredentialsForm()
         {
             InitializeComponent();
         }
@@ -45,19 +46,9 @@ namespace Simbi.WindowsForms
             }
         }
 
-        private void SubmitCredentialsButton_Click(object sender, EventArgs e)
+        public virtual void SubmitCredentialsButton_Click(object sender, EventArgs e)
         {
-            var enteredUsername = this.usernameTextBox.Text;
-            var enteredPassword = this.passwordTextBox.Text;
-
-            try
-            {
-                SignInManager.Instance.TrySignIn(enteredUsername, enteredPassword);
-            }
-            catch (Exception)
-            {
-                this.ErrorMessageLabel.Show();
-            }
+            
         }
 
         private void ExitLabel_Click(object sender, EventArgs e)

@@ -15,12 +15,9 @@ namespace Simbi.WindowsForms
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            #endregion
+            #endregion            
 
-            var loginForm = new LoginForm();
-            var mainForm = new MainForm(loginForm);
-
-            Application.Run(mainForm);
+            Application.Run(new CashierPage());
         }
     }
 }

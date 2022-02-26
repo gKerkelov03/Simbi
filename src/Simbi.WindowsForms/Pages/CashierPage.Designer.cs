@@ -1,7 +1,7 @@
 ﻿
 namespace Simbi.WindowsForms
 {
-    partial class MainForm
+    partial class CashierPage
     {   
         private System.ComponentModel.IContainer components = null;       
         protected override void Dispose(bool disposing)
@@ -24,6 +24,7 @@ namespace Simbi.WindowsForms
             this.openLoginFormButton = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.testLabel = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // openLoginFormButton
@@ -58,17 +59,27 @@ namespace Simbi.WindowsForms
             this.testLabel.TabIndex = 2;
             this.testLabel.Text = "label1";
             // 
-            // MainForm
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(694, 35);
+            this.button1.Name = "LogoutButton";
+            this.button1.Size = new System.Drawing.Size(94, 29);
+            this.button1.TabIndex = 3;
+            this.button1.Text = "Logout";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.LogoutButton_Click);
+            // 
+            // CashierForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.testLabel);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.openLoginFormButton);
-            this.Name = "MainForm";
+            this.Name = "CashierForm";
             this.Text = "Form1";
-            this.Load += new System.EventHandler(this.MainForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -79,6 +90,7 @@ namespace Simbi.WindowsForms
         private System.Windows.Forms.Button openLoginFormButton;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Label testLabel;
+        private System.Windows.Forms.Button button1;
     }
 }
 
