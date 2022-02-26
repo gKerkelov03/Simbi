@@ -3,19 +3,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Simbi.Data.Common;
 
 namespace Simbi.Data.Models
 {
-    public class Material
+    public class Material : BaseEntity<string>
     {
-        public string Name { get; set; }
+        public string Description { get; set; }
 
-        public MaterialType Type { get; set; }
+        public double QuantityAvailableInKilograms { get; set; }
 
-        public double QuantityInKilograms { get; set; }
-
-        public double Fi { get; set; }
-
-        public double PricePerFi { get; }
+        public string Size { get; set; } // има л ф б някви obiknoveno sa bukva cifra ma ima i nqkvi dr izvrateni
+        public double PricePerKilogram { get; set; }        
     }
 }

@@ -66,7 +66,6 @@ namespace Simbi.WindowsForms
             this.Text = "UserPage";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.ResumeLayout(false);
-
         }
 
         #endregion
