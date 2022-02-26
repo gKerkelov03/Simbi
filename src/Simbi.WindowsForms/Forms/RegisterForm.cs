@@ -27,6 +27,8 @@ namespace Simbi.WindowsForms
             try
             {
                UserManager.Instance.TryCreateUserWithCredentials(enteredUsername, enteredPassword);
+                this.ErrorMessageLabel.Text = "Your creation was successfull";
+                this.ErrorMessageLabel.Show();
             }
             catch (Exception)
             {

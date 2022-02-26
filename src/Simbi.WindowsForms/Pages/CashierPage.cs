@@ -14,21 +14,23 @@ namespace Simbi.WindowsForms
 {
     public partial class CashierPage : Form
     {
-        public CashierPage()
-        {           
+        private SignInManager signInManager;
+        public CashierPage(SignInManager signInManager)
+        {
+            this.signInManager = signInManager;
             InitializeComponent();
         }              
 
         private void OpenLoginFormButton_Click(object sender, EventArgs e)
         {
             this.testLabel.Text = "here i was";
-            new LoginForm(this).Show();
+            new LoginForm(this, this.signInManager).Show();
             this.Hide();
         }
 
         private void LogoutButton_Click(object sender, EventArgs e)
         {
-            SignInManager.Instance.Logout();
+            this.signInManager.Logout(this);
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using Simbi.Data;
+﻿using Simbi.Common;
+using Simbi.Data;
 using Simbi.Data.Common;
 using Simbi.Services.Data;
 using System;
@@ -10,30 +11,37 @@ using System.Threading.Tasks;
 
 namespace Simbi.Services
 {
-    public sealed class SignInManager
-    {
-        private static readonly SignInManager instance = new SignInManager();
+    public class SignInManager
+    {            
         public ApplicationUser CurrentUser { get; private set; }
 
         private ApplicationDbContext dbContext = new ApplicationDbContext();
-        private SignInManager()
+        private IRedirector redirector;
+
+        public SignInManager(IRedirector redirector)
         {
+            this.redirector = redirector;
+        }        
+
+        public void TrySignIn(string username, string password, object sender)
+        {
+            //this.CurrentUser = UserManager.Instance.TryGetUserWithCredentials(username, password);
+
+            //if(this.CurrentUser.Role.Name == "Admin")
+            //{
+                redirector.RedirectTo(PageName.Admin, sender );
+            //}
+            //else
+            //{
+            //    redirector.RedirectTo(PageName.Cashier, sender);
+            //}
         }
 
-        public void TrySignIn(string username, string password)
-        {
-            this.CurrentUser = UserManager.Instance.TryGetUserWithCredentials(username, password);
-
-            //redirect to cashier or admin page
-        }
-
-        public void Logout()
+        public void Logout(object sender)
         {
             this.CurrentUser = null;
 
-            //redirect to home page
+            redirector.RedirectTo(PageName.Home, sender);
         }
-
-        public static SignInManager Instance => instance;
     }
 }

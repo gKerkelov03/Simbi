@@ -7,10 +7,10 @@ namespace Simbi.WindowsForms
 {
     public partial class CredentialsForm : Form
     {
-        private Form parent;
+        public new Form Parent { get; }
         public CredentialsForm(Form parent)
         {
-            this.parent = parent;
+            this.Parent = parent;
             InitializeComponent();
         }
 
@@ -55,8 +55,8 @@ namespace Simbi.WindowsForms
 
         private void ExitLabel_Click(object sender, EventArgs e)
         {
-            this.parent.Enabled = true;
-            this.Hide();            
+            this.Parent.Enabled = true;
+            this.Close();            
         }
     }
 }

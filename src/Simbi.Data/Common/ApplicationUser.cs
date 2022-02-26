@@ -10,5 +10,7 @@ namespace Simbi.Data.Common
     {
         public string Password { get; set; }
         public string Username { get; set; }
+
+        public Role Role { get; set; }
     }
 }

@@ -14,9 +14,11 @@ namespace Simbi.WindowsForms
 {
     public partial class LoginForm : CredentialsForm
     {
-        public LoginForm(Form parent) : base (parent)
+        private SignInManager signInManager;
+        public LoginForm(Form parent, SignInManager signInManager) : base (parent)
         {
             InitializeComponent();
+            this.signInManager = signInManager;
         }
 
         public override void SubmitCredentialsButton_Click(object sender, EventArgs e)
@@ -26,7 +28,7 @@ namespace Simbi.WindowsForms
 
             try
             {
-                SignInManager.Instance.TrySignIn(enteredUsername, enteredPassword);
+                this.signInManager.TrySignIn(enteredUsername, enteredPassword, this);
             }
             catch (Exception)
             {

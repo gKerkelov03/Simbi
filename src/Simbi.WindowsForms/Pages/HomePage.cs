@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Simbi.Services;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -33,7 +34,7 @@ namespace Simbi.WindowsForms
 
         private void LoginButton_Click(object sender, EventArgs e)
         {
-            new LoginForm(this).Show();
+            new LoginForm(this, new SignInManager(new WindowsFormsRedirector())).Show();
             this.Enabled = false;
         }        
     }
