@@ -1,11 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using System.Windows.Forms;
 using Simbi.Common;
-using Simbi.Services;
 using Simbi.WindowsForms;
 
 namespace Simbi.Services
@@ -26,17 +20,17 @@ namespace Simbi.Services
             }
             else if(page == PageName.Admin)
             {
-                newPage = new AdminPage();
+                newPage = new AdminPage(new SignInManager(this));
             }
 
             newPage.Show();
 
-                if (currentPage is CredentialsForm)
-                {
-                    (currentPage as CredentialsForm).Parent.Hide();
-                }
+            if (currentPage is CredentialsForm)
+            {
+                (currentPage as CredentialsForm).Parent.Hide();
+            }
 
-                (currentPage as Form).Close();
+            (currentPage as Form).Close();
         }
     }
 }

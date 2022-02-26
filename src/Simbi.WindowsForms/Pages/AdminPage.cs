@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Simbi.Common;
+using Simbi.Services;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,16 +12,11 @@ using System.Windows.Forms;
 
 namespace Simbi.WindowsForms
 {
-    public partial class AdminPage : Form
+    public partial class AdminPage : UserPage
     {
-        public AdminPage()
+        public AdminPage(SignInManager signInManager) : base(signInManager)
         {
             InitializeComponent();
-        }
-
-        private void AdminPage_Load(object sender, EventArgs e)
-        {
-            this.Text = "admin page";
         }
     }
 }

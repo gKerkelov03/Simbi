@@ -12,25 +12,11 @@ using System.Windows.Forms;
 
 namespace Simbi.WindowsForms
 {
-    public partial class CashierPage : Form
+    public partial class CashierPage : UserPage
     {
-        private SignInManager signInManager;
-        public CashierPage(SignInManager signInManager)
+        public CashierPage(SignInManager signInManager) : base(signInManager)
         {
-            this.signInManager = signInManager;
             InitializeComponent();
-        }              
-
-        private void OpenLoginFormButton_Click(object sender, EventArgs e)
-        {
-            this.testLabel.Text = "here i was";
-            new LoginForm(this, this.signInManager).Show();
-            this.Hide();
-        }
-
-        private void LogoutButton_Click(object sender, EventArgs e)
-        {
-            this.signInManager.Logout(this);
-        }
+        }                     
     }
 }

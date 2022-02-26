@@ -28,10 +28,14 @@ namespace Simbi.WindowsForms
             {
                UserManager.Instance.TryCreateUserWithCredentials(enteredUsername, enteredPassword);
                 this.ErrorMessageLabel.Text = "Your creation was successfull";
+                this.ErrorMessageLabel.ForeColor = Color.Green;
                 this.ErrorMessageLabel.Show();
             }
             catch (Exception)
             {
+                this.ErrorMessageLabel.Text = "That user already exists!";
+                this.ErrorMessageLabel.ForeColor = Color.Red;
+
                 this.ErrorMessageLabel.Show();
             }
         }        

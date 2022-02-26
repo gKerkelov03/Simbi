@@ -25,11 +25,12 @@ namespace Simbi.Services
 
         public void TrySignIn(string username, string password, object sender)
         {
+            Random rnd = new Random();
             //this.CurrentUser = UserManager.Instance.TryGetUserWithCredentials(username, password);
 
             //if(this.CurrentUser.Role.Name == "Admin")
             //{
-                redirector.RedirectTo(PageName.Admin, sender );
+                redirector.RedirectTo(rnd.Next()%2==0?PageName.Admin:PageName.Cashier, sender );
             //}
             //else
             //{
