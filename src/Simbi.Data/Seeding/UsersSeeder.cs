@@ -4,10 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Simbi.Data.Common
+namespace Simbi.Data.Seeding
 {
-    public class Role : BaseEntity<string>
+    class UsersSeeder
     {
-        public string Name { get; set; }
     }
 }

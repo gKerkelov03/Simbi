@@ -25,7 +25,7 @@ namespace Simbi.Data
         public DbSet<Order> Orders { get; set; }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("Server=.;Database=Simbi;TrustedConnection=True;");
+            optionsBuilder.UseSqlServer("Server=.;Database=Simbi;Trusted_Connection=True;");
         }
     }
 }

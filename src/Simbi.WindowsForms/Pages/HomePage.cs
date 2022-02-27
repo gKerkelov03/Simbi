@@ -1,4 +1,5 @@
-﻿using Simbi.Services;
+﻿using Simbi.Data;
+using Simbi.Services;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -36,6 +37,7 @@ namespace Simbi.WindowsForms
         {
             new LoginForm(this, new SignInManager(new WindowsFormsRedirector())).Show();
             this.Enabled = false;
+            new ApplicationDbContext().Database.EnsureCreated();
         }        
     }
 }
