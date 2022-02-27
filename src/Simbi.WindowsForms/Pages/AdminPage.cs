@@ -12,11 +12,18 @@ using System.Windows.Forms;
 
 namespace Simbi.WindowsForms
 {
-    public partial class AdminPage : UserPage
+    public partial class AdminPage : Form
     {
-        public AdminPage(SignInManager signInManager) : base(signInManager)
+        private SignInManager signInManager;
+        public AdminPage(SignInManager signInManager)
         {
+            this.signInManager = signInManager;
             InitializeComponent();
+        }
+
+        private void LoginButton_Click(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
         }
     }
 }

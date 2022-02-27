@@ -36,8 +36,7 @@ namespace Simbi.WindowsForms
         private void LoginButton_Click(object sender, EventArgs e)
         {
             new LoginForm(this, new SignInManager(new WindowsFormsRedirector())).Show();
-            this.Enabled = false;
-            new ApplicationDbContext().Database.EnsureCreated();
+            this.Enabled = false;           
         }        
     }
 }

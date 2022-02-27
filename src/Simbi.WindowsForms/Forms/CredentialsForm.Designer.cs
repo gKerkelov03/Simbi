@@ -37,7 +37,7 @@ namespace Simbi.WindowsForms
             this.ErrorMessageLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();            
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
             // SubmitCredentialsButton
@@ -64,13 +64,13 @@ namespace Simbi.WindowsForms
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
             // 
-            // label1
+            // titleLabel
             // 
             this.titleLabel.AutoSize = true;
             this.titleLabel.Font = new System.Drawing.Font("Bauhaus 93", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.titleLabel.ForeColor = System.Drawing.Color.Goldenrod;
             this.titleLabel.Location = new System.Drawing.Point(63, 140);
-            this.titleLabel.Name = "label1";
+            this.titleLabel.Name = "titleLabel";
             this.titleLabel.Size = new System.Drawing.Size(176, 57);
             this.titleLabel.TabIndex = 3;
             this.titleLabel.Text = "LOG IN";
@@ -148,15 +148,13 @@ namespace Simbi.WindowsForms
             this.passwordTextBox.Location = new System.Drawing.Point(84, 322);
             this.passwordTextBox.Multiline = true;
             this.passwordTextBox.Name = "passwordTextBox";
-            //this.passwordTextBox.PasswordChar = '';
             this.passwordTextBox.Size = new System.Drawing.Size(216, 32);
             this.passwordTextBox.TabIndex = 10;
-            this.passwordTextBox.Text = "Password";
+            this.passwordTextBox.Text = "Password";            
             this.passwordTextBox.GotFocus += new System.EventHandler(this.passwordTextBox_Focus);
             this.passwordTextBox.LostFocus += new System.EventHandler(this.passwordTextBox_Blur);
-
             // 
-            // label2
+            // ErrorMessageLabel
             // 
             this.ErrorMessageLabel.AutoSize = true;
             this.ErrorMessageLabel.ForeColor = System.Drawing.Color.Red;
@@ -165,9 +163,8 @@ namespace Simbi.WindowsForms
             this.ErrorMessageLabel.Size = new System.Drawing.Size(221, 17);
             this.ErrorMessageLabel.TabIndex = 11;
             this.ErrorMessageLabel.Text = "* Wrong username or password.";
-            this.ErrorMessageLabel.Hide();
             // 
-            // LoginForm
+            // CredentialsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -185,9 +182,8 @@ namespace Simbi.WindowsForms
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.SubmitCredentialsButton);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "LoginForm";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
-            this.Location = new System.Drawing.Point(this.Parent.Size.Width / 2 - this.Width / 2, this.Parent.Size.Height / 2 - this.Height / 2);
+            this.Name = "CredentialsForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "LoginForm";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();

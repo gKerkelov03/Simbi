@@ -8,9 +8,13 @@ namespace Simbi.WindowsForms
     public partial class CredentialsForm : Form
     {
         public new Form Parent { get; }
-        public CredentialsForm(Form parent)
+        public CredentialsForm(Form parent) : this()
         {
-            this.Parent = parent;
+            this.Parent = parent;           
+        }
+
+        public CredentialsForm()
+        {            
             InitializeComponent();
         }
 
@@ -57,6 +61,6 @@ namespace Simbi.WindowsForms
         {
             this.Parent.Enabled = true;
             this.Close();            
-        }
+        }       
     }
 }

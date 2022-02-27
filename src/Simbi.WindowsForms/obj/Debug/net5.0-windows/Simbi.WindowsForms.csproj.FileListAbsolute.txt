@@ -207,4 +207,3 @@ D:\repos\kursovi raboti\Simbi\src\Simbi.WindowsForms\obj\Debug\net5.0-windows\Si
 D:\repos\kursovi raboti\Simbi\src\Simbi.WindowsForms\obj\Debug\net5.0-windows\Simbi.WindowsForms.CashierPage.resources
 D:\repos\kursovi raboti\Simbi\src\Simbi.WindowsForms\obj\Debug\net5.0-windows\Simbi.WindowsForms.HomePage.resources
 D:\repos\kursovi raboti\Simbi\src\Simbi.WindowsForms\obj\Debug\net5.0-windows\Simbi.WindowsForms.Properties.Resources.resources
-D:\repos\kursovi raboti\Simbi\src\Simbi.WindowsForms\obj\Debug\net5.0-windows\Simbi.WindowsForms.UserPage.resources

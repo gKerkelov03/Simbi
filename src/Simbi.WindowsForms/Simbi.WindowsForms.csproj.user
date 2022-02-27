@@ -4,13 +4,13 @@
     <Compile Update="Infrastructure\OvalPictureBox.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Update="Forms\CredentialsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Pages\AdminPage.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Pages\CashierPage.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Update="Forms\CredentialsForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Pages\HomePage.cs">
@@ -20,9 +20,6 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Forms\RegisterForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Update="Pages\UserPage.cs">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>

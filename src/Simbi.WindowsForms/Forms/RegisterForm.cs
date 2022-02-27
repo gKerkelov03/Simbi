@@ -14,9 +14,16 @@ namespace Simbi.WindowsForms
 {
     public partial class RegisterForm : CredentialsForm
     {
-        public RegisterForm(Form parent) : base(parent)
+        private UsersService usersService;
+        public RegisterForm(Form parent, UsersService usersService) : base(parent)
         {
+            this.usersService = usersService;
             this.InitializeComponent();
+        }
+
+        public RegisterForm()
+        {
+            InitializeComponent();
         }
 
         public override void SubmitCredentialsButton_Click(object sender, EventArgs e)
@@ -26,7 +33,7 @@ namespace Simbi.WindowsForms
 
             try
             {
-               UserManager.Instance.TryCreateUserWithCredentials(enteredUsername, enteredPassword);
+               usersService.TryCreateUserWithCredentials(enteredUsername, enteredPassword);
                 this.ErrorMessageLabel.Text = "Your creation was successfull";
                 this.ErrorMessageLabel.ForeColor = Color.Green;
                 this.ErrorMessageLabel.Show();

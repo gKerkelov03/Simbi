@@ -21,6 +21,11 @@ namespace Simbi.WindowsForms
             this.signInManager = signInManager;
         }
 
+        public LoginForm()
+        {
+            InitializeComponent();
+        }
+
         public override void SubmitCredentialsButton_Click(object sender, EventArgs e)
         {
             var enteredUsername = this.usernameTextBox.Text;

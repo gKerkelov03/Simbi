@@ -16,6 +16,8 @@ namespace Simbi.Data
 
         public DbSet<ApplicationUser> Users { get; set; }
 
+        public DbSet<Role> Roles { get; set; }
+
         public DbSet<AdminRemark> AdminRemarks { get; set; }
 
         public DbSet<Material> Materials { get; set; }

@@ -9,15 +9,11 @@ using System.Threading.Tasks;
 
 namespace Simbi.Services.Data
 {
-    public sealed class UserManager
+    public class UsersService : IUsersService
     {
-        private static readonly UserManager instance = new UserManager();
-
         private SHA256 sha = SHA256.Create();
-        private ApplicationDbContext dbContext = new ApplicationDbContext();
-        private UserManager()
-        {            
-        }
+        private ApplicationDbContext dbContext;
+        public UsersService(ApplicationDbContext dbContext) => this.dbContext = new ApplicationDbContext();
 
         public ApplicationUser TryGetUserWithCredentials(string username, string password) =>
             this.dbContext.Users.Single(user => user.Password == this.Hash(password) && user.Username == username);
@@ -41,13 +37,5 @@ namespace Simbi.Services.Data
 
         private string Hash(string password) =>        
             string.Join("", this.sha.ComputeHash(Encoding.UTF8.GetBytes(password)));
-        
-        public static UserManager Instance
-        {
-            get
-            {
-                return instance;
-            }
-        }
     }
 }
