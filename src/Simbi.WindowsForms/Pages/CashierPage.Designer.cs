@@ -34,6 +34,7 @@ namespace Simbi.WindowsForms
             this.LogoutButton = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
@@ -43,7 +44,6 @@ namespace Simbi.WindowsForms
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.ConfirmPurchaseButton = new System.Windows.Forms.Button();
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.SendRemarkButton = new System.Windows.Forms.Button();
@@ -123,6 +123,16 @@ namespace Simbi.WindowsForms
             this.panel1.Size = new System.Drawing.Size(420, 448);
             this.panel1.TabIndex = 8;
             // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(6, 60);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(102, 21);
+            this.checkBox1.TabIndex = 18;
+            this.checkBox1.Text = "checkBox1";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.Goldenrod;
@@ -193,16 +203,6 @@ namespace Simbi.WindowsForms
             this.textBox1.Size = new System.Drawing.Size(101, 25);
             this.textBox1.TabIndex = 9;
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
-            // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(6, 60);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(102, 21);
-            this.checkBox1.TabIndex = 18;
-            this.checkBox1.Text = "checkBox1";
-            this.checkBox1.UseVisualStyleBackColor = true;
             // 
             // ConfirmPurchaseButton
             // 
@@ -298,7 +298,7 @@ namespace Simbi.WindowsForms
             this.Controls.Add(this.HelpButton);
             this.Controls.Add(this.LoginButton);
             this.Name = "CashierPage";
-            this.Text = "CashierPage";
+            this.Text = "f";
             this.Load += new System.EventHandler(this.CashierPage_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel1.ResumeLayout(false);

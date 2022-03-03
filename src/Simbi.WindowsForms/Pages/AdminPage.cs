@@ -1,5 +1,4 @@
-﻿using Simbi.Common;
-using Simbi.Services;
+﻿using Simbi.Services;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -21,9 +20,9 @@ namespace Simbi.WindowsForms
             InitializeComponent();
         }
 
-        private void LoginButton_Click(object sender, EventArgs e)
+        private void tableLayoutPanel3_Paint(object sender, PaintEventArgs e)
         {
-            throw new NotImplementedException();
+
         }
     }
 }

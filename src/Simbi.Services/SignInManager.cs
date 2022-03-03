@@ -30,12 +30,14 @@ namespace Simbi.Services
 
             //if(this.CurrentUser.Role.Name == "Admin")
             //{
-                redirector.RedirectTo(rnd.Next()%2==0?PageName.Admin:PageName.Cashier, sender );
+                //redirector.RedirectTo(rnd.Next()%2==0?PageName.Admin:PageName.Cashier, sender );
             //}
             //else
             //{
             //    redirector.RedirectTo(PageName.Cashier, sender);
             //}
+            redirector.RedirectTo(PageName.Admin, sender);
+
         }
 
         public void Logout(object sender)
