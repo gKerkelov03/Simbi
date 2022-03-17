@@ -14,8 +14,8 @@ namespace Simbi.WindowsForms
 {
     public partial class RegisterForm : CredentialsForm
     {
-        private UsersService usersService;
-        public RegisterForm(Form parent, UsersService usersService) : base(parent)
+        private UserManager usersService;
+        public RegisterForm(Form parent, UserManager usersService) : base(parent)
         {
             this.usersService = usersService;
             this.InitializeComponent();
@@ -31,14 +31,16 @@ namespace Simbi.WindowsForms
             var enteredUsername = this.usernameTextBox.Text;
             var enteredPassword = this.passwordTextBox.Text;
 
-            try
+            bool isCreatedSuccessfully = usersService.CreateUserWithCredentials(enteredUsername, enteredPassword);
+
+
+            if(isCreatedSuccessfully)
             {
-               usersService.TryCreateUserWithCredentials(enteredUsername, enteredPassword);
                 this.ErrorMessageLabel.Text = "Your creation was successfull";
                 this.ErrorMessageLabel.ForeColor = Color.Green;
                 this.ErrorMessageLabel.Show();
             }
-            catch (Exception)
+            else
             {
                 this.ErrorMessageLabel.Text = "That user already exists!";
                 this.ErrorMessageLabel.ForeColor = Color.Red;

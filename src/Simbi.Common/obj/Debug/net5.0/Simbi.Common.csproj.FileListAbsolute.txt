@@ -12,7 +12,6 @@ D:\repos\kursovi raboti\Simbi\Simbi.Common\obj\Debug\net5.0\ref\Simbi.Common.dll
 D:\repos\kursovi raboti\Simbi\Simbi.Common\obj\Debug\net5.0\Simbi.Common.pdb
 D:\repos\kursovi raboti\Simbi\src\Simbi.Common\bin\Debug\net5.0\Simbi.Common.deps.json
 D:\repos\kursovi raboti\Simbi\src\Simbi.Common\bin\Debug\net5.0\Simbi.Common.dll
-D:\repos\kursovi raboti\Simbi\src\Simbi.Common\bin\Debug\net5.0\ref\Simbi.Common.dll
 D:\repos\kursovi raboti\Simbi\src\Simbi.Common\bin\Debug\net5.0\Simbi.Common.pdb
 D:\repos\kursovi raboti\Simbi\src\Simbi.Common\obj\Debug\net5.0\Simbi.Common.csproj.AssemblyReference.cache
 D:\repos\kursovi raboti\Simbi\src\Simbi.Common\obj\Debug\net5.0\Simbi.Common.GeneratedMSBuildEditorConfig.editorconfig
@@ -22,3 +21,4 @@ D:\repos\kursovi raboti\Simbi\src\Simbi.Common\obj\Debug\net5.0\Simbi.Common.csp
 D:\repos\kursovi raboti\Simbi\src\Simbi.Common\obj\Debug\net5.0\Simbi.Common.dll
 D:\repos\kursovi raboti\Simbi\src\Simbi.Common\obj\Debug\net5.0\ref\Simbi.Common.dll
 D:\repos\kursovi raboti\Simbi\src\Simbi.Common\obj\Debug\net5.0\Simbi.Common.pdb
+D:\repos\kursovi raboti\Simbi\src\Simbi.Common\obj\Debug\net5.0\refint\Simbi.Common.dll

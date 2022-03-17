@@ -7,10 +7,10 @@
     <Compile Update="Forms\CredentialsForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Pages\AdminPage.cs">
+    <Compile Update="Pages\CashierPage.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Pages\CashierPage.cs">
+    <Compile Update="Pages\AdminPage.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Pages\HomePage.cs">

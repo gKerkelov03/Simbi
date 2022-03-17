@@ -4,8 +4,9 @@ using Simbi.WindowsForms;
 
 namespace Simbi.Services
 {
-    public class WindowsFormsRedirector : IRedirector
+    public class Redirector
     {        
+        private static UserManager userManager = new UserManager();
         public void RedirectTo(PageName page,object currentPage)
         {
             Form newPage = null;
@@ -16,11 +17,11 @@ namespace Simbi.Services
             }
             else if (page == PageName.Cashier)
             {
-                newPage = new CashierPage(new SignInManager(this));
+                newPage = new AdminPage(userManager);
             }
             else if(page == PageName.Admin)
             {
-                newPage = new AdminPage(new SignInManager(this));
+                newPage = new CashierPage(userManager);
             }
 
             newPage.Show();

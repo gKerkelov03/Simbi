@@ -1,4 +1,5 @@
-﻿using Simbi.Services;
+﻿using Simbi.Data.Common;
+using Simbi.Services;
 using Simbi.Services.Data;
 using System;
 using System.Collections.Generic;
@@ -14,11 +15,11 @@ namespace Simbi.WindowsForms
 {
     public partial class LoginForm : CredentialsForm
     {
-        private SignInManager signInManager;
-        public LoginForm(Form parent, SignInManager signInManager) : base (parent)
+        private UserManager userManager;
+        public LoginForm(Form parent, UserManager userManager) : base (parent)
         {
             InitializeComponent();
-            this.signInManager = signInManager;
+            this.userManager = userManager;
         }
 
         public LoginForm()
@@ -31,11 +32,14 @@ namespace Simbi.WindowsForms
             var enteredUsername = this.usernameTextBox.Text;
             var enteredPassword = this.passwordTextBox.Text;
 
-            try
+            
+            ApplicationUser potentialUser = this.userManager.GetUserWithCredentials(enteredUsername, enteredPassword);
+            
+            if(potentialUser != null)
             {
-                this.signInManager.TrySignIn(enteredUsername, enteredPassword, this);
+                userManager.CurrentUser = potentialUser;
             }
-            catch (Exception)
+            else
             {
                 this.ErrorMessageLabel.Show();
             }

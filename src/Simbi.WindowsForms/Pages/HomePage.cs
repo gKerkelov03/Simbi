@@ -14,6 +14,7 @@ namespace Simbi.WindowsForms
 {
     public partial class HomePage : Form
     {
+        private static UserManager userManager = new UserManager();
         public HomePage()
         {
             InitializeComponent();
@@ -35,7 +36,7 @@ namespace Simbi.WindowsForms
 
         private void LoginButton_Click(object sender, EventArgs e)
         {
-            new LoginForm(this, new SignInManager(new WindowsFormsRedirector())).Show();
+            new LoginForm(this, userManager).Show();
             this.Enabled = false;           
         }        
     }

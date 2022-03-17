@@ -7,7 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Simbi.Common\Simbi.Common.csproj" />
     <ProjectReference Include="..\Simbi.Data\Simbi.Data.csproj" />
     <ProjectReference Include="..\Simbi.Services\Simbi.Services.csproj" />
   </ItemGroup>

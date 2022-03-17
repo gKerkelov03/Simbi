@@ -16,8 +16,4 @@
     </PackageReference>
   </ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\Simbi.Common\Simbi.Common.csproj" />
-  </ItemGroup>
-
 </Project>

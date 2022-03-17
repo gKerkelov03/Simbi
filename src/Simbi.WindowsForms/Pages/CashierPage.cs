@@ -13,34 +13,14 @@ namespace Simbi.WindowsForms
 {
     public partial class CashierPage : Form
     {
-        private SignInManager signInManager;
-        public CashierPage(SignInManager signInManager)
+        private UserManager userManager;
+        public CashierPage(UserManager UserManager)
         {
-            this.signInManager = signInManager;
+            this.userManager = UserManager;
             InitializeComponent();
         }
 
-        private void CashierPage_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void splitContainer1_Panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void tableLayoutPanel3_Paint(object sender, PaintEventArgs e)
         {
 
         }
