@@ -1482,6 +1482,16 @@
           "lib/netstandard1.3/System.Xml.XmlSerializer.dll": {}
         }
       },
+      "Simbi.Common/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "compile": {
+          "bin/placeholder/Simbi.Common.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Simbi.Common.dll": {}
+        }
+      },
       "Simbi.Data/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
@@ -5720,6 +5730,11 @@
         "system.xml.xmlserializer.nuspec"
       ]
     },
+    "Simbi.Common/1.0.0": {
+      "type": "project",
+      "path": "../Simbi.Common/Simbi.Common.csproj",
+      "msbuildProject": "../Simbi.Common/Simbi.Common.csproj"
+    },
     "Simbi.Data/1.0.0": {
       "type": "project",
       "path": "../Simbi.Data/Simbi.Data.csproj",
@@ -5733,6 +5748,7 @@
   },
   "projectFileDependencyGroups": {
     "net5.0-windows7.0": [
+      "Simbi.Common >= 1.0.0",
       "Simbi.Data >= 1.0.0",
       "Simbi.Services >= 1.0.0"
     ]
@@ -5764,6 +5780,9 @@
         "net5.0-windows7.0": {
           "targetAlias": "net5.0-windows",
           "projectReferences": {
+            "D:\\repos\\kursovi raboti\\Simbi\\src\\Simbi.Common\\Simbi.Common.csproj": {
+              "projectPath": "D:\\repos\\kursovi raboti\\Simbi\\src\\Simbi.Common\\Simbi.Common.csproj"
+            },
             "D:\\repos\\kursovi raboti\\Simbi\\src\\Simbi.Data\\Simbi.Data.csproj": {
               "projectPath": "D:\\repos\\kursovi raboti\\Simbi\\src\\Simbi.Data\\Simbi.Data.csproj"
             },

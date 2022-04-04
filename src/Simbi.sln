@@ -9,6 +9,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Simbi.Data", "Simbi.Data\Si
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Simbi.Services", "Simbi.Services\Simbi.Services.csproj", "{099FA3F6-40F1-420F-BDA2-3E64ACDBCAAC}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Simbi.Common", "Simbi.Common\Simbi.Common.csproj", "{AF138B51-FC63-4F3E-980E-750CC04C44A8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{099FA3F6-40F1-420F-BDA2-3E64ACDBCAAC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{099FA3F6-40F1-420F-BDA2-3E64ACDBCAAC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{099FA3F6-40F1-420F-BDA2-3E64ACDBCAAC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AF138B51-FC63-4F3E-980E-750CC04C44A8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AF138B51-FC63-4F3E-980E-750CC04C44A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AF138B51-FC63-4F3E-980E-750CC04C44A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AF138B51-FC63-4F3E-980E-750CC04C44A8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
