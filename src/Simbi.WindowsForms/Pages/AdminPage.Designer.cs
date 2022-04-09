@@ -155,7 +155,6 @@ namespace Simbi.WindowsForms
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 22.76176F));
             this.tableLayoutPanel6.Size = new System.Drawing.Size(563, 659);
             this.tableLayoutPanel6.TabIndex = 8;
-            this.tableLayoutPanel6.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel6_Paint);
             // 
             // tableLayoutPanel2
             // 
@@ -222,7 +221,6 @@ namespace Simbi.WindowsForms
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "AdminPage";
             this.Text = "Admin Page";
-            this.Load += new System.EventHandler(this.CashierPage_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.tableLayoutPanel9.ResumeLayout(false);

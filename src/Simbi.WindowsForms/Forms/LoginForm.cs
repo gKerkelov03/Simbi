@@ -1,4 +1,5 @@
-﻿using Simbi.Data.Common;
+﻿using Simbi.Common;
+using Simbi.Data.Common;
 using Simbi.Services;
 using Simbi.Services.Data;
 using System;
@@ -16,10 +17,13 @@ namespace Simbi.WindowsForms
     public partial class LoginForm : CredentialsForm
     {
         private UserManager userManager;
-        public LoginForm(Form parent, UserManager userManager) : base (parent)
+        private Redirector redirector;
+
+        public LoginForm(Form parent, UserManager userManager, Redirector redirector) : base (parent)
         {
             InitializeComponent();
             this.userManager = userManager;
+            this.redirector = redirector;
         }
 
         public LoginForm()
@@ -31,20 +35,26 @@ namespace Simbi.WindowsForms
         {
             var enteredUsername = this.usernameTextBox.Text;
             var enteredPassword = this.passwordTextBox.Text;
-
             
             ApplicationUser potentialUser = this.userManager.GetUserWithCredentials(enteredUsername, enteredPassword);
             
             if(potentialUser != null)
             {
                 userManager.CurrentUser = potentialUser;
+
+                if(userManager.CurrentUser.Role.Name == GlobalConstants.AdministratorRoleName)
+                {
+                    this.redirector.RedirectTo(PageName.Admin, this);
+                }
+                else if(userManager.CurrentUser.Role.Name == GlobalConstants.CashierRoleName)
+                {
+                    this.redirector.RedirectTo(PageName.Cashier, this);
+                }
             }
             else
             {
                 this.ErrorMessageLabel.Show();
             }
         }
-
-        
     }
 }

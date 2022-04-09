@@ -1,4 +1,5 @@
-﻿using Simbi.Data;
+﻿using Simbi.Common;
+using Simbi.Data;
 using Simbi.Data.Common;
 using System;
 using System.Linq;
@@ -33,13 +34,23 @@ namespace Simbi.Services
             this.dbContext.Users.Add(new ApplicationUser()
             {
                 Username = username,
-                Password = hashedPassword
+                Password = hashedPassword,
+                Role = new Role
+                {
+                    Name = GlobalConstants.CashierRoleName,
+                    Id = 2//aka not admin                    
+                }
             });
 
             return true;
         }
 
-        public void CurrentUserLogout() => this.CurrentUser = null;
+        public void MakeAdmin(ApplicationUser user)
+        {
+            user.Role.Name = GlobalConstants.AdministratorRoleName;            
+        }
+
+        public void CurrentUserLogout() => this.CurrentUser = null;        
 
         private string Hash(string password) =>        
             string.Join("", this.sha.ComputeHash(Encoding.UTF8.GetBytes(password)));

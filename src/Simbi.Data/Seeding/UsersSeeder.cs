@@ -1,4 +1,5 @@
 ﻿using Simbi.Data.Common;
+using System;
 using System.Threading.Tasks;
 
 namespace Simbi.Data.Seeding
@@ -7,7 +8,7 @@ namespace Simbi.Data.Seeding
     {
         private static ApplicationUser[] dataToSeed = new[] {
             new ApplicationUser
-            {
+            {               
             },
             new ApplicationUser
             {

@@ -6,8 +6,7 @@ using System.Threading.Tasks;
 
 namespace Simbi.Data.Common
 {
-    public class Role : BaseEntity<int>
+    public class ApplicationEntity : BaseEntity<Guid>
     {
-        public string Name { get; set; }
     }
 }

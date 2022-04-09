@@ -81,7 +81,11 @@
         "frameworks": {
           "net5.0": {
             "targetAlias": "net5.0",
-            "projectReferences": {}
+            "projectReferences": {
+              "D:\\repos\\kursovi raboti\\Simbi\\src\\Simbi.Common\\Simbi.Common.csproj": {
+                "projectPath": "D:\\repos\\kursovi raboti\\Simbi\\src\\Simbi.Common\\Simbi.Common.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
@@ -154,6 +158,9 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
+              "D:\\repos\\kursovi raboti\\Simbi\\src\\Simbi.Common\\Simbi.Common.csproj": {
+                "projectPath": "D:\\repos\\kursovi raboti\\Simbi\\src\\Simbi.Common\\Simbi.Common.csproj"
+              },
               "D:\\repos\\kursovi raboti\\Simbi\\src\\Simbi.Data\\Simbi.Data.csproj": {
                 "projectPath": "D:\\repos\\kursovi raboti\\Simbi\\src\\Simbi.Data\\Simbi.Data.csproj"
               }
@@ -233,6 +240,14 @@
       "frameworks": {
         "net5.0-windows7.0": {
           "targetAlias": "net5.0-windows",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[5.0.14, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

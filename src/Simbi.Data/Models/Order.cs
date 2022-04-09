@@ -1,13 +1,9 @@
 ﻿using Simbi.Data.Common;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Simbi.Data.Models
 {
-    public class Order : BaseEntity<string>
+    public class Order : ApplicationEntity
     {
         public string ClientName { get; set; }
 

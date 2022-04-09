@@ -1,13 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Simbi.Data.Common;
+﻿using Simbi.Data.Common;
 
 namespace Simbi.Data.Models
 {
-    public class Material : BaseEntity<string>
+    public class Material : ApplicationEntity
     {
         public string Description { get; set; }
 

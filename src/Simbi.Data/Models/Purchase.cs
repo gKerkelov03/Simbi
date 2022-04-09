@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Simbi.Data.Models
 {
-    public class Purchase : BaseEntity<string>
+    public class Purchase : ApplicationEntity
     {
         public virtual Material Material { get; set; }
 

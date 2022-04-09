@@ -15,6 +15,8 @@ namespace Simbi.WindowsForms
     public partial class HomePage : Form
     {
         private static UserManager userManager = new UserManager();
+        private static Redirector redirektor = new Redirector();
+
         public HomePage()
         {
             InitializeComponent();
@@ -30,13 +32,11 @@ namespace Simbi.WindowsForms
             this.LoginButton.Location = new Point(20, this.ClientSize.Height / 2 + this.LoginButton.Height);
             this.LoginButton.Font = new Font(this.LoginButton.Font.FontFamily, this.ClientSize.Width / 78);
             this.label2.Location = new Point(20, this.ClientSize.Height / 3);
-
-
         }
 
         private void LoginButton_Click(object sender, EventArgs e)
         {
-            new LoginForm(this, userManager).Show();
+            new LoginForm(this, userManager, redirektor).Show();
             this.Enabled = false;           
         }        
     }

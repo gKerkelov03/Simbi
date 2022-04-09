@@ -30,3 +30,5 @@ D:\repos\kursovi raboti\Simbi\src\Simbi.Services\obj\Debug\net5.0\Simbi.Services
 D:\repos\kursovi raboti\Simbi\src\Simbi.Services\obj\Debug\net5.0\ref\Simbi.Services.dll
 D:\repos\kursovi raboti\Simbi\src\Simbi.Services\obj\Debug\net5.0\Simbi.Services.pdb
 D:\repos\kursovi raboti\Simbi\src\Simbi.Services\obj\Debug\net5.0\refint\Simbi.Services.dll
+D:\repos\kursovi raboti\Simbi\src\Simbi.Services\bin\Debug\net5.0\Simbi.Common.dll
+D:\repos\kursovi raboti\Simbi\src\Simbi.Services\bin\Debug\net5.0\Simbi.Common.pdb

@@ -1519,6 +1519,16 @@
         "runtime": {
           "lib/netstandard1.3/System.Xml.XmlSerializer.dll": {}
         }
+      },
+      "Simbi.Common/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "compile": {
+          "bin/placeholder/Simbi.Common.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Simbi.Common.dll": {}
+        }
       }
     }
   },
@@ -5787,13 +5797,19 @@
         "system.xml.xmlserializer.4.3.0.nupkg.sha512",
         "system.xml.xmlserializer.nuspec"
       ]
+    },
+    "Simbi.Common/1.0.0": {
+      "type": "project",
+      "path": "../Simbi.Common/Simbi.Common.csproj",
+      "msbuildProject": "../Simbi.Common/Simbi.Common.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net5.0": [
       "Microsoft.EntityFrameworkCore.Design >= 5.0.14",
       "Microsoft.EntityFrameworkCore.SqlServer >= 5.0.14",
-      "Microsoft.EntityFrameworkCore.Tools >= 5.0.14"
+      "Microsoft.EntityFrameworkCore.Tools >= 5.0.14",
+      "Simbi.Common >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -5822,7 +5838,11 @@
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "D:\\repos\\kursovi raboti\\Simbi\\src\\Simbi.Common\\Simbi.Common.csproj": {
+              "projectPath": "D:\\repos\\kursovi raboti\\Simbi\\src\\Simbi.Common\\Simbi.Common.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

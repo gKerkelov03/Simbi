@@ -207,3 +207,5 @@ D:\repos\kursovi raboti\Simbi\src\Simbi.WindowsForms\obj\Debug\net5.0-windows\Si
 D:\repos\kursovi raboti\Simbi\src\Simbi.WindowsForms\obj\Debug\net5.0-windows\Simbi.WindowsForms.HomePage.resources
 D:\repos\kursovi raboti\Simbi\src\Simbi.WindowsForms\obj\Debug\net5.0-windows\Simbi.WindowsForms.Properties.Resources.resources
 D:\repos\kursovi raboti\Simbi\src\Simbi.WindowsForms\obj\Debug\net5.0-windows\refint\Simbi.WindowsForms.dll
+D:\repos\kursovi raboti\Simbi\src\Simbi.WindowsForms\bin\Debug\net5.0-windows\Humanizer.dll
+D:\repos\kursovi raboti\Simbi\src\Simbi.WindowsForms\bin\Debug\net5.0-windows\Microsoft.EntityFrameworkCore.Design.dll

@@ -1,4 +1,5 @@
-﻿using Simbi.Data.Common;
+﻿using Simbi.Common;
+using Simbi.Data.Common;
 using System.Threading.Tasks;
 
 namespace Simbi.Data.Seeding
@@ -7,14 +8,15 @@ namespace Simbi.Data.Seeding
     {
         private static Role[] dataToSeed = new[] {
             new Role
-            {
-                Name = "Admin"
-            },
+            {                
+                Name = GlobalConstants.AdministratorRoleName
+            },            
             new Role
-            {
-                Name = "Admin"
-            }            
+            {                
+                Name = GlobalConstants.CashierRoleName
+            },
         };
+
         public async Task SeedAsync(ApplicationDbContext dbContext)
         {
             foreach(var role in dataToSeed)
