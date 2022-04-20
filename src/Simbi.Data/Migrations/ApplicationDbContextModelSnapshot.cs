@@ -6,6 +6,8 @@ using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Simbi.Data;
 
+#nullable disable
+
 namespace Simbi.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
@@ -15,11 +17,26 @@ namespace Simbi.Data.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("Relational:MaxIdentifierLength", 128)
-                .HasAnnotation("ProductVersion", "5.0.14")
-                .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                .HasAnnotation("ProductVersion", "6.0.4")
+                .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
-            modelBuilder.Entity("Simbi.Data.Common.ApplicationUser", b =>
+            SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
+
+            modelBuilder.Entity("Simbi.Data.Common.Role", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Roles");
+                });
+
+            modelBuilder.Entity("Simbi.Data.Common.User", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -28,8 +45,8 @@ namespace Simbi.Data.Migrations
                     b.Property<string>("Password")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("RoleId")
-                        .HasColumnType("int");
+                    b.Property<Guid?>("RoleId")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Username")
                         .HasColumnType("nvarchar(max)");
@@ -39,21 +56,6 @@ namespace Simbi.Data.Migrations
                     b.HasIndex("RoleId");
 
                     b.ToTable("Users");
-                });
-
-            modelBuilder.Entity("Simbi.Data.Common.Role", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("Name")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Roles");
                 });
 
             modelBuilder.Entity("Simbi.Data.Models.AdminRemark", b =>
@@ -82,6 +84,9 @@ namespace Simbi.Data.Migrations
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<double>("PricePerKilogram")
@@ -130,10 +135,10 @@ namespace Simbi.Data.Migrations
                     b.Property<Guid?>("OrderId")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<double>("Price")
+                    b.Property<double>("QuantityInKilograms")
                         .HasColumnType("float");
 
-                    b.Property<double>("Quantity")
+                    b.Property<double>("TotalPrice")
                         .HasColumnType("float");
 
                     b.Property<double>("Width")
@@ -148,7 +153,7 @@ namespace Simbi.Data.Migrations
                     b.ToTable("Purchases");
                 });
 
-            modelBuilder.Entity("Simbi.Data.Common.ApplicationUser", b =>
+            modelBuilder.Entity("Simbi.Data.Common.User", b =>
                 {
                     b.HasOne("Simbi.Data.Common.Role", "Role")
                         .WithMany()
@@ -159,7 +164,7 @@ namespace Simbi.Data.Migrations
 
             modelBuilder.Entity("Simbi.Data.Models.AdminRemark", b =>
                 {
-                    b.HasOne("Simbi.Data.Common.ApplicationUser", "Creator")
+                    b.HasOne("Simbi.Data.Common.User", "Creator")
                         .WithMany()
                         .HasForeignKey("CreatorId");
 

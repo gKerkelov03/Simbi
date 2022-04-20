@@ -1,11 +1,35 @@
-﻿using System.Threading.Tasks;
+﻿using Simbi.Data.Models;
+using System.Threading.Tasks;
 
 namespace Simbi.Data.Seeding;
 
-internal class MaterialsSeeder : ISeeder
+public class MaterialsSeeder : ISeeder
 {
-    public Task SeedAsync(ApplicationDbContext dbContext)
+
+    public async Task SeedAsync(ApplicationDbContext dbContext)
     {
-        throw new System.NotImplementedException();
+        var dataToSeed = new[] {
+            new Material
+            {
+                Name = "Material 1",
+                QuantityAvailableInKilograms = 100,
+                Description = "Material 1 description",
+                PricePerKilogram = 15,
+                Size = "l"
+            },
+            new Material
+            {
+                Name = "Material 2",
+                QuantityAvailableInKilograms = 100,
+                Description = "Material 1 description",
+                PricePerKilogram = 15,
+                Size = "l"
+            }
+        };
+
+        foreach (var material in dataToSeed)
+        {
+            await dbContext.Materials.AddAsync(material);
+        }
     }
 }

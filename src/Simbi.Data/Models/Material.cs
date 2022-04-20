@@ -4,6 +4,7 @@ namespace Simbi.Data.Models;
 
 public class Material : ApplicationEntity
 {
+    public string Name { get; set; }
     public string Description { get; set; }
 
     public double QuantityAvailableInKilograms { get; set; }

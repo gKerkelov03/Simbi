@@ -1,4 +1,5 @@
 ﻿using static Simbi.Common.GlobalConstants;
+using static Simbi.Common.UtilityMethods;
 using Simbi.Data;
 using Simbi.Data.Common;
 using System;
@@ -12,14 +13,13 @@ public class UserManager
 {
     public User CurrentUser { get; set; }
 
-    private readonly SHA256 sha = SHA256.Create();
     private readonly ApplicationDbContext dbContext = new ApplicationDbContext();
 
-    public User GetUserWithCredentials(string username, string password) => this.dbContext.Users.FirstOrDefault(user => user.Password == this.Hash(password) && user.Username == username);
+    public User GetUserWithCredentials(string username, string password) => this.dbContext.Users.FirstOrDefault(user => user.Password == Hash(password) && user.Username == username);
               
     public bool CreateUserWithCredentials(string username, string password)
     {
-        var hashedPassword = this.Hash(password);
+        var hashedPassword = Hash(password);
         var suchUserAlreadyExists = this.dbContext.Users.Any(user => user.Password == hashedPassword || user.Username == username);
 
         if (suchUserAlreadyExists)
@@ -45,5 +45,4 @@ public class UserManager
     
     public void CurrentUserLogout() => this.CurrentUser = null;        
 
-    private string Hash(string password) => string.Join("", this.sha.ComputeHash(Encoding.UTF8.GetBytes(password)));
 }
