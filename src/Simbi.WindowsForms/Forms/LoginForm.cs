@@ -36,7 +36,7 @@ namespace Simbi.WindowsForms
             var enteredUsername = this.usernameTextBox.Text;
             var enteredPassword = this.passwordTextBox.Text;
             
-            ApplicationUser potentialUser = this.userManager.GetUserWithCredentials(enteredUsername, enteredPassword);
+            User potentialUser = this.userManager.GetUserWithCredentials(enteredUsername, enteredPassword);
             
             if(potentialUser != null)
             {

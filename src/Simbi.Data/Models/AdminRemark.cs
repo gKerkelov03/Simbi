@@ -6,6 +6,6 @@ namespace Simbi.Data.Models
     {
         public string Text { get; set; }
 
-        public virtual ApplicationUser Creator { get; set; }
+        public virtual User Creator { get; set; }
     }
 }

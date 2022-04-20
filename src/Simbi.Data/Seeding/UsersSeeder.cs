@@ -6,14 +6,15 @@ namespace Simbi.Data.Seeding
 {
     public class UsersSeeder : ISeeder
     {
-        private static ApplicationUser[] dataToSeed = new[] {
-            new ApplicationUser
+        private static User[] dataToSeed = new[] {
+            new User
             {               
             },
-            new ApplicationUser
+            new User
             {
             }
         };
+
         public async Task SeedAsync(ApplicationDbContext dbContext)
         {
             foreach (var applicationUser in dataToSeed)

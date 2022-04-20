@@ -995,7 +995,8 @@
       },
       "Simbi.Data/1.0.0": {
         "dependencies": {
-          "Microsoft.EntityFrameworkCore.SqlServer": "5.0.14"
+          "Microsoft.EntityFrameworkCore.SqlServer": "5.0.14",
+          "Simbi.Common": "1.0.0"
         },
         "runtime": {
           "Simbi.Data.dll": {}

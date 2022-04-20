@@ -31,3 +31,6 @@ D:\repos\kursovi raboti\Simbi\src\Simbi.Data\obj\Debug\net5.0\ref\Simbi.Data.dll
 D:\repos\kursovi raboti\Simbi\src\Simbi.Data\obj\Debug\net5.0\Simbi.Data.pdb
 D:\repos\kursovi raboti\Simbi\src\Simbi.Data\obj\Debug\net5.0\Simbi.Data.genruntimeconfig.cache
 D:\repos\kursovi raboti\Simbi\src\Simbi.Data\obj\Debug\net5.0\refint\Simbi.Data.dll
+D:\repos\kursovi raboti\Simbi\src\Simbi.Data\bin\Debug\net5.0\Simbi.Common.dll
+D:\repos\kursovi raboti\Simbi\src\Simbi.Data\bin\Debug\net5.0\Simbi.Common.pdb
+D:\repos\kursovi raboti\Simbi\src\Simbi.Data\obj\Debug\net5.0\Simbi.Data.csproj.CopyComplete

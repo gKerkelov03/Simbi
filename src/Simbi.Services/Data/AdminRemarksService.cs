@@ -1,5 +1,6 @@
 ﻿using Simbi.Data;
 using Simbi.Data.Models;
+using Simbi.Data.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,8 +11,12 @@ namespace Simbi.Services.Data
 {
     public class AdminRemarksService : IAdminRemarksService
     {
-        private ApplicationDbContext dbContext;
-        public AdminRemarksService(ApplicationDbContext dbContext) => this.dbContext = dbContext;
+        private readonly AdminRemarksRepository adminRemarksRepository;
+        
+        public AdminRemarksService(AdminRemarksRepository adminRemarksRepository)
+        {
+            this.adminRemarksRepository = adminRemarksRepository;
+        }
 
         public void Add(AdminRemark newRemark)
         {

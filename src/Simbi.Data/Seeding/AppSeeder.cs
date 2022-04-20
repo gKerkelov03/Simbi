@@ -3,13 +3,17 @@ using System.Threading.Tasks;
 
 namespace Simbi.Data.Seeding
 {
-    class AppSeeder : ISeeder
+    public class AppSeeder : ISeeder
     {
         public async Task SeedAsync(ApplicationDbContext dbContext)
         {
             var seeders = new List<ISeeder>
                           {
                               new RolesSeeder(),
+                              new UsersSeeder(),
+                              new OrdersSeeder(),
+                              new PurchasesSeeder(),
+                              new RolesSeeder(),                              
                           };
 
             foreach (var seeder in seeders)

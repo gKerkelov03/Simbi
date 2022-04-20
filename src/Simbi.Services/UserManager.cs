@@ -10,12 +10,12 @@ namespace Simbi.Services
 {
     public class UserManager 
     {
-        public ApplicationUser CurrentUser { get; set; }
+        public User CurrentUser { get; set; }
 
         private SHA256 sha = SHA256.Create();
         private ApplicationDbContext dbContext = new ApplicationDbContext();
 
-        public ApplicationUser GetUserWithCredentials(string username, string password)
+        public User GetUserWithCredentials(string username, string password)
         {
             var hashedPassword = this.Hash(password);
             return this.dbContext.Users.FirstOrDefault(user => user.Password == hashedPassword && user.Username == username);
@@ -31,21 +31,21 @@ namespace Simbi.Services
                 return false;
             }
 
-            this.dbContext.Users.Add(new ApplicationUser()
+            this.dbContext.Users.Add(new User()
             {
                 Username = username,
                 Password = hashedPassword,
                 Role = new Role
                 {
                     Name = GlobalConstants.CashierRoleName,
-                    Id = 2//aka not admin                    
+                    Id = Guid.NewGuid()//aka not admin                    
                 }
             });
 
             return true;
         }
 
-        public void MakeAdmin(ApplicationUser user)
+        public void MakeAdmin(User user)
         {
             user.Role.Name = GlobalConstants.AdministratorRoleName;            
         }
