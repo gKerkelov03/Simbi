@@ -1,23 +1,14 @@
 ﻿using Simbi.Services;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Simbi.WindowsForms
+namespace Simbi.WindowsForms;
+
+public partial class CashierPage : Form
 {
-    public partial class CashierPage : Form
+    private UserManager userManager;
+    public CashierPage(UserManager UserManager)
     {
-        private UserManager userManager;
-        public CashierPage(UserManager UserManager)
-        {
-            this.userManager = UserManager;
-            InitializeComponent();
-        }
+        this.userManager = UserManager;
+        InitializeComponent();
     }
 }

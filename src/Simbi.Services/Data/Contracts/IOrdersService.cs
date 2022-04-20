@@ -1,14 +1,15 @@
 ﻿using Simbi.Data.Models;
-using System.Linq;
+using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
-namespace Simbi.Services.Data
+namespace Simbi.Services.Data;
+
+public interface IOrdersService
 {
-    public interface IOrdersService
-    {
-        IQueryable<Order> GetAll();
+    Task<IEnumerable<Order>> GetAll();
 
-        void DeleteById(string key);
+    Task DeleteById(Guid key);
 
-        void Add(Order newOrder);
-    }
+    Task Add(Order newOrder);
 }

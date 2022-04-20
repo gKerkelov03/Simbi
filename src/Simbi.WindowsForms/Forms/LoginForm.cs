@@ -1,60 +1,48 @@
 ﻿using Simbi.Common;
 using Simbi.Data.Common;
 using Simbi.Services;
-using Simbi.Services.Data;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Simbi.WindowsForms
+namespace Simbi.WindowsForms;
+
+public partial class LoginForm : CredentialsForm
 {
-    public partial class LoginForm : CredentialsForm
+    private readonly UserManager userManager;
+    private readonly Redirector redirector;
+
+    public LoginForm(Form parent, UserManager userManager, Redirector redirector) : base (parent)
     {
-        private UserManager userManager;
-        private Redirector redirector;
+        InitializeComponent();
+        this.userManager = userManager;
+        this.redirector = redirector;
+    }
 
-        public LoginForm(Form parent, UserManager userManager, Redirector redirector) : base (parent)
+    public LoginForm() => InitializeComponent();
+    
+    public override void SubmitCredentialsButton_Click(object sender, EventArgs e)
+    {
+        var enteredUsername = this.usernameTextBox.Text;
+        var enteredPassword = this.passwordTextBox.Text;
+        
+        User potentialUser = this.userManager.GetUserWithCredentials(enteredUsername, enteredPassword);
+        
+        if(potentialUser != null)
         {
-            InitializeComponent();
-            this.userManager = userManager;
-            this.redirector = redirector;
-        }
+            userManager.CurrentUser = potentialUser;
 
-        public LoginForm()
-        {
-            InitializeComponent();
-        }
-
-        public override void SubmitCredentialsButton_Click(object sender, EventArgs e)
-        {
-            var enteredUsername = this.usernameTextBox.Text;
-            var enteredPassword = this.passwordTextBox.Text;
-            
-            User potentialUser = this.userManager.GetUserWithCredentials(enteredUsername, enteredPassword);
-            
-            if(potentialUser != null)
+            if(userManager.CurrentUser.Role.Name == GlobalConstants.AdministratorRoleName)
             {
-                userManager.CurrentUser = potentialUser;
-
-                if(userManager.CurrentUser.Role.Name == GlobalConstants.AdministratorRoleName)
-                {
-                    this.redirector.RedirectTo(PageName.Admin, this);
-                }
-                else if(userManager.CurrentUser.Role.Name == GlobalConstants.CashierRoleName)
-                {
-                    this.redirector.RedirectTo(PageName.Cashier, this);
-                }
+                this.redirector.RedirectTo(PageName.Admin, this);
             }
-            else
+            else if(userManager.CurrentUser.Role.Name == GlobalConstants.CashierRoleName)
             {
-                this.ErrorMessageLabel.Show();
+                this.redirector.RedirectTo(PageName.Cashier, this);
             }
+        }
+        else
+        {
+            this.ErrorMessageLabel.Show();
         }
     }
 }

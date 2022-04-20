@@ -1,26 +1,24 @@
 ﻿using Simbi.Data.Common;
-using System;
 using System.Threading.Tasks;
 
-namespace Simbi.Data.Seeding
-{
-    public class UsersSeeder : ISeeder
-    {
-        private static User[] dataToSeed = new[] {
-            new User
-            {               
-            },
-            new User
-            {
-            }
-        };
+namespace Simbi.Data.Seeding;
 
-        public async Task SeedAsync(ApplicationDbContext dbContext)
+public class UsersSeeder : ISeeder
+{
+    private readonly static User[] dataToSeed = new[] {
+        new User
+        {               
+        },
+        new User
         {
-            foreach (var applicationUser in dataToSeed)
-            {
-                await dbContext.Users.AddAsync(applicationUser);
-            }
+        }
+    };
+
+    public async Task SeedAsync(ApplicationDbContext dbContext)
+    {
+        foreach (var applicationUser in dataToSeed)
+        {
+            await dbContext.Users.AddAsync(applicationUser);
         }
     }
 }

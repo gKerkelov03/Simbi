@@ -1,23 +1,14 @@
 ﻿using Simbi.Services;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Simbi.WindowsForms
+namespace Simbi.WindowsForms;
+
+public partial class AdminPage : Form
 {
-    public partial class AdminPage : Form
+    private UserManager userManager;
+    public AdminPage(UserManager userManager)
     {
-        private UserManager userManager;
-        public AdminPage(UserManager userManager)
-        {
-            this.userManager = userManager;
-            InitializeComponent();
-        }
+        this.userManager = userManager;
+        InitializeComponent();
     }
 }

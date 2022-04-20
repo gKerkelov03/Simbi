@@ -1,9 +1,8 @@
 ﻿using System.Threading.Tasks;
 
-namespace Simbi.Data.Seeding
+namespace Simbi.Data.Seeding;
+
+public interface ISeeder
 {
-    public interface ISeeder
-    {
-        Task SeedAsync(ApplicationDbContext dbContext);
-    }
+    Task SeedAsync(ApplicationDbContext dbContext);
 }

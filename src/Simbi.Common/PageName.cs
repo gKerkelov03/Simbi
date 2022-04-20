@@ -1,13 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿namespace Simbi.Common;
 
-namespace Simbi.Common
+public enum PageName
 {
-    public enum PageName
-    {
-        Home, Cashier, Admin
-    }
+    Unknown, Home, Cashier, Admin
 }

@@ -1,10 +1,9 @@
 ﻿using Simbi.Data.Common;
 using Simbi.Data.Models;
 
-namespace Simbi.Data.Repositories
+namespace Simbi.Data.Repositories;
+
+public class AdminRemarksRepository : BaseRepository<AdminRemark>
 {
-    public class UsersRepository : BaseRepository<User>
-    {
-        public UsersRepository(ApplicationDbContext context) : base(context) { }
-    }
+    public AdminRemarksRepository(ApplicationDbContext context) : base(context) { }
 }

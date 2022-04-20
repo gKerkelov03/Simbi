@@ -1,12 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace Simbi.Data.Common
+namespace Simbi.Data.Common;
+
+public class ApplicationEntity : BaseEntity<Guid>
 {
-    public class ApplicationEntity : BaseEntity<Guid>
-    {
-    }
 }

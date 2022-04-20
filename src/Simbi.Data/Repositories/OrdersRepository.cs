@@ -1,10 +1,9 @@
 ﻿using Simbi.Data.Common;
 using Simbi.Data.Models;
 
-namespace Simbi.Data.Repositories
+namespace Simbi.Data.Repositories;
+
+public class OrdersRepository : BaseRepository<Order>
 {
-    public class OrdersRepository : BaseRepository<Order>
-    {
-        public OrdersRepository(ApplicationDbContext context) : base(context) { }
-    }
+    public OrdersRepository(ApplicationDbContext context) : base(context) { }
 }

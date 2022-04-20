@@ -1,33 +1,18 @@
-﻿using Simbi.Data;
+﻿using Simbi.Data.Common;
 using Simbi.Data.Models;
-using Simbi.Data.Repositories;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
-namespace Simbi.Services.Data
+namespace Simbi.Services.Data;
+
+public class PurchasesService : IPurchasesService
 {
-    public class PurchasesService : IPurchasesService
-    {
-        private readonly PurchasesRepository purchasesRepository;
-        
-        public PurchasesService(PurchasesRepository purchasesRepository) => this.purchasesRepository = purchasesRepository;
-        
-        public async Task Add(Purchase newPurchase)
-        {
-            await this.purchasesRepository.CreateAsync(newPurchase);
-        }
+    private readonly BaseRepository<Purchase> purchasesRepository;
+    
+    public PurchasesService(BaseRepository<Purchase> purchasesRepository) => this.purchasesRepository = purchasesRepository;
+    
+    public async Task Add(Purchase newPurchase) => await this.purchasesRepository.CreateAsync(newPurchase);
 
-        public async Task AddMultipe(IEnumerable<Purchase> purchasesToAdd)
-        {
-            foreach (var purchase in purchasesToAdd)
-            {
-                this.dbContext.Purchases.Add(purchase);
-            }
-
-            this.dbContext.SaveChanges();
-        }
-    }
+    public void AddMultipe(IEnumerable<Purchase> purchasesToAdd) => purchasesToAdd.ToList().ForEach(async purchase => await this.Add(purchase));        
 }

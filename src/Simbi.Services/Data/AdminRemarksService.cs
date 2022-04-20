@@ -1,29 +1,17 @@
-﻿using Simbi.Data;
+﻿using Simbi.Data.Common;
 using Simbi.Data.Models;
-using Simbi.Data.Repositories;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
-namespace Simbi.Services.Data
+namespace Simbi.Services.Data;
+
+public class AdminRemarksService : IAdminRemarksService
 {
-    public class AdminRemarksService : IAdminRemarksService
-    {
-        private readonly AdminRemarksRepository adminRemarksRepository;
-        
-        public AdminRemarksService(AdminRemarksRepository adminRemarksRepository)
-        {
-            this.adminRemarksRepository = adminRemarksRepository;
-        }
-
-        public void Add(AdminRemark newRemark)
-        {
-            this.dbContext.AdminRemarks.Add(newRemark);
-            this.dbContext.SaveChanges();
-        }
-
-        public void DeleteById(string key) => this.dbContext.AdminRemarks.Remove(this.dbContext.AdminRemarks.Find(key));
-    }
+    private readonly BaseRepository<AdminRemark> adminRemarksRepository;
+    
+    public AdminRemarksService(BaseRepository<AdminRemark> adminRemarksRepository) => this.adminRemarksRepository = adminRemarksRepository;
+    
+    public async Task Add(AdminRemark newRemark) => await this.adminRemarksRepository.CreateAsync(newRemark);            
+    
+    public async Task DeleteById(Guid key) => await this.adminRemarksRepository.DeleteAsync(key);
 }
