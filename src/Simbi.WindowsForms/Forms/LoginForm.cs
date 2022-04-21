@@ -2,6 +2,7 @@
 using Simbi.Data.Common;
 using Simbi.Services;
 using System;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace Simbi.WindowsForms;
@@ -24,18 +25,16 @@ public partial class LoginForm : CredentialsForm
     {
         var enteredUsername = this.usernameTextBox.Text;
         var enteredPassword = this.passwordTextBox.Text;
-        
-        User potentialUser = this.userManager.GetUserWithCredentials(enteredUsername, enteredPassword);
-        
-        if(potentialUser != null)
-        {
-            userManager.CurrentUser = potentialUser;
+                
+        bool isSignIn = userManager.SignIn(enteredUsername, enteredPassword);
 
-            if(userManager.CurrentUser.Role.Name == GlobalConstants.AdministratorRoleName)
+        if (isSignIn)
+        {
+            if (userManager.CurrentUserRoles().Contains(GlobalConstants.AdministratorRoleName))
             {
                 this.redirector.RedirectTo(PageName.Admin, this);
             }
-            else if(userManager.CurrentUser.Role.Name == GlobalConstants.CashierRoleName)
+            else if (userManager.CurrentUserRoles().Contains(GlobalConstants.CashierRoleName))
             {
                 this.redirector.RedirectTo(PageName.Cashier, this);
             }

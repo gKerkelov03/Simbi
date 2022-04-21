@@ -8,8 +8,7 @@ public class AppSeeder : ISeeder
     public async Task SeedAsync(ApplicationDbContext dbContext)
     {
         var seeders = new List<ISeeder>
-        {
-            new RolesSeeder(),
+        {            
             new UsersSeeder(),
             new AdminRemarksSeeder(),
 

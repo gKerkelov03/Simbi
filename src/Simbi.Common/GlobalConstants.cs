@@ -7,4 +7,6 @@ public class GlobalConstants
 
     public const string AdministratorPassword = "azsamangeladmina";
     public const string TestUsersPassword = "azsamangel";
+
+    public const string AdministratorUsername = "angel";
 }

@@ -3,7 +3,7 @@ using static Simbi.Common.GlobalConstants;
 
 using Simbi.Data.Common;
 using System.Threading.Tasks;
-using System.Linq;
+using System.Collections.Generic;
 
 namespace Simbi.Data.Seeding;
 
@@ -12,20 +12,33 @@ public class UsersSeeder : ISeeder
 
     public async Task SeedAsync(ApplicationDbContext dbContext)
     {
+        var adminRole = new Role
+        {
+            Name = AdministratorRoleName
+        };
+
+        var cashierRole = new Role
+        {
+            Name = CashierRoleName
+        };
+
         var dataToSeed = new[] {
             new User
             {
                 Password = Hash(TestUsersPassword),
                 Username = "testuser1",
-                Role = dbContext.Roles.FirstOrDefault(role => role.Name == CashierRoleName),
+                Roles = new List<Role> { cashierRole },
             },
             new User
             {
                 Password = Hash(AdministratorPassword),
-                Username = "angel",
-                Role = dbContext.Roles.FirstOrDefault(role => role.Name == AdministratorRoleName),
+                Username = AdministratorUsername,
+                Roles = new List<Role> { adminRole },
             }
         };
+
+        cashierRole.Users = new List<User> { dataToSeed[0] };
+        adminRole.Users = new List<User> { dataToSeed[1] };
 
         foreach (var applicationUser in dataToSeed)
         {

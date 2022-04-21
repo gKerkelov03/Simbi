@@ -22,6 +22,21 @@ namespace Simbi.Data.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
 
+            modelBuilder.Entity("RoleUser", b =>
+                {
+                    b.Property<Guid>("RolesId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("UsersId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("RolesId", "UsersId");
+
+                    b.HasIndex("UsersId");
+
+                    b.ToTable("RoleUser");
+                });
+
             modelBuilder.Entity("Simbi.Data.Common.Role", b =>
                 {
                     b.Property<Guid>("Id")
@@ -45,15 +60,10 @@ namespace Simbi.Data.Migrations
                     b.Property<string>("Password")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<Guid?>("RoleId")
-                        .HasColumnType("uniqueidentifier");
-
                     b.Property<string>("Username")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("RoleId");
 
                     b.ToTable("Users");
                 });
@@ -153,13 +163,19 @@ namespace Simbi.Data.Migrations
                     b.ToTable("Purchases");
                 });
 
-            modelBuilder.Entity("Simbi.Data.Common.User", b =>
+            modelBuilder.Entity("RoleUser", b =>
                 {
-                    b.HasOne("Simbi.Data.Common.Role", "Role")
+                    b.HasOne("Simbi.Data.Common.Role", null)
                         .WithMany()
-                        .HasForeignKey("RoleId");
+                        .HasForeignKey("RolesId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
-                    b.Navigation("Role");
+                    b.HasOne("Simbi.Data.Common.User", null)
+                        .WithMany()
+                        .HasForeignKey("UsersId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("Simbi.Data.Models.AdminRemark", b =>

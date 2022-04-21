@@ -1,4 +1,6 @@
-﻿namespace Simbi.Data.Common;
+﻿using System.Collections.Generic;
+
+namespace Simbi.Data.Common;
 
 public class User : ApplicationEntity
 {
@@ -6,5 +8,5 @@ public class User : ApplicationEntity
 
     public string Username { get; set; }
 
-    public Role Role { get; set; }
+    public ICollection<Role> Roles { get; set; }
 }
