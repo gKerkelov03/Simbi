@@ -7,6 +7,7 @@ namespace Simbi.Services;
 public class Redirector
 {        
     private static readonly UserManager userManager = new UserManager();
+
     public void RedirectTo(PageName page, object currentPage)
     {
         Form newPage = null;
@@ -17,11 +18,11 @@ public class Redirector
         }
         else if (page == PageName.Cashier)
         {
-            newPage = new AdminPage(userManager);
+            newPage = new CashierPage(userManager, this);
         }
         else if(page == PageName.Admin)
         {
-            newPage = new CashierPage(userManager);
+            newPage = new AdminPage(userManager, this);
         }
 
         newPage.Show();

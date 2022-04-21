@@ -199,7 +199,7 @@ namespace Simbi.WindowsForms
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(115, 90);
             this.button1.TabIndex = 3;
-            this.button1.Text = "button1";
+            this.button1.Text = "Enter";
             this.button1.UseVisualStyleBackColor = true;
             // 
             // panel2
@@ -304,8 +304,9 @@ namespace Simbi.WindowsForms
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(421, 56);
             this.button2.TabIndex = 0;
-            this.button2.Text = "button2";
+            this.button2.Text = "Sign out";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button3
             // 

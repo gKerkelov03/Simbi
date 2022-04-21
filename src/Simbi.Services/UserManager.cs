@@ -7,6 +7,7 @@ using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
 using System.Collections.Generic;
+using Microsoft.EntityFrameworkCore;
 
 namespace Simbi.Services;
 
@@ -16,14 +17,14 @@ public class UserManager
 
     private readonly ApplicationDbContext dbContext = new ApplicationDbContext();
 
-    public User GetUserWithCredentials(string username, string password) => this.dbContext.Users.FirstOrDefault(user => user.Password == Hash(password) && user.Username == username);
+    public User GetUserWithCredentials(string username, string password) => this.dbContext.Users.Where(user => user.Password == Hash(password) && user.Username == username).Include(x => x.Roles).FirstOrDefault();
 
     public bool SignIn(string username, string password) => (this.CurrentUser = GetUserWithCredentials(username, password)) != null;
 
     public bool CreateUserWithCredentials(string username, string password)
     {
         var hashedPassword = Hash(password);
-        var suchUserAlreadyExists = this.dbContext.Users.Any(user => user.Password == hashedPassword || user.Username == username);
+        var suchUserAlreadyExists = this.dbContext.Users.Any(user => user.Username == username);
 
         if (suchUserAlreadyExists)
         {
@@ -36,6 +37,7 @@ public class UserManager
             Password = hashedPassword,
             Roles = new[] { dbContext.Roles.Where(role => role.Name == CashierRoleName).FirstOrDefault() }
         });
+        this.dbContext.SaveChanges();
 
         return true;
     }

@@ -34,7 +34,7 @@ namespace Simbi.WindowsForms
             // SubmitCredentialsButton
             // 
             this.SubmitCredentialsButton.Location = new System.Drawing.Point(24, 400);
-            this.SubmitCredentialsButton.Size = new System.Drawing.Size(264, 44);            
+            this.SubmitCredentialsButton.Size = new System.Drawing.Size(264, 44);
             // 
             // titleLabel
             // 
@@ -44,7 +44,7 @@ namespace Simbi.WindowsForms
             // 
             // ErrorMessageLabel
             // 
-            this.ErrorMessageLabel.Location = new System.Drawing.Point(80, 373);
+            this.ErrorMessageLabel.Location = new System.Drawing.Point(59, 370);
             this.ErrorMessageLabel.Size = new System.Drawing.Size(168, 17);
             this.ErrorMessageLabel.Text = "That user already exists!";
             // 

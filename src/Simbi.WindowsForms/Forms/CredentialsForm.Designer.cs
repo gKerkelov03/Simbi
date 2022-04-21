@@ -162,6 +162,7 @@ namespace Simbi.WindowsForms
             this.ErrorMessageLabel.Name = "ErrorMessageLabel";
             this.ErrorMessageLabel.Size = new System.Drawing.Size(221, 17);
             this.ErrorMessageLabel.TabIndex = 11;
+            this.ErrorMessageLabel.Visible = false;
             this.ErrorMessageLabel.Text = "* Wrong username or password.";
             // 
             // CredentialsForm

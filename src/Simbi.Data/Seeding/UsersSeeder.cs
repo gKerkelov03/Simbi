@@ -26,7 +26,7 @@ public class UsersSeeder : ISeeder
             new User
             {
                 Password = Hash(TestUsersPassword),
-                Username = "testuser1",
+                Username = TestUserUsername,
                 Roles = new List<Role> { cashierRole },
             },
             new User

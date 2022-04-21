@@ -22,8 +22,11 @@ public partial class RegisterForm : CredentialsForm
         var enteredUsername = this.usernameTextBox.Text;
         var enteredPassword = this.passwordTextBox.Text;
 
-        bool isCreatedSuccessfully = usersService.CreateUserWithCredentials(enteredUsername, enteredPassword);
+        this.passwordTextBox.PasswordChar = '\0';
+        this.usernameTextBox.Text = "Username";
+        this.passwordTextBox.Text = "Password";
 
+        bool isCreatedSuccessfully = usersService.CreateUserWithCredentials(enteredUsername, enteredPassword);
 
         if(isCreatedSuccessfully)
         {
@@ -35,7 +38,6 @@ public partial class RegisterForm : CredentialsForm
         {
             this.ErrorMessageLabel.Text = "That user already exists!";
             this.ErrorMessageLabel.ForeColor = Color.Red;
-
             this.ErrorMessageLabel.Show();
         }
     }        

@@ -25,10 +25,15 @@ public partial class LoginForm : CredentialsForm
     {
         var enteredUsername = this.usernameTextBox.Text;
         var enteredPassword = this.passwordTextBox.Text;
-                
-        bool isSignIn = userManager.SignIn(enteredUsername, enteredPassword);
 
-        if (isSignIn)
+        this.passwordTextBox.PasswordChar = '\0';
+        this.usernameTextBox.Text = "Username";
+        this.passwordTextBox.Text = "Password";
+
+
+        bool isLoginSuccessful = userManager.SignIn(enteredUsername, enteredPassword);
+
+        if (isLoginSuccessful)
         {
             if (userManager.CurrentUserRoles().Contains(GlobalConstants.AdministratorRoleName))
             {

@@ -11,7 +11,6 @@ public partial class CredentialsForm : Form
     
     public CredentialsForm() => InitializeComponent();
     
-
     private void usernameTextBox_Focus(object sender, EventArgs e)
     {
         if (this.usernameTextBox.Text == "Username")

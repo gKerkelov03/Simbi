@@ -29,7 +29,7 @@ public partial class HomePage : Form
 
     private void LoginButton_Click(object sender, EventArgs e)
     {
-        new LoginForm(this, userManager, redirektor).Show();
+        new LoginForm(this, userManager, redirektor).Show();       
         this.Enabled = false;           
     }        
 }
