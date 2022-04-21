@@ -24,6 +24,7 @@ static class Program
         #region SeedData
 
         var dbContext = new ApplicationDbContext();
+        dbContext.Database.EnsureDeleted();
         if (dbContext.Database.GetPendingMigrations().Any())
         {
             dbContext.Database.Migrate();

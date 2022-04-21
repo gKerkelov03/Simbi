@@ -13,9 +13,9 @@ public class AppSeeder : ISeeder
             new UsersSeeder(),
             new AdminRemarksSeeder(),
 
-            new OrdersSeeder(),
             new MaterialsSeeder(),
             new PurchasesSeeder(),     
+            new OrdersSeeder(),
         };
 
         foreach (var seeder in seeders)
