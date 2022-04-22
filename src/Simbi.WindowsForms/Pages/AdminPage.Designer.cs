@@ -32,25 +32,42 @@ namespace Simbi.WindowsForms
             this.sqlCommand1 = new Microsoft.Data.SqlClient.SqlCommand();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.ordersDataGridView = new System.Windows.Forms.DataGridView();
             this.tableLayoutPanel9 = new System.Windows.Forms.TableLayoutPanel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.button5 = new System.Windows.Forms.Button();
-            this.adminRemarksDataGridView = new System.Windows.Forms.DataGridView();
-            this.refreshButton = new System.Windows.Forms.Button();
-            this.logoutButton = new System.Windows.Forms.Button();
+            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            this.ordersDataGridView = new System.Windows.Forms.DataGridView();
+            this.purchasesDataGridView = new System.Windows.Forms.DataGridView();
+            this.button7 = new System.Windows.Forms.Button();
             this.materialsDataGridView = new System.Windows.Forms.DataGridView();
+            this.adminRemarksDataGridView = new System.Windows.Forms.DataGridView();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.logoutButton = new System.Windows.Forms.Button();
+            this.refreshButton = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel6.SuspendLayout();
-            this.tableLayoutPanel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ordersDataGridView)).BeginInit();
             this.tableLayoutPanel9.SuspendLayout();
             this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.adminRemarksDataGridView)).BeginInit();
+            this.tableLayoutPanel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ordersDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.purchasesDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.materialsDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.adminRemarksDataGridView)).BeginInit();
+            this.tableLayoutPanel2.SuspendLayout();
+            this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
+            this.panel4.SuspendLayout();
+            this.panel5.SuspendLayout();
             this.SuspendLayout();
             // 
             // sqlCommand1
@@ -67,14 +84,14 @@ namespace Simbi.WindowsForms
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 56.46519F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 43.53481F));
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel6, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.ordersDataGridView, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel3, 0, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(955, 530);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(914, 484);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // tableLayoutPanel6
@@ -82,46 +99,22 @@ namespace Simbi.WindowsForms
             this.tableLayoutPanel6.BackColor = System.Drawing.Color.PeachPuff;
             this.tableLayoutPanel6.ColumnCount = 1;
             this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel6.Controls.Add(this.adminRemarksDataGridView, 0, 0);
-            this.tableLayoutPanel6.Controls.Add(this.tableLayoutPanel2, 0, 2);
             this.tableLayoutPanel6.Controls.Add(this.materialsDataGridView, 0, 1);
+            this.tableLayoutPanel6.Controls.Add(this.adminRemarksDataGridView, 0, 3);
+            this.tableLayoutPanel6.Controls.Add(this.tableLayoutPanel2, 0, 4);
+            this.tableLayoutPanel6.Controls.Add(this.panel4, 0, 0);
+            this.tableLayoutPanel6.Controls.Add(this.panel5, 0, 2);
             this.tableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel6.Location = new System.Drawing.Point(542, 3);
+            this.tableLayoutPanel6.Location = new System.Drawing.Point(519, 3);
             this.tableLayoutPanel6.Name = "tableLayoutPanel6";
-            this.tableLayoutPanel6.RowCount = 3;
-            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.10846F));
-            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 49.89154F));
-            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 62F));
-            this.tableLayoutPanel6.Size = new System.Drawing.Size(410, 524);
+            this.tableLayoutPanel6.RowCount = 5;
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 6.738352F));
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.26165F));
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.995816F));
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 38.28452F));
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.3431F));
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(392, 478);
             this.tableLayoutPanel6.TabIndex = 8;
-            // 
-            // tableLayoutPanel2
-            // 
-            this.tableLayoutPanel2.BackColor = System.Drawing.Color.PaleGreen;
-            this.tableLayoutPanel2.ColumnCount = 2;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Controls.Add(this.logoutButton, 0, 0);
-            this.tableLayoutPanel2.Controls.Add(this.refreshButton, 0, 0);
-            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 464);
-            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.RowCount = 1;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(404, 57);
-            this.tableLayoutPanel2.TabIndex = 0;
-            // 
-            // ordersDataGridView
-            // 
-            this.ordersDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.ordersDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ordersDataGridView.Location = new System.Drawing.Point(3, 3);
-            this.ordersDataGridView.Name = "ordersDataGridView";
-            this.ordersDataGridView.RowHeadersWidth = 51;
-            this.ordersDataGridView.RowTemplate.Height = 27;
-            this.ordersDataGridView.Size = new System.Drawing.Size(533, 524);
-            this.ordersDataGridView.TabIndex = 9;
             // 
             // tableLayoutPanel9
             // 
@@ -180,68 +173,231 @@ namespace Simbi.WindowsForms
             this.button5.Text = "Confirm";
             this.button5.UseVisualStyleBackColor = true;
             // 
+            // tableLayoutPanel3
+            // 
+            this.tableLayoutPanel3.ColumnCount = 1;
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel3.Controls.Add(this.ordersDataGridView, 0, 1);
+            this.tableLayoutPanel3.Controls.Add(this.purchasesDataGridView, 0, 3);
+            this.tableLayoutPanel3.Controls.Add(this.panel1, 0, 0);
+            this.tableLayoutPanel3.Controls.Add(this.panel2, 0, 2);
+            this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
+            this.tableLayoutPanel3.RowCount = 4;
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 6.679389F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 43.70229F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.206107F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 41.22137F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(510, 478);
+            this.tableLayoutPanel3.TabIndex = 3;
+            this.tableLayoutPanel3.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel3_Paint);
+            // 
+            // ordersDataGridView
+            // 
+            this.ordersDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.ordersDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ordersDataGridView.Location = new System.Drawing.Point(3, 34);
+            this.ordersDataGridView.Name = "ordersDataGridView";
+            this.ordersDataGridView.RowHeadersWidth = 51;
+            this.ordersDataGridView.RowTemplate.Height = 27;
+            this.ordersDataGridView.Size = new System.Drawing.Size(504, 203);
+            this.ordersDataGridView.TabIndex = 0;
+            // 
+            // purchasesDataGridView
+            // 
+            this.purchasesDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.purchasesDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.purchasesDataGridView.Location = new System.Drawing.Point(3, 282);
+            this.purchasesDataGridView.Name = "purchasesDataGridView";
+            this.purchasesDataGridView.RowHeadersWidth = 51;
+            this.purchasesDataGridView.RowTemplate.Height = 27;
+            this.purchasesDataGridView.Size = new System.Drawing.Size(504, 193);
+            this.purchasesDataGridView.TabIndex = 1;
+            // 
+            // button7
+            // 
+            this.button7.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.button7.Location = new System.Drawing.Point(3, 3);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(92, 8);
+            this.button7.TabIndex = 3;
+            this.button7.Text = "Refresh";
+            this.button7.UseVisualStyleBackColor = true;
+            // 
+            // materialsDataGridView
+            // 
+            this.materialsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.materialsDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.materialsDataGridView.Location = new System.Drawing.Point(3, 35);
+            this.materialsDataGridView.Name = "materialsDataGridView";
+            this.materialsDataGridView.RowHeadersWidth = 51;
+            this.materialsDataGridView.RowTemplate.Height = 27;
+            this.materialsDataGridView.Size = new System.Drawing.Size(386, 153);
+            this.materialsDataGridView.TabIndex = 0;
+            // 
             // adminRemarksDataGridView
             // 
             this.adminRemarksDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.adminRemarksDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.adminRemarksDataGridView.Location = new System.Drawing.Point(3, 3);
+            this.adminRemarksDataGridView.Location = new System.Drawing.Point(3, 237);
             this.adminRemarksDataGridView.Name = "adminRemarksDataGridView";
             this.adminRemarksDataGridView.RowHeadersWidth = 51;
             this.adminRemarksDataGridView.RowTemplate.Height = 27;
-            this.adminRemarksDataGridView.Size = new System.Drawing.Size(404, 225);
+            this.adminRemarksDataGridView.Size = new System.Drawing.Size(386, 177);
             this.adminRemarksDataGridView.TabIndex = 1;
+            // 
+            // tableLayoutPanel2
+            // 
+            this.tableLayoutPanel2.BackColor = System.Drawing.Color.PaleGreen;
+            this.tableLayoutPanel2.ColumnCount = 2;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.Controls.Add(this.logoutButton, 1, 0);
+            this.tableLayoutPanel2.Controls.Add(this.refreshButton, 0, 0);
+            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 420);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 1;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(386, 55);
+            this.tableLayoutPanel2.TabIndex = 2;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(3, 3);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(504, 25);
+            this.panel1.TabIndex = 2;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.panel2.Controls.Add(this.label5);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Location = new System.Drawing.Point(3, 243);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(504, 33);
+            this.panel2.TabIndex = 3;
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.panel4.Controls.Add(this.label2);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel4.Location = new System.Drawing.Point(3, 3);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(386, 26);
+            this.panel4.TabIndex = 3;
+            // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.panel5.Controls.Add(this.label6);
+            this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel5.Location = new System.Drawing.Point(3, 194);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(386, 37);
+            this.panel5.TabIndex = 4;
+            // 
+            // logoutButton
+            // 
+            this.logoutButton.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.logoutButton.Location = new System.Drawing.Point(196, 3);
+            this.logoutButton.Name = "logoutButton";
+            this.logoutButton.Size = new System.Drawing.Size(187, 49);
+            this.logoutButton.TabIndex = 0;
+            this.logoutButton.Text = "Sign out";
+            this.logoutButton.UseVisualStyleBackColor = true;
             // 
             // refreshButton
             // 
             this.refreshButton.Dock = System.Windows.Forms.DockStyle.Fill;
             this.refreshButton.Location = new System.Drawing.Point(3, 3);
             this.refreshButton.Name = "refreshButton";
-            this.refreshButton.Size = new System.Drawing.Size(196, 51);
-            this.refreshButton.TabIndex = 3;
+            this.refreshButton.Size = new System.Drawing.Size(187, 49);
+            this.refreshButton.TabIndex = 1;
             this.refreshButton.Text = "Refresh";
             this.refreshButton.UseVisualStyleBackColor = true;
-            this.refreshButton.Click += new System.EventHandler(this.button1_Click);
             // 
-            // logoutButton
+            // label1
             // 
-            this.logoutButton.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.logoutButton.Location = new System.Drawing.Point(205, 3);
-            this.logoutButton.Name = "logoutButton";
-            this.logoutButton.Size = new System.Drawing.Size(196, 51);
-            this.logoutButton.TabIndex = 5;
-            this.logoutButton.Text = "Sign out";
-            this.logoutButton.UseVisualStyleBackColor = true;
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(190, 3);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(54, 17);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Orders";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
-            // materialsDataGridView
+            // label2
             // 
-            this.materialsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.materialsDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.materialsDataGridView.GridColor = System.Drawing.Color.PeachPuff;
-            this.materialsDataGridView.Location = new System.Drawing.Point(3, 234);
-            this.materialsDataGridView.Name = "materialsDataGridView";
-            this.materialsDataGridView.RowHeadersWidth = 51;
-            this.materialsDataGridView.RowTemplate.Height = 27;
-            this.materialsDataGridView.Size = new System.Drawing.Size(404, 224);
-            this.materialsDataGridView.TabIndex = 2;
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(158, 3);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(66, 17);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Materials";
+            // 
+            // label5
+            // 
+            this.label5.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(121, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(215, 17);
+            this.label5.TabIndex = 0;
+            this.label5.Text = "Purchases in the selected order";
+            // 
+            // label6
+            // 
+            this.label6.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(156, 10);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(68, 17);
+            this.label6.TabIndex = 0;
+            this.label6.Text = "Remarks";
             // 
             // AdminPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(955, 530);
+            this.ClientSize = new System.Drawing.Size(914, 484);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "AdminPage";
             this.Text = "Admin Page";
             this.Load += new System.EventHandler(this.AdminPage_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel6.ResumeLayout(false);
-            this.tableLayoutPanel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.ordersDataGridView)).EndInit();
             this.tableLayoutPanel9.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.adminRemarksDataGridView)).EndInit();
+            this.tableLayoutPanel3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.ordersDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.purchasesDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.materialsDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.adminRemarksDataGridView)).EndInit();
+            this.tableLayoutPanel2.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -255,11 +411,22 @@ namespace Simbi.WindowsForms
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel6;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
-        private System.Windows.Forms.DataGridView ordersDataGridView;
+        private System.Windows.Forms.DataGridView materialsDataGridView;
         private System.Windows.Forms.DataGridView adminRemarksDataGridView;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.Button logoutButton;
         private System.Windows.Forms.Button refreshButton;
-        private System.Windows.Forms.DataGridView materialsDataGridView;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
+        private System.Windows.Forms.DataGridView ordersDataGridView;
+        private System.Windows.Forms.DataGridView purchasesDataGridView;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button button7;
     }
 }

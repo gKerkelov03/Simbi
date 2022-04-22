@@ -37,4 +37,14 @@ public partial class AdminPage : Form
         this.ordersDataGridView.DataSource = await this.ordersService.GetAll();
         this.adminRemarksDataGridView.DataSource = (await this.adminRemarksService.GetAll(adminRemark => adminRemark.Creator.Username == userManager.CurrentUserUsername()));
     }
+
+    private void label1_Click(object sender, System.EventArgs e)
+    {
+
+    }
+
+    private void tableLayoutPanel3_Paint(object sender, PaintEventArgs e)
+    {
+
+    }
 }

@@ -35,7 +35,7 @@ public partial class CashierPage : Form
         InitializeComponent();
     }
 
-    private void button2_Click(object sender, EventArgs e)
+    private void LogoutButtonClick(object sender, EventArgs e)
     {
         this.userManager.CurrentUserLogout();
         this.redirector.RedirectTo(PageName.Home, this);
@@ -48,11 +48,6 @@ public partial class CashierPage : Form
         this.materialsDataGridView.DataSource = await this.materialsService.GetAll();
         this.currentOrderDataGridView.DataSource = currentOrder.Purchases;
         this.adminRemarksDataGridView.DataSource = (await this.adminRemarksService.GetAll(adminRemark => adminRemark.Creator.Username == userManager.CurrentUserUsername()));
-
-    }
-
-    private void tableLayoutPanel10_Paint(object sender, PaintEventArgs e)
-    {
 
     }
 }

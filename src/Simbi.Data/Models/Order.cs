@@ -9,5 +9,5 @@ public class Order : ApplicationEntity
 
     public string ClientPhoneNumber { get; set; }
 
-    public virtual System.Collections.Generic.ICollection<Purchase> Purchases { get; set; }
+    public virtual ICollection<Purchase> Purchases { get; set; }
 }
