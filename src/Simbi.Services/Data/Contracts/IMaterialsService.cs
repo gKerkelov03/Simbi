@@ -5,11 +5,11 @@ using System.Threading.Tasks;
 
 namespace Simbi.Services.Data;
 
-public interface IPurchasesService
+public interface IMaterialsService
 {
-    Task<IEnumerable<Purchase>> GetAll();
+    Task<IEnumerable<Material>> GetAll();
 
     Task DeleteById(Guid key);
 
-    Task Add(Purchase newPurchase);
+    Task Add(Material newPurchase);
 }

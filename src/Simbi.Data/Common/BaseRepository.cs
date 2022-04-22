@@ -13,14 +13,14 @@ public class BaseRepository<T> where T : ApplicationEntity
 
     public BaseRepository(ApplicationDbContext context) => this.context = context;
 
-    public virtual async Task<System.Collections.Generic.ICollection<T>> GetAllAsync(Expression<Func<T, bool>> filter = null)
+    public virtual async Task<ICollection<T>> GetAllAsync(Expression<Func<T, bool>> filter = null)
     {
         var set = context.Set<T>().AsQueryable();
 
         if (filter != null)
         {
             set = set.Where(filter);
-        }
+        }        
 
         return await set.ToListAsync();
     }

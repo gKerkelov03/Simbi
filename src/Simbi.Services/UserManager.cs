@@ -13,13 +13,13 @@ namespace Simbi.Services;
 
 public class UserManager
 {
-    private User CurrentUser { get; set; }
+    private static User CurrentUser { get; set; }
 
     private readonly ApplicationDbContext dbContext = new ApplicationDbContext();
 
     public User GetUserWithCredentials(string username, string password) => this.dbContext.Users.Where(user => user.Password == Hash(password) && user.Username == username).Include(x => x.Roles).FirstOrDefault();
 
-    public bool SignIn(string username, string password) => (this.CurrentUser = GetUserWithCredentials(username, password)) != null;
+    public bool SignIn(string username, string password) => (CurrentUser = GetUserWithCredentials(username, password)) != null;
 
     public bool CreateUserWithCredentials(string username, string password)
     {
@@ -44,7 +44,7 @@ public class UserManager
 
     public void MakeAdmin(User user) => user.Roles.Add(dbContext.Roles.Where(role => role.Name == AdministratorRoleName).FirstOrDefault());
 
-    public void CurrentUserLogout() => this.CurrentUser = null;
+    public void CurrentUserLogout() => CurrentUser = null;
 
     public IEnumerable<string> CurrentUserRoles() => CurrentUser.Roles.Select(role => role.Name);
     

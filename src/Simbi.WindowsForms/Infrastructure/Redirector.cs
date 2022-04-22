@@ -1,5 +1,9 @@
 ﻿using System.Windows.Forms;
 using Simbi.Common;
+using Simbi.Data;
+using Simbi.Data.Repositories;
+using Simbi.Services.Data;
+using Simbi.Services.Data.Simbi.Services.Data;
 using Simbi.WindowsForms;
 
 namespace Simbi.Services;
@@ -7,6 +11,10 @@ namespace Simbi.Services;
 public class Redirector
 {        
     private static readonly UserManager userManager = new UserManager();
+    private static readonly IPurchasesService purchasesService = new PurchasesService(new PurchasesRepository(new ApplicationDbContext()));
+    private static readonly IOrdersService ordersService = new OrdersService(new OrdersRepository(new ApplicationDbContext()));
+    private static readonly IAdminRemarksService adminRemarksService = new AdminRemarksService(new AdminRemarksRepository(new ApplicationDbContext()));
+    private static readonly IMaterialsService materialsService = new MaterialsService(new MaterialsRepository(new ApplicationDbContext()));
 
     public void RedirectTo(PageName page, object currentPage)
     {
@@ -18,11 +26,11 @@ public class Redirector
         }
         else if (page == PageName.Cashier)
         {
-            newPage = new CashierPage(userManager, this);
+            newPage = new CashierPage(userManager, this, materialsService, purchasesService, ordersService, adminRemarksService);
         }
         else if(page == PageName.Admin)
         {
-            newPage = new AdminPage(userManager, this);
+            newPage = new AdminPage(userManager, this, materialsService, purchasesService, ordersService, adminRemarksService);
         }
 
         newPage.Show();
