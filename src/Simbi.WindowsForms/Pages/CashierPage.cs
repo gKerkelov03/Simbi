@@ -47,7 +47,7 @@ public partial class CashierPage : Form
 
         this.materialsDataGridView.DataSource = await this.materialsService.GetAll();
         this.currentOrderDataGridView.DataSource = currentOrder.Purchases;
-        this.adminRemarksDataGridView.DataSource = (await this.adminRemarksService.GetAll(adminRemark => adminRemark.Creator == userManager.CurrentUserUsername()));
+        this.adminRemarksDataGridView.DataSource = (await this.adminRemarksService.GetAll(adminRemark => adminRemark.Creator.Username == userManager.CurrentUserUsername()));
 
     }
 }

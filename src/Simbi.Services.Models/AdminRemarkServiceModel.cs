@@ -6,5 +6,5 @@ public class AdminRemarkServiceModel
 
     public string Text { get; set; }
 
-    public string Creator { get; set; }
+    public UserServiceModel Creator { get; set; }
 }

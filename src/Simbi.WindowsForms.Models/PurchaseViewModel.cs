@@ -1,9 +1,7 @@
 ﻿namespace Simbi.WindowsForms.Models;
 
-public class PurchaseViewModel
+public class PurchaseViewModel : BaseViewModel
 {
-    public Guid Id { get; set; }
-
     public string Material { get; set; }
 
     public double QuantityInKilograms { get; set; }

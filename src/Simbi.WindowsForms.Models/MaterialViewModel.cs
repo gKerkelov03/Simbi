@@ -1,9 +1,7 @@
 ﻿namespace Simbi.WindowsForms.Models;
 
-public class MaterialViewModel
+public class MaterialViewModel : BaseViewModel
 {
-    public Guid Id { get; set; }
-
     public string Name { get; set; }
 
     public string Description { get; set; }

@@ -1,5 +1,4 @@
-﻿using Simbi.Data.Common;
-
+﻿
 namespace Simbi.Services.Models;
 
 public class RoleServiceModel

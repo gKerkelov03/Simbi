@@ -250,12 +250,14 @@ namespace Simbi.WindowsForms
             // 
             // ordersDataGridView
             // 
+            this.ordersDataGridView.AllowUserToAddRows = false;
             this.ordersDataGridView.AllowUserToOrderColumns = true;
             this.ordersDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.ordersDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.ordersDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ordersDataGridView.Location = new System.Drawing.Point(3, 34);
             this.ordersDataGridView.Name = "ordersDataGridView";
+            this.ordersDataGridView.ReadOnly = true;
             this.ordersDataGridView.RowHeadersWidth = 51;
             this.ordersDataGridView.RowTemplate.Height = 27;
             this.ordersDataGridView.Size = new System.Drawing.Size(504, 203);

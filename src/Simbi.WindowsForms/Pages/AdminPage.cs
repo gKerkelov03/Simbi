@@ -39,33 +39,46 @@ public partial class AdminPage : Form
 
     private async void AdminPage_Load(object sender, EventArgs e)
     {
+
         #region Orders
         var orders = (await this.ordersService.GetAll()).To<OrderWithoutPurchasesViewModel>();
-        var ordersDataSource = new BindingList<OrderWithoutPurchasesViewModel>(orders.ToList());
-        
-        ordersDataSource.AllowNew = true;
-        ordersDataSource.AllowRemove = true;
-        ordersDataSource.AllowEdit = true;
+        var ordersDataSource = new BindingList<OrderWithoutPurchasesViewModel>(orders.ToList());                
 
         this.ordersDataGridView.DataSource = ordersDataSource;
+
+        ordersDataSource.AllowRemove = true;
+
+        var deleteButtonColumnOrders = new DataGridViewButtonColumn();
+        deleteButtonColumnOrders.Text = "Delete";
+        deleteButtonColumnOrders.HeaderText = "Delete";
+        deleteButtonColumnOrders.UseColumnTextForButtonValue = true;
 
         var selectPurchasesButtonColumn = new DataGridViewButtonColumn();
         selectPurchasesButtonColumn.Text = "Select";
         selectPurchasesButtonColumn.HeaderText = "Purchases";
-        selectPurchasesButtonColumn.UseColumnTextForButtonValue = true;
+        selectPurchasesButtonColumn.UseColumnTextForButtonValue = true;        
 
-        var deleteButtonColumn = new DataGridViewButtonColumn();
-        deleteButtonColumn.Text = "Delete";
-        deleteButtonColumn.HeaderText = "Delete";
-        deleteButtonColumn.UseColumnTextForButtonValue = true;
-
-        this.ordersDataGridView.Columns.Insert(this.ordersDataGridView.ColumnCount - 1, selectPurchasesButtonColumn);
+        this.ordersDataGridView.Columns.Add(selectPurchasesButtonColumn);
         this.ordersDataGridView.Columns["ID"].DisplayIndex = this.ordersDataGridView.ColumnCount - 1;
-        this.ordersDataGridView.Columns.Add(deleteButtonColumn);
+        this.ordersDataGridView.Columns.Add(deleteButtonColumnOrders);
         #endregion
 
         #region Materials
+        var materials = (await this.ordersService.GetAll()).To<OrderWithoutPurchasesViewModel>();
+        var materialsDataSource = new BindingList<OrderWithoutPurchasesViewModel>(orders.ToList());
 
+        materialsDataSource.AllowNew = true;
+        materialsDataSource.AllowRemove = true;
+        materialsDataSource.AllowEdit = true;
+
+        var deleteButtonColumnMaterials = new DataGridViewButtonColumn();
+        deleteButtonColumnMaterials.Text = "Delete";
+        deleteButtonColumnMaterials.HeaderText = "Delete";
+        deleteButtonColumnMaterials.UseColumnTextForButtonValue = true;
+
+        this.materialsDataGridView.DataSource = materialsDataSource;                                  
+        this.materialsDataGridView.Columns["ID"].DisplayIndex = this.materialsDataGridView.ColumnCount - 1;
+        this.materialsDataGridView.Columns.Add(deleteButtonColumnMaterials);
         #endregion
 
         #region AdminRemarks
