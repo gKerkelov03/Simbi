@@ -1,5 +1,4 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Simbi.Data.Common;
 using Simbi.Data.Models;
 using System;
 using System.Linq;

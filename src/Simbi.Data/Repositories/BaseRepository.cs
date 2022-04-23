@@ -1,11 +1,12 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Simbi.Data.Common;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
 
-namespace Simbi.Data.Common;
+namespace Simbi.Data.Repositories;
 
 public class BaseRepository<T> where T : ApplicationEntity
 {
@@ -20,7 +21,7 @@ public class BaseRepository<T> where T : ApplicationEntity
         if (filter != null)
         {
             set = set.Where(filter);
-        }        
+        }
 
         return await set.ToListAsync();
     }

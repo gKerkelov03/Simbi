@@ -1,5 +1,4 @@
-﻿using Simbi.Data.Common;
-using Simbi.Data.Models;
+﻿using Simbi.Data.Models;
 
 namespace Simbi.Data.Repositories;
 
