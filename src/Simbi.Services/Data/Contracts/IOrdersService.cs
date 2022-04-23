@@ -1,15 +1,17 @@
-﻿using Simbi.Data.Models;
+﻿using Simbi.Services.Models;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace Simbi.Services.Data;
+namespace Simbi.Services.Data.Contracts;
 
 public interface IOrdersService
 {
-    Task<IEnumerable<Order>> GetAll();
+    Task<IEnumerable<OrderServiceModel>> GetAll();
 
     Task DeleteById(Guid key);
 
-    Task Add(Order newOrder);
+    Task<OrderServiceModel> GetById(Guid id);
+
+    Task Add(OrderServiceModel newOrder);
 }

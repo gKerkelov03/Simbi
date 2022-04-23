@@ -9,7 +9,7 @@ public class MaterialsSeeder : ISeeder
     public async Task SeedAsync(ApplicationDbContext dbContext)
     {
         var dataToSeed = new[] {
-            new Material
+            new MaterialEntity
             {
                 Name = "Material 1",
                 QuantityAvailableInKilograms = 100,
@@ -17,7 +17,7 @@ public class MaterialsSeeder : ISeeder
                 PricePerKilogram = 15,
                 Size = "l"
             },
-            new Material
+            new MaterialEntity
             {
                 Name = "Material 2",
                 QuantityAvailableInKilograms = 100,

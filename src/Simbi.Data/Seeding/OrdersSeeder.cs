@@ -1,5 +1,4 @@
 ﻿using Simbi.Data.Models;
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -11,16 +10,16 @@ public class OrdersSeeder : ISeeder
     public async Task SeedAsync(ApplicationDbContext dbContext)
     {        
         var dataToSeed = new[] {
-            new Order
+            new OrderEntity
             {
                 ClientName = "Client 1",
                 ClientPhoneNumber = "0895105612",
-                Purchases = new List<Purchase>
+                Purchases = new List<PurchaseEntity>
                 {
                     dbContext.Purchases.FirstOrDefault(),                    
                 }
             },
-            new Order
+            new OrderEntity
             {
                 ClientName = "Client 2",
                 ClientPhoneNumber = "0895105612",

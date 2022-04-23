@@ -16,7 +16,9 @@
   <ItemGroup>
     <ProjectReference Include="..\Simbi.Common\Simbi.Common.csproj" />
     <ProjectReference Include="..\Simbi.Data\Simbi.Data.csproj" />
+    <ProjectReference Include="..\Simbi.Mappings\Simbi.Mappings.csproj" />
     <ProjectReference Include="..\Simbi.Services\Simbi.Services.csproj" />
+    <ProjectReference Include="..\Simbi.WindowsForms.Models\Simbi.WindowsForms.Models.csproj" />
   </ItemGroup>
 
   <ItemGroup>

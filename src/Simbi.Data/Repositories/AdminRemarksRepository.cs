@@ -9,20 +9,20 @@ using System.Threading.Tasks;
 
 namespace Simbi.Data.Repositories;
 
-public class AdminRemarksRepository : BaseRepository<AdminRemark>
+public class AdminRemarksRepository : BaseRepository<AdminRemarkEntity>
 {
     public AdminRemarksRepository(ApplicationDbContext context) : base(context) { }
 
-    public override async Task<ICollection<AdminRemark>> GetAllAsync(Expression<Func<AdminRemark, bool>> filter = null)
+    public override async Task<ICollection<AdminRemarkEntity>> GetAllAsync(Expression<Func<AdminRemarkEntity, bool>> filter = null)
     {
-        var set = context.Set<AdminRemark>().AsQueryable();
+        var set = context.Set<AdminRemarkEntity>().AsQueryable();
 
         if (filter != null)
         {
             set = set.Where(filter);        
         }
 
-        set = set.Include(adminRemark => adminRemark.Creator);
+        set = set.Include(AdminRemarkEntity => AdminRemarkEntity.Creator);
 
         return await set.ToListAsync();
     }

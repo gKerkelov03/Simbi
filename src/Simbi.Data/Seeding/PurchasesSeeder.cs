@@ -9,7 +9,7 @@ public class PurchasesSeeder : ISeeder
     public async Task SeedAsync(ApplicationDbContext dbContext)
     {
         var dataToSeed = new[] {
-            new Purchase
+            new PurchaseEntity
             {
                 Material = dbContext.Materials.FirstOrDefault(material => material.Name == "Material 1"),
                 Width = 20,
@@ -17,7 +17,7 @@ public class PurchasesSeeder : ISeeder
                 QuantityInKilograms = 4,
                 TotalPrice = 120            
             },
-            new Purchase
+            new PurchaseEntity
             {
                 Material = dbContext.Materials.FirstOrDefault(material => material.Name == "Material 2"),
                 Width = 15,
@@ -25,7 +25,7 @@ public class PurchasesSeeder : ISeeder
                 QuantityInKilograms = 12,
                 TotalPrice = 100
             },
-            new Purchase
+            new PurchaseEntity
             {
                 Material = dbContext.Materials.FirstOrDefault(material => material.Name == "Material 1"),
                 Width = 30,

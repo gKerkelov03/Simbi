@@ -1,9 +1,8 @@
 ﻿using static Simbi.Common.UtilityMethods;
 using static Simbi.Common.GlobalConstants;
-
-using Simbi.Data.Common;
 using System.Threading.Tasks;
 using System.Collections.Generic;
+using Simbi.Data.Models;
 
 namespace Simbi.Data.Seeding;
 
@@ -12,33 +11,33 @@ public class UsersSeeder : ISeeder
 
     public async Task SeedAsync(ApplicationDbContext dbContext)
     {
-        var adminRole = new Role
+        var adminRole = new RoleEntity
         {
             Name = AdministratorRoleName
         };
 
-        var cashierRole = new Role
+        var cashierRole = new RoleEntity
         {
             Name = CashierRoleName
         };
 
         var dataToSeed = new[] {
-            new User
+            new UserEntity
             {
                 Password = Hash(TestUsersPassword),
                 Username = TestUserUsername,
-                Roles = new List<Role> { cashierRole },
+                Roles = new List<RoleEntity> { cashierRole },
             },
-            new User
+            new UserEntity
             {
                 Password = Hash(AdministratorPassword),
                 Username = AdministratorUsername,
-                Roles = new List<Role> { adminRole },
+                Roles = new List<RoleEntity> { adminRole },
             }
         };
 
-        cashierRole.Users = new List<User> { dataToSeed[0] };
-        adminRole.Users = new List<User> { dataToSeed[1] };
+        cashierRole.Users = new List<UserEntity> { dataToSeed[0] };
+        adminRole.Users = new List<UserEntity> { dataToSeed[1] };
 
         foreach (var applicationUser in dataToSeed)
         {

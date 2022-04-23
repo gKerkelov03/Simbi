@@ -10,12 +10,12 @@ public class AdminRemarksSeeder : ISeeder
     public async Task SeedAsync(ApplicationDbContext dbContext)
     {
         var dataToSeed = new[] {
-            new AdminRemark
+            new AdminRemarkEntity
             {
                 Creator = dbContext.Users.FirstOrDefault(user => user.Username == "testuser1"),
                 Text = "Remark test 1"
             },
-            new AdminRemark
+            new AdminRemarkEntity
             {
                 Creator = dbContext.Users.FirstOrDefault(user => user.Username == "angel"),
                 Text = "Remark test 1"

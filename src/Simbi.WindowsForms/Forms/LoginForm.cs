@@ -1,6 +1,6 @@
 ﻿using Simbi.Common;
-using Simbi.Data.Common;
 using Simbi.Services;
+using Simbi.WindowsForms.Infrastructure;
 using System;
 using System.Linq;
 using System.Windows.Forms;
@@ -23,6 +23,8 @@ public partial class LoginForm : CredentialsForm
     
     public override void SubmitCredentialsButton_Click(object sender, EventArgs e)
     {
+        this.redirector.RedirectTo(PageName.Admin, this);
+
         var enteredUsername = this.usernameTextBox.Text;
         var enteredPassword = this.passwordTextBox.Text;
 

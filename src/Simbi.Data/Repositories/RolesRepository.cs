@@ -1,8 +1,9 @@
 ﻿using Simbi.Data.Common;
+using Simbi.Data.Models;
 
 namespace Simbi.Data.Repositories;
 
-public class RolesRepository : BaseRepository<Role>
+public class RolesRepository : BaseRepository<RoleEntity>
 {
     public RolesRepository(ApplicationDbContext context) : base(context) { }
 }

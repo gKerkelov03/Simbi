@@ -641,6 +641,29 @@
         "runtime": {
           "bin/placeholder/Simbi.Common.dll": {}
         }
+      },
+      "Simbi.Data.Common/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/Simbi.Data.Common.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Simbi.Data.Common.dll": {}
+        }
+      },
+      "Simbi.Data.Models/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Simbi.Data.Common": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Simbi.Data.Models.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Simbi.Data.Models.dll": {}
+        }
       }
     }
   },
@@ -1865,6 +1888,16 @@
       "type": "project",
       "path": "../Simbi.Common/Simbi.Common.csproj",
       "msbuildProject": "../Simbi.Common/Simbi.Common.csproj"
+    },
+    "Simbi.Data.Common/1.0.0": {
+      "type": "project",
+      "path": "../Simbi.Data.Common/Simbi.Data.Common.csproj",
+      "msbuildProject": "../Simbi.Data.Common/Simbi.Data.Common.csproj"
+    },
+    "Simbi.Data.Models/1.0.0": {
+      "type": "project",
+      "path": "../Simbi.Data.Models/Simbi.Data.Models.csproj",
+      "msbuildProject": "../Simbi.Data.Models/Simbi.Data.Models.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -1872,7 +1905,8 @@
       "Microsoft.EntityFrameworkCore.Design >= 6.0.4",
       "Microsoft.EntityFrameworkCore.SqlServer >= 6.0.4",
       "Microsoft.EntityFrameworkCore.Tools >= 6.0.4",
-      "Simbi.Common >= 1.0.0"
+      "Simbi.Common >= 1.0.0",
+      "Simbi.Data.Models >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -1904,6 +1938,9 @@
           "projectReferences": {
             "D:\\repos\\kursovi raboti\\Simbi\\src\\Simbi.Common\\Simbi.Common.csproj": {
               "projectPath": "D:\\repos\\kursovi raboti\\Simbi\\src\\Simbi.Common\\Simbi.Common.csproj"
+            },
+            "D:\\repos\\kursovi raboti\\Simbi\\src\\Simbi.Data.Models\\Simbi.Data.Models.csproj": {
+              "projectPath": "D:\\repos\\kursovi raboti\\Simbi\\src\\Simbi.Data.Models\\Simbi.Data.Models.csproj"
             }
           }
         }

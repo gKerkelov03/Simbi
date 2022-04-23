@@ -2,9 +2,9 @@
 
 namespace Simbi.Data.Models;
 
-public class Purchase : ApplicationEntity
+public class PurchaseEntity : ApplicationEntity
 {
-    public virtual Material Material { get; set; }
+    public virtual MaterialEntity Material { get; set; }
 
     public double  QuantityInKilograms { get; set; }
 

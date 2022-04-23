@@ -58,6 +58,118 @@
         }
       }
     },
+    "D:\\repos\\kursovi raboti\\Simbi\\src\\Simbi.Data.Common\\Simbi.Data.Common.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\repos\\kursovi raboti\\Simbi\\src\\Simbi.Data.Common\\Simbi.Data.Common.csproj",
+        "projectName": "Simbi.Data.Common",
+        "projectPath": "D:\\repos\\kursovi raboti\\Simbi\\src\\Simbi.Data.Common\\Simbi.Data.Common.csproj",
+        "packagesPath": "C:\\Users\\35989\\.nuget\\packages\\",
+        "outputPath": "D:\\repos\\kursovi raboti\\Simbi\\src\\Simbi.Data.Common\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\35989\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\repos\\kursovi raboti\\Simbi\\src\\Simbi.Data.Models\\Simbi.Data.Models.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\repos\\kursovi raboti\\Simbi\\src\\Simbi.Data.Models\\Simbi.Data.Models.csproj",
+        "projectName": "Simbi.Data.Models",
+        "projectPath": "D:\\repos\\kursovi raboti\\Simbi\\src\\Simbi.Data.Models\\Simbi.Data.Models.csproj",
+        "packagesPath": "C:\\Users\\35989\\.nuget\\packages\\",
+        "outputPath": "D:\\repos\\kursovi raboti\\Simbi\\src\\Simbi.Data.Models\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\35989\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "D:\\repos\\kursovi raboti\\Simbi\\src\\Simbi.Data.Common\\Simbi.Data.Common.csproj": {
+                "projectPath": "D:\\repos\\kursovi raboti\\Simbi\\src\\Simbi.Data.Common\\Simbi.Data.Common.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
     "D:\\repos\\kursovi raboti\\Simbi\\src\\Simbi.Data\\Simbi.Data.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -84,6 +196,9 @@
             "projectReferences": {
               "D:\\repos\\kursovi raboti\\Simbi\\src\\Simbi.Common\\Simbi.Common.csproj": {
                 "projectPath": "D:\\repos\\kursovi raboti\\Simbi\\src\\Simbi.Common\\Simbi.Common.csproj"
+              },
+              "D:\\repos\\kursovi raboti\\Simbi\\src\\Simbi.Data.Models\\Simbi.Data.Models.csproj": {
+                "projectPath": "D:\\repos\\kursovi raboti\\Simbi\\src\\Simbi.Data.Models\\Simbi.Data.Models.csproj"
               }
             }
           }
@@ -134,6 +249,130 @@
         }
       }
     },
+    "D:\\repos\\kursovi raboti\\Simbi\\src\\Simbi.Mappings\\Simbi.Mappings.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\repos\\kursovi raboti\\Simbi\\src\\Simbi.Mappings\\Simbi.Mappings.csproj",
+        "projectName": "Simbi.Mappings",
+        "projectPath": "D:\\repos\\kursovi raboti\\Simbi\\src\\Simbi.Mappings\\Simbi.Mappings.csproj",
+        "packagesPath": "C:\\Users\\35989\\.nuget\\packages\\",
+        "outputPath": "D:\\repos\\kursovi raboti\\Simbi\\src\\Simbi.Mappings\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\35989\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "D:\\repos\\kursovi raboti\\Simbi\\src\\Simbi.Data.Models\\Simbi.Data.Models.csproj": {
+                "projectPath": "D:\\repos\\kursovi raboti\\Simbi\\src\\Simbi.Data.Models\\Simbi.Data.Models.csproj"
+              },
+              "D:\\repos\\kursovi raboti\\Simbi\\src\\Simbi.Services.Models\\Simbi.Services.Models.csproj": {
+                "projectPath": "D:\\repos\\kursovi raboti\\Simbi\\src\\Simbi.Services.Models\\Simbi.Services.Models.csproj"
+              },
+              "D:\\repos\\kursovi raboti\\Simbi\\src\\Simbi.WindowsForms.Models\\Simbi.WindowsForms.Models.csproj": {
+                "projectPath": "D:\\repos\\kursovi raboti\\Simbi\\src\\Simbi.WindowsForms.Models\\Simbi.WindowsForms.Models.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[11.0.1, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\repos\\kursovi raboti\\Simbi\\src\\Simbi.Services.Models\\Simbi.Services.Models.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\repos\\kursovi raboti\\Simbi\\src\\Simbi.Services.Models\\Simbi.Services.Models.csproj",
+        "projectName": "Simbi.Services.Models",
+        "projectPath": "D:\\repos\\kursovi raboti\\Simbi\\src\\Simbi.Services.Models\\Simbi.Services.Models.csproj",
+        "packagesPath": "C:\\Users\\35989\\.nuget\\packages\\",
+        "outputPath": "D:\\repos\\kursovi raboti\\Simbi\\src\\Simbi.Services.Models\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\35989\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
     "D:\\repos\\kursovi raboti\\Simbi\\src\\Simbi.Services\\Simbi.Services.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -163,8 +402,65 @@
               },
               "D:\\repos\\kursovi raboti\\Simbi\\src\\Simbi.Data\\Simbi.Data.csproj": {
                 "projectPath": "D:\\repos\\kursovi raboti\\Simbi\\src\\Simbi.Data\\Simbi.Data.csproj"
+              },
+              "D:\\repos\\kursovi raboti\\Simbi\\src\\Simbi.Mappings\\Simbi.Mappings.csproj": {
+                "projectPath": "D:\\repos\\kursovi raboti\\Simbi\\src\\Simbi.Mappings\\Simbi.Mappings.csproj"
               }
             }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\repos\\kursovi raboti\\Simbi\\src\\Simbi.WindowsForms.Models\\Simbi.WindowsForms.Models.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\repos\\kursovi raboti\\Simbi\\src\\Simbi.WindowsForms.Models\\Simbi.WindowsForms.Models.csproj",
+        "projectName": "Simbi.WindowsForms.Models",
+        "projectPath": "D:\\repos\\kursovi raboti\\Simbi\\src\\Simbi.WindowsForms.Models\\Simbi.WindowsForms.Models.csproj",
+        "packagesPath": "C:\\Users\\35989\\.nuget\\packages\\",
+        "outputPath": "D:\\repos\\kursovi raboti\\Simbi\\src\\Simbi.WindowsForms.Models\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\35989\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
           }
         },
         "warningProperties": {
@@ -225,8 +521,14 @@
               "D:\\repos\\kursovi raboti\\Simbi\\src\\Simbi.Data\\Simbi.Data.csproj": {
                 "projectPath": "D:\\repos\\kursovi raboti\\Simbi\\src\\Simbi.Data\\Simbi.Data.csproj"
               },
+              "D:\\repos\\kursovi raboti\\Simbi\\src\\Simbi.Mappings\\Simbi.Mappings.csproj": {
+                "projectPath": "D:\\repos\\kursovi raboti\\Simbi\\src\\Simbi.Mappings\\Simbi.Mappings.csproj"
+              },
               "D:\\repos\\kursovi raboti\\Simbi\\src\\Simbi.Services\\Simbi.Services.csproj": {
                 "projectPath": "D:\\repos\\kursovi raboti\\Simbi\\src\\Simbi.Services\\Simbi.Services.csproj"
+              },
+              "D:\\repos\\kursovi raboti\\Simbi\\src\\Simbi.WindowsForms.Models\\Simbi.WindowsForms.Models.csproj": {
+                "projectPath": "D:\\repos\\kursovi raboti\\Simbi\\src\\Simbi.WindowsForms.Models\\Simbi.WindowsForms.Models.csproj"
               }
             }
           }

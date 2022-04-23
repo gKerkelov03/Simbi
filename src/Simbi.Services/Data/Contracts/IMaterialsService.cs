@@ -1,15 +1,15 @@
-﻿using Simbi.Data.Models;
+﻿using Simbi.Services.Models;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace Simbi.Services.Data;
+namespace Simbi.Services.Data.Contracts;
 
 public interface IMaterialsService
 {
-    Task<IEnumerable<Material>> GetAll();
+    Task<IEnumerable<MaterialServiceModel>> GetAll();
 
     Task DeleteById(Guid key);
 
-    Task Add(Material newPurchase);
+    Task Add(MaterialServiceModel newPurchase);
 }

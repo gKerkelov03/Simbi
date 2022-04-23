@@ -227,6 +227,7 @@ namespace Simbi.WindowsForms
             // 
             // currentOrderDataGridView
             // 
+            this.currentOrderDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.currentOrderDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.currentOrderDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.currentOrderDataGridView.Location = new System.Drawing.Point(3, 58);
@@ -305,6 +306,7 @@ namespace Simbi.WindowsForms
             // adminRemarksDataGridView
             // 
             this.adminRemarksDataGridView.AllowUserToDeleteRows = false;
+            this.adminRemarksDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.adminRemarksDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.adminRemarksDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.adminRemarksDataGridView.Location = new System.Drawing.Point(3, 57);
@@ -431,6 +433,7 @@ namespace Simbi.WindowsForms
             // 
             this.materialsDataGridView.AllowUserToAddRows = false;
             this.materialsDataGridView.AllowUserToDeleteRows = false;
+            this.materialsDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.materialsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.materialsDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.materialsDataGridView.Location = new System.Drawing.Point(3, 55);

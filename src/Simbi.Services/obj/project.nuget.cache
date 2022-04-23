@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "kgU8leOf7wWROJTTCo0xoxRSxxfc5WjsOlEjRyMfjCNxNFWKDBD/6al22XujQyHIX/QhkoIIQAEjWsU3+76I7Q==",
+  "dgSpecHash": "YZeBujwTmglIANIciL9LoaHUCXWJD4nkFNnoCYLrpI9PDYwJwkJX5HxC+MSKHj9mje28bcoqqm6edlPPdqrLCw==",
   "success": true,
   "projectFilePath": "D:\\repos\\kursovi raboti\\Simbi\\src\\Simbi.Services\\Simbi.Services.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\35989\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
+    "C:\\Users\\35989\\.nuget\\packages\\automapper\\11.0.1\\automapper.11.0.1.nupkg.sha512",
+    "C:\\Users\\35989\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\35989\\.nuget\\packages\\microsoft.data.sqlclient\\2.1.4\\microsoft.data.sqlclient.2.1.4.nupkg.sha512",
     "C:\\Users\\35989\\.nuget\\packages\\microsoft.data.sqlclient.sni.runtime\\2.1.1\\microsoft.data.sqlclient.sni.runtime.2.1.1.nupkg.sha512",
     "C:\\Users\\35989\\.nuget\\packages\\microsoft.entityframeworkcore\\6.0.4\\microsoft.entityframeworkcore.6.0.4.nupkg.sha512",

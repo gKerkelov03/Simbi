@@ -12,7 +12,7 @@ using Simbi.Data;
 namespace Simbi.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20220421130508_Initial")]
+    [Migration("20220423083749_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -24,7 +24,7 @@ namespace Simbi.Data.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
 
-            modelBuilder.Entity("RoleUser", b =>
+            modelBuilder.Entity("RoleEntityUserEntity", b =>
                 {
                     b.Property<Guid>("RolesId")
                         .HasColumnType("uniqueidentifier");
@@ -36,41 +36,10 @@ namespace Simbi.Data.Migrations
 
                     b.HasIndex("UsersId");
 
-                    b.ToTable("RoleUser");
+                    b.ToTable("RoleEntityUserEntity");
                 });
 
-            modelBuilder.Entity("Simbi.Data.Common.Role", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<string>("Name")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Roles");
-                });
-
-            modelBuilder.Entity("Simbi.Data.Common.User", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<string>("Password")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Username")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Users");
-                });
-
-            modelBuilder.Entity("Simbi.Data.Models.AdminRemark", b =>
+            modelBuilder.Entity("Simbi.Data.Models.AdminRemarkEntity", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -89,7 +58,7 @@ namespace Simbi.Data.Migrations
                     b.ToTable("AdminRemarks");
                 });
 
-            modelBuilder.Entity("Simbi.Data.Models.Material", b =>
+            modelBuilder.Entity("Simbi.Data.Models.MaterialEntity", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -115,7 +84,7 @@ namespace Simbi.Data.Migrations
                     b.ToTable("Materials");
                 });
 
-            modelBuilder.Entity("Simbi.Data.Models.Order", b =>
+            modelBuilder.Entity("Simbi.Data.Models.OrderEntity", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -132,7 +101,7 @@ namespace Simbi.Data.Migrations
                     b.ToTable("Orders");
                 });
 
-            modelBuilder.Entity("Simbi.Data.Models.Purchase", b =>
+            modelBuilder.Entity("Simbi.Data.Models.PurchaseEntity", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -144,7 +113,7 @@ namespace Simbi.Data.Migrations
                     b.Property<Guid?>("MaterialId")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<Guid?>("OrderId")
+                    b.Property<Guid?>("OrderEntityId")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<double>("QuantityInKilograms")
@@ -160,49 +129,80 @@ namespace Simbi.Data.Migrations
 
                     b.HasIndex("MaterialId");
 
-                    b.HasIndex("OrderId");
+                    b.HasIndex("OrderEntityId");
 
                     b.ToTable("Purchases");
                 });
 
-            modelBuilder.Entity("RoleUser", b =>
+            modelBuilder.Entity("Simbi.Data.Models.RoleEntity", b =>
                 {
-                    b.HasOne("Simbi.Data.Common.Role", null)
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Roles");
+                });
+
+            modelBuilder.Entity("Simbi.Data.Models.UserEntity", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Password")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Username")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Users");
+                });
+
+            modelBuilder.Entity("RoleEntityUserEntity", b =>
+                {
+                    b.HasOne("Simbi.Data.Models.RoleEntity", null)
                         .WithMany()
                         .HasForeignKey("RolesId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Simbi.Data.Common.User", null)
+                    b.HasOne("Simbi.Data.Models.UserEntity", null)
                         .WithMany()
                         .HasForeignKey("UsersId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("Simbi.Data.Models.AdminRemark", b =>
+            modelBuilder.Entity("Simbi.Data.Models.AdminRemarkEntity", b =>
                 {
-                    b.HasOne("Simbi.Data.Common.User", "Creator")
+                    b.HasOne("Simbi.Data.Models.UserEntity", "Creator")
                         .WithMany()
                         .HasForeignKey("CreatorId");
 
                     b.Navigation("Creator");
                 });
 
-            modelBuilder.Entity("Simbi.Data.Models.Purchase", b =>
+            modelBuilder.Entity("Simbi.Data.Models.PurchaseEntity", b =>
                 {
-                    b.HasOne("Simbi.Data.Models.Material", "Material")
+                    b.HasOne("Simbi.Data.Models.MaterialEntity", "Material")
                         .WithMany()
                         .HasForeignKey("MaterialId");
 
-                    b.HasOne("Simbi.Data.Models.Order", null)
+                    b.HasOne("Simbi.Data.Models.OrderEntity", null)
                         .WithMany("Purchases")
-                        .HasForeignKey("OrderId");
+                        .HasForeignKey("OrderEntityId");
 
                     b.Navigation("Material");
                 });
 
-            modelBuilder.Entity("Simbi.Data.Models.Order", b =>
+            modelBuilder.Entity("Simbi.Data.Models.OrderEntity", b =>
                 {
                     b.Navigation("Purchases");
                 });

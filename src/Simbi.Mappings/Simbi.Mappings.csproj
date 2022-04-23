@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="11.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Simbi.Data.Models\Simbi.Data.Models.csproj" />
+    <ProjectReference Include="..\Simbi.Services.Models\Simbi.Services.Models.csproj" />
+    <ProjectReference Include="..\Simbi.WindowsForms.Models\Simbi.WindowsForms.Models.csproj" />
+  </ItemGroup>
+
+</Project>

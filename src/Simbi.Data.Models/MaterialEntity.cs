@@ -2,7 +2,7 @@
 
 namespace Simbi.Data.Models;
 
-public class Material : ApplicationEntity
+public class MaterialEntity : ApplicationEntity
 {
     public string Name { get; set; }
     public string Description { get; set; }

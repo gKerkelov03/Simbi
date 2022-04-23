@@ -2,14 +2,15 @@
 using Simbi.Common;
 using Simbi.Data;
 using Simbi.Data.Repositories;
+using Simbi.Services;
 using Simbi.Services.Data;
+using Simbi.Services.Data.Contracts;
 using Simbi.Services.Data.Simbi.Services.Data;
-using Simbi.WindowsForms;
 
-namespace Simbi.Services;
+namespace Simbi.WindowsForms.Infrastructure;
 
 public class Redirector
-{        
+{
     private static readonly UserManager userManager = new UserManager();
     private static readonly IPurchasesService purchasesService = new PurchasesService(new PurchasesRepository(new ApplicationDbContext()));
     private static readonly IOrdersService ordersService = new OrdersService(new OrdersRepository(new ApplicationDbContext()));
@@ -20,7 +21,7 @@ public class Redirector
     {
         Form newPage = null;
 
-        if(page == PageName.Home)
+        if (page == PageName.Home)
         {
             newPage = new HomePage();
         }
@@ -28,7 +29,7 @@ public class Redirector
         {
             newPage = new CashierPage(userManager, this, materialsService, purchasesService, ordersService, adminRemarksService);
         }
-        else if(page == PageName.Admin)
+        else if (page == PageName.Admin)
         {
             newPage = new AdminPage(userManager, this, materialsService, purchasesService, ordersService, adminRemarksService);
         }

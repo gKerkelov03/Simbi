@@ -1,23 +1,20 @@
 ﻿using static Simbi.Common.GlobalConstants;
 using static Simbi.Common.UtilityMethods;
 using Simbi.Data;
-using Simbi.Data.Common;
-using System;
 using System.Linq;
-using System.Security.Cryptography;
-using System.Text;
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
+using Simbi.Data.Models;
 
 namespace Simbi.Services;
 
 public class UserManager
 {
-    private static User CurrentUser { get; set; }
+    private static UserEntity CurrentUser { get; set; }
 
     private readonly ApplicationDbContext dbContext = new ApplicationDbContext();
 
-    public User GetUserWithCredentials(string username, string password) => this.dbContext.Users.Where(user => user.Password == Hash(password) && user.Username == username).Include(x => x.Roles).FirstOrDefault();
+    public UserEntity GetUserWithCredentials(string username, string password) => this.dbContext.Users.Where(user => user.Password == Hash(password) && user.Username == username).Include(x => x.Roles).FirstOrDefault();
 
     public bool SignIn(string username, string password) => (CurrentUser = GetUserWithCredentials(username, password)) != null;
 
@@ -31,7 +28,7 @@ public class UserManager
             return false;
         }
 
-        this.dbContext.Users.Add(new User()
+        this.dbContext.Users.Add(new UserEntity()
         {
             Username = username,
             Password = hashedPassword,
@@ -42,7 +39,7 @@ public class UserManager
         return true;
     }
 
-    public void MakeAdmin(User user) => user.Roles.Add(dbContext.Roles.Where(role => role.Name == AdministratorRoleName).FirstOrDefault());
+    public void MakeAdmin(UserEntity user) => user.Roles.Add(dbContext.Roles.Where(role => role.Name == AdministratorRoleName).FirstOrDefault());
 
     public void CurrentUserLogout() => CurrentUser = null;
 

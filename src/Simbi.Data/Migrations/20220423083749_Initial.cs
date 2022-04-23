@@ -73,7 +73,7 @@ namespace Simbi.Data.Migrations
                     Width = table.Column<double>(type: "float", nullable: false),
                     Height = table.Column<double>(type: "float", nullable: false),
                     TotalPrice = table.Column<double>(type: "float", nullable: false),
-                    OrderId = table.Column<Guid>(type: "uniqueidentifier", nullable: true)
+                    OrderEntityId = table.Column<Guid>(type: "uniqueidentifier", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -84,8 +84,8 @@ namespace Simbi.Data.Migrations
                         principalTable: "Materials",
                         principalColumn: "Id");
                     table.ForeignKey(
-                        name: "FK_Purchases_Orders_OrderId",
-                        column: x => x.OrderId,
+                        name: "FK_Purchases_Orders_OrderEntityId",
+                        column: x => x.OrderEntityId,
                         principalTable: "Orders",
                         principalColumn: "Id");
                 });
@@ -109,7 +109,7 @@ namespace Simbi.Data.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "RoleUser",
+                name: "RoleEntityUserEntity",
                 columns: table => new
                 {
                     RolesId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
@@ -117,15 +117,15 @@ namespace Simbi.Data.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_RoleUser", x => new { x.RolesId, x.UsersId });
+                    table.PrimaryKey("PK_RoleEntityUserEntity", x => new { x.RolesId, x.UsersId });
                     table.ForeignKey(
-                        name: "FK_RoleUser_Roles_RolesId",
+                        name: "FK_RoleEntityUserEntity_Roles_RolesId",
                         column: x => x.RolesId,
                         principalTable: "Roles",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_RoleUser_Users_UsersId",
+                        name: "FK_RoleEntityUserEntity_Users_UsersId",
                         column: x => x.UsersId,
                         principalTable: "Users",
                         principalColumn: "Id",
@@ -143,13 +143,13 @@ namespace Simbi.Data.Migrations
                 column: "MaterialId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Purchases_OrderId",
+                name: "IX_Purchases_OrderEntityId",
                 table: "Purchases",
-                column: "OrderId");
+                column: "OrderEntityId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_RoleUser_UsersId",
-                table: "RoleUser",
+                name: "IX_RoleEntityUserEntity_UsersId",
+                table: "RoleEntityUserEntity",
                 column: "UsersId");
         }
 
@@ -162,7 +162,7 @@ namespace Simbi.Data.Migrations
                 name: "Purchases");
 
             migrationBuilder.DropTable(
-                name: "RoleUser");
+                name: "RoleEntityUserEntity");
 
             migrationBuilder.DropTable(
                 name: "Materials");
