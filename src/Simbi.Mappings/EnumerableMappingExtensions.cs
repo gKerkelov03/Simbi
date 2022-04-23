@@ -13,8 +13,7 @@ public static class EnumerableMappingExtensions
         config.AddProfile<ServiceModelsToViewModelsProfile>();
     }));
 
-    public static IEnumerable<TDestination> To<TDestination>(
-        this IEnumerable source)
+    public static IEnumerable<TDestination> To<TDestination>(this IEnumerable source)
     {
         if (source == null)
         {

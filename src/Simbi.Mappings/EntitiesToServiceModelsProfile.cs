@@ -3,6 +3,7 @@ using Simbi.Data.Models;
 using Simbi.Services.Models;
 
 namespace Simbi.Mappings;
+
 public class EntitiesToServiceModelsProfile : Profile
 {
     public EntitiesToServiceModelsProfile()

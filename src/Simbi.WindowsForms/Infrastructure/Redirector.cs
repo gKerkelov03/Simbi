@@ -11,11 +11,20 @@ namespace Simbi.WindowsForms.Infrastructure;
 
 public class Redirector
 {
-    private static readonly UserManager userManager = new UserManager();
-    private static readonly IPurchasesService purchasesService = new PurchasesService(new PurchasesRepository(new ApplicationDbContext()));
-    private static readonly IOrdersService ordersService = new OrdersService(new OrdersRepository(new ApplicationDbContext()));
-    private static readonly IAdminRemarksService adminRemarksService = new AdminRemarksService(new AdminRemarksRepository(new ApplicationDbContext()));
-    private static readonly IMaterialsService materialsService = new MaterialsService(new MaterialsRepository(new ApplicationDbContext()));
+    private readonly UserManager userManager;
+    private readonly IPurchasesService purchasesService;
+    private readonly IOrdersService ordersService;
+    private readonly IAdminRemarksService adminRemarksService;
+    private readonly IMaterialsService materialsService;
+
+    public Redirector(UserManager userManager, IPurchasesService purchasesService, IOrdersService ordersService, IAdminRemarksService adminRemarksService, IMaterialsService materialsService)
+    {
+        this.userManager = userManager;
+        this.purchasesService = purchasesService;
+        this.ordersService = ordersService;
+        this.adminRemarksService = adminRemarksService;
+        this.materialsService = materialsService;
+    }
 
     public void RedirectTo(PageName page, object currentPage)
     {
@@ -23,7 +32,7 @@ public class Redirector
 
         if (page == PageName.Home)
         {
-            newPage = new HomePage();
+            newPage = new HomePage(this.userManager, this);
         }
         else if (page == PageName.Cashier)
         {

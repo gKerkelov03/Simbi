@@ -8,11 +8,13 @@ namespace Simbi.WindowsForms;
 
 public partial class HomePage : Form
 {
-    private static UserManager userManager = new UserManager();
-    private static Redirector redirektor = new Redirector();
+    private UserManager userManager;
+    private Redirector redirektor;
 
-    public HomePage()
+    public HomePage(UserManager userManager, Redirector redirektor)
     {
+        this.userManager = userManager;
+        this.redirektor = redirektor;
         InitializeComponent();
     }       
 

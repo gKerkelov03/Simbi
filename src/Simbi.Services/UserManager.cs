@@ -12,7 +12,9 @@ public class UserManager
 {
     private static UserEntity CurrentUser { get; set; }
 
-    private readonly ApplicationDbContext dbContext = new ApplicationDbContext();
+    private readonly ApplicationDbContext dbContext;
+
+    public UserManager(ApplicationDbContext dbContext) => this.dbContext = dbContext;
 
     public UserEntity GetUserWithCredentials(string username, string password) => this.dbContext.Users.Where(user => user.Password == Hash(password) && user.Username == username).Include(x => x.Roles).FirstOrDefault();
 
@@ -38,8 +40,6 @@ public class UserManager
 
         return true;
     }
-
-    public void MakeAdmin(UserEntity user) => user.Roles.Add(dbContext.Roles.Where(role => role.Name == AdministratorRoleName).FirstOrDefault());
 
     public void CurrentUserLogout() => CurrentUser = null;
 
