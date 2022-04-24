@@ -59,13 +59,13 @@ public partial class AdminPage : Form
         selectPurchasesButtonColumn.UseColumnTextForButtonValue = true;        
 
         this.ordersDataGridView.Columns.Add(selectPurchasesButtonColumn);
-        this.ordersDataGridView.Columns["ID"].DisplayIndex = this.ordersDataGridView.ColumnCount - 1;
         this.ordersDataGridView.Columns.Add(deleteButtonColumnOrders);
+        this.ordersDataGridView.Columns["ID"].Visible = false;
         #endregion
 
         #region Materials
-        var materials = (await this.ordersService.GetAll()).To<OrderWithoutPurchasesViewModel>();
-        var materialsDataSource = new BindingList<OrderWithoutPurchasesViewModel>(orders.ToList());
+        var materials = (await this.materialsService.GetAll()).To<MaterialViewModel>();
+        var materialsDataSource = new BindingList<MaterialViewModel>(materials.ToList());
 
         materialsDataSource.AllowNew = true;
         materialsDataSource.AllowRemove = true;
@@ -76,13 +76,26 @@ public partial class AdminPage : Form
         deleteButtonColumnMaterials.HeaderText = "Delete";
         deleteButtonColumnMaterials.UseColumnTextForButtonValue = true;
 
-        this.materialsDataGridView.DataSource = materialsDataSource;                                  
-        this.materialsDataGridView.Columns["ID"].DisplayIndex = this.materialsDataGridView.ColumnCount - 1;
+        this.materialsDataGridView.DataSource = materialsDataSource;
         this.materialsDataGridView.Columns.Add(deleteButtonColumnMaterials);
+        this.materialsDataGridView.Columns["ID"].Visible = false;
         #endregion
 
         #region AdminRemarks
+        var temp = (await this.adminRemarksService.GetAll()).ToList();
+        var remarks = temp.To<AdminRemarkViewModel>().ToList();
+        var remarksDataSource = new BindingList<AdminRemarkViewModel>(remarks.ToList());
+        
+        remarksDataSource.AllowRemove = true;
 
+        var deleteButtonColumnRemarks = new DataGridViewButtonColumn();
+        deleteButtonColumnRemarks.Text = "Delete";
+        deleteButtonColumnRemarks.HeaderText = "Delete";
+        deleteButtonColumnRemarks.UseColumnTextForButtonValue = true;
+
+        this.adminRemarksDataGridView.DataSource = remarksDataSource;
+        this.adminRemarksDataGridView.Columns.Add(deleteButtonColumnRemarks);
+        this.adminRemarksDataGridView.Columns["ID"].Visible = false;
         #endregion
     }
 
@@ -94,21 +107,8 @@ public partial class AdminPage : Form
             e.RowIndex >= 0)
         {
             var id = new Guid(senderGrid.Rows[e.RowIndex].Cells["ID"].Value.ToString());
-            var purchases = (await this.ordersService.GetById(id)).Purchases;
-            var purchasesModel = new BindingList<PurchaseViewModel>();
-
-            foreach (var purchase in purchases)
-            {
-                purchasesModel.Add(new PurchaseViewModel()
-                {
-                    Height = purchase.Height,
-                    Width = purchase.Width,
-                    Material = purchase.Material.Name,
-                    QuantityInKilograms = purchase.QuantityInKilograms,
-                    TotalPrice = purchase.TotalPrice,
-                    Id = purchase.Id,
-                });
-            }
+            var purchases = (await this.ordersService.GetById(id)).Purchases.To<PurchaseViewModel>();
+            var purchasesModel = new BindingList<PurchaseViewModel>(purchases.ToList());           
 
             this.purchasesDataGridView.DataSource = purchasesModel;
         }

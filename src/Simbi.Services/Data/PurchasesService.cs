@@ -6,6 +6,7 @@ using Simbi.Services.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Threading.Tasks;
 
 namespace Simbi.Services.Data;
@@ -18,8 +19,8 @@ public class PurchasesService : IPurchasesService
     
     public async Task Add(PurchaseServiceModel newPurchase) => await this.purchasesRepository.CreateAsync(newPurchase.To<PurchaseEntity>());
 
-    public async Task<IEnumerable<PurchaseServiceModel>> GetAll() => (await this.purchasesRepository.GetAllAsync()).To<PurchaseServiceModel>();
-        
+    public async Task<IEnumerable<PurchaseServiceModel>> GetAll(Expression<Func<PurchaseServiceModel, bool>> filter) => (await this.purchasesRepository.GetAllAsync(filter?.To<Expression<Func<PurchaseEntity, bool>>>())).To<PurchaseServiceModel>();
+
     public async Task DeleteById(Guid key) => await this.purchasesRepository.DeleteAsync(key);
 
     public void AddMultipe(IEnumerable<PurchaseServiceModel> purchasesToAdd) => purchasesToAdd.ToList().ForEach(async purchase => await this.Add(purchase));    

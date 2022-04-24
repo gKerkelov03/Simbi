@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "YZeBujwTmglIANIciL9LoaHUCXWJD4nkFNnoCYLrpI9PDYwJwkJX5HxC+MSKHj9mje28bcoqqm6edlPPdqrLCw==",
+  "dgSpecHash": "hHmNK685SY+Qf2J3Gg1j7gu2nd62xdYFDR0iSYlgMyRBag19fPuD2hgzMhRKq3JULw7f/uGZBMcj2cw03MEy1Q==",
   "success": true,
   "projectFilePath": "D:\\repos\\kursovi raboti\\Simbi\\src\\Simbi.Services\\Simbi.Services.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\35989\\.nuget\\packages\\automapper\\11.0.1\\automapper.11.0.1.nupkg.sha512",
+    "C:\\Users\\35989\\.nuget\\packages\\automapper.extensions.expressionmapping\\5.0.2\\automapper.extensions.expressionmapping.5.0.2.nupkg.sha512",
     "C:\\Users\\35989\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\35989\\.nuget\\packages\\microsoft.data.sqlclient\\2.1.4\\microsoft.data.sqlclient.2.1.4.nupkg.sha512",
     "C:\\Users\\35989\\.nuget\\packages\\microsoft.data.sqlclient.sni.runtime\\2.1.1\\microsoft.data.sqlclient.sni.runtime.2.1.1.nupkg.sha512",

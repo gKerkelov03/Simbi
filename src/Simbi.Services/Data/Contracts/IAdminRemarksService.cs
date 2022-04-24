@@ -8,7 +8,7 @@ namespace Simbi.Services.Data.Contracts;
 
 public interface IAdminRemarksService
 {
-    Task<IEnumerable<AdminRemarkServiceModel>> GetAll(Expression<Func<AdminRemarkServiceModel, bool>> filter = null);
+    Task<IEnumerable<AdminRemarkServiceModel>> GetAll(Expression<Func<AdminRemarkServiceModel, bool>> filter = null);    
 
     Task DeleteById(Guid key);
 

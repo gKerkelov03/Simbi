@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "1YZsGkAuxz++ldqpKKtlq/3UUYLn5I7gLMJDv4QC+Sn/rLk5u/l6UbjeGhYOiPB9VBvK/YFkHh4thp2azIEYIQ==",
+  "dgSpecHash": "fEISMXaPrvvDdS5UnjhlFd5PamtKJUHEEEsX8c/4bGcgSNfqL7G4Tu4c6SzGzMnZnRs9W0N6VbTv3SeIjTa6vg==",
   "success": true,
   "projectFilePath": "D:\\repos\\kursovi raboti\\Simbi\\src\\Simbi.WindowsForms\\Simbi.WindowsForms.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\35989\\.nuget\\packages\\automapper\\11.0.1\\automapper.11.0.1.nupkg.sha512",
+    "C:\\Users\\35989\\.nuget\\packages\\automapper.extensions.expressionmapping\\5.0.2\\automapper.extensions.expressionmapping.5.0.2.nupkg.sha512",
     "C:\\Users\\35989\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\35989\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\35989\\.nuget\\packages\\microsoft.data.sqlclient\\2.1.4\\microsoft.data.sqlclient.2.1.4.nupkg.sha512",

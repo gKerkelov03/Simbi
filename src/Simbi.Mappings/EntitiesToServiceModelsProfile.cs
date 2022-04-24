@@ -11,6 +11,9 @@ public class EntitiesToServiceModelsProfile : Profile
         CreateMap<PurchaseEntity, PurchaseServiceModel>().ReverseMap();
         CreateMap<AdminRemarkEntity, AdminRemarkServiceModel>().ReverseMap();
         CreateMap<MaterialEntity, MaterialServiceModel>().ReverseMap();
-        CreateMap<OrderEntity, OrderServiceModel>().ReverseMap();        
+        CreateMap<OrderEntity, OrderServiceModel>().ReverseMap();
+
+        CreateMap<RoleEntity, RoleServiceModel>().ReverseMap();
+        CreateMap<UserEntity, UserServiceModel>().ReverseMap();
     }
 }

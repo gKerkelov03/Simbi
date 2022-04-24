@@ -11,15 +11,23 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Simbi.Services", "Simbi.Ser
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Simbi.Common", "Simbi.Common\Simbi.Common.csproj", "{AF138B51-FC63-4F3E-980E-750CC04C44A8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Simbi.Services.Models", "Simbi.Services.Models\Simbi.Services.Models.csproj", "{F345B8B9-A6CF-4E1E-B2E2-137B7CF3BCB2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Simbi.Services.Models", "Simbi.Services.Models\Simbi.Services.Models.csproj", "{F345B8B9-A6CF-4E1E-B2E2-137B7CF3BCB2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Simbi.Data.Models", "Simbi.Data.Models\Simbi.Data.Models.csproj", "{C605694E-79A1-41F1-B1AB-02A610E0F674}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Simbi.Data.Models", "Simbi.Data.Models\Simbi.Data.Models.csproj", "{C605694E-79A1-41F1-B1AB-02A610E0F674}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Simbi.WindowsForms.Models", "Simbi.WindowsForms.Models\Simbi.WindowsForms.Models.csproj", "{7980F3B4-FDAF-4154-B5BB-D13F41B4B04D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Simbi.WindowsForms.Models", "Simbi.WindowsForms.Models\Simbi.WindowsForms.Models.csproj", "{7980F3B4-FDAF-4154-B5BB-D13F41B4B04D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Simbi.Mappings", "Simbi.Mappings\Simbi.Mappings.csproj", "{495AF489-31AD-43FA-A4B3-1FE6BB46C235}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Simbi.Mappings", "Simbi.Mappings\Simbi.Mappings.csproj", "{495AF489-31AD-43FA-A4B3-1FE6BB46C235}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Simbi.Data.Common", "Simbi.Data.Common\Simbi.Data.Common.csproj", "{CEC72935-C84A-420B-B292-DDFAF648E8B8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Simbi.Data.Common", "Simbi.Data.Common\Simbi.Data.Common.csproj", "{CEC72935-C84A-420B-B292-DDFAF648E8B8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{E44E5F05-F321-4B0E-AC8A-35814026F1BC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{CCBFB9E6-37A4-4BF3-8643-14D565000D74}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WindowsForms", "WindowsForms", "{0624A518-FB5F-41F9-BAFC-633F1AC48232}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Utilities", "Utilities", "{74F3CFC4-4D65-40B8-8EE6-5E5B9C9F62E4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -66,6 +74,17 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{0E8228E1-D4E5-47B2-9266-129EE17A3E14} = {0624A518-FB5F-41F9-BAFC-633F1AC48232}
+		{88418DFA-CCC8-43F6-B74D-604BB5A40546} = {E44E5F05-F321-4B0E-AC8A-35814026F1BC}
+		{099FA3F6-40F1-420F-BDA2-3E64ACDBCAAC} = {CCBFB9E6-37A4-4BF3-8643-14D565000D74}
+		{AF138B51-FC63-4F3E-980E-750CC04C44A8} = {74F3CFC4-4D65-40B8-8EE6-5E5B9C9F62E4}
+		{F345B8B9-A6CF-4E1E-B2E2-137B7CF3BCB2} = {CCBFB9E6-37A4-4BF3-8643-14D565000D74}
+		{C605694E-79A1-41F1-B1AB-02A610E0F674} = {E44E5F05-F321-4B0E-AC8A-35814026F1BC}
+		{7980F3B4-FDAF-4154-B5BB-D13F41B4B04D} = {0624A518-FB5F-41F9-BAFC-633F1AC48232}
+		{495AF489-31AD-43FA-A4B3-1FE6BB46C235} = {74F3CFC4-4D65-40B8-8EE6-5E5B9C9F62E4}
+		{CEC72935-C84A-420B-B292-DDFAF648E8B8} = {E44E5F05-F321-4B0E-AC8A-35814026F1BC}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {1E566AC2-453E-4230-9552-3098886E12E6}

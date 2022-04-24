@@ -14,6 +14,18 @@
           "lib/netstandard2.1/AutoMapper.dll": {}
         }
       },
+      "AutoMapper.Extensions.ExpressionMapping/5.0.2": {
+        "type": "package",
+        "dependencies": {
+          "AutoMapper": "[11.0.0, 12.0.0)"
+        },
+        "compile": {
+          "lib/netstandard2.1/AutoMapper.Extensions.ExpressionMapping.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.1/AutoMapper.Extensions.ExpressionMapping.dll": {}
+        }
+      },
       "Humanizer.Core/2.8.26": {
         "type": "package",
         "compile": {
@@ -1045,6 +1057,7 @@
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
           "AutoMapper": "11.0.1",
+          "AutoMapper.Extensions.ExpressionMapping": "5.0.2",
           "Simbi.Data.Models": "1.0.0",
           "Simbi.Services.Models": "1.0.0",
           "Simbi.WindowsForms.Models": "1.0.0"
@@ -1107,6 +1120,19 @@
         "icon.png",
         "lib/netstandard2.1/AutoMapper.dll",
         "lib/netstandard2.1/AutoMapper.xml"
+      ]
+    },
+    "AutoMapper.Extensions.ExpressionMapping/5.0.2": {
+      "sha512": "fB0paAMKpylVtG96BvGpFe7zwJ/Zi0XdlQOpvMBw+OViiM0hj5/zivNEO7PSgGtsv2GymJgygjc6aooEKXjfyw==",
+      "type": "package",
+      "path": "automapper.extensions.expressionmapping/5.0.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "automapper.extensions.expressionmapping.5.0.2.nupkg.sha512",
+        "automapper.extensions.expressionmapping.nuspec",
+        "lib/netstandard2.1/AutoMapper.Extensions.ExpressionMapping.dll",
+        "lib/netstandard2.1/AutoMapper.Extensions.ExpressionMapping.xml"
       ]
     },
     "Humanizer.Core/2.8.26": {
@@ -2928,7 +2954,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
       }
     }
   }

@@ -96,7 +96,7 @@ namespace Simbi.WindowsForms
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.26482F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 88.73518F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1004, 569);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1420, 794);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // tableLayoutPanel2
@@ -109,13 +109,13 @@ namespace Simbi.WindowsForms
             this.tableLayoutPanel2.Controls.Add(this.panel2, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.currentOrderDataGridView, 0, 1);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(337, 67);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(476, 92);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 3;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.17424F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 66.47727F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 22.15909F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(328, 499);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(467, 699);
             this.tableLayoutPanel2.TabIndex = 3;
             // 
             // tableLayoutPanel4
@@ -126,12 +126,12 @@ namespace Simbi.WindowsForms
             this.tableLayoutPanel4.Controls.Add(this.tableLayoutPanel5, 0, 0);
             this.tableLayoutPanel4.Controls.Add(this.EnterPurchaseButton, 1, 0);
             this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel4.Location = new System.Drawing.Point(3, 390);
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(3, 546);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 1;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 96F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(322, 106);
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(461, 150);
             this.tableLayoutPanel4.TabIndex = 1;
             // 
             // tableLayoutPanel5
@@ -150,7 +150,7 @@ namespace Simbi.WindowsForms
             this.tableLayoutPanel5.RowCount = 2;
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(224, 100);
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(323, 144);
             this.tableLayoutPanel5.TabIndex = 2;
             // 
             // widthTextBox
@@ -159,27 +159,27 @@ namespace Simbi.WindowsForms
             this.widthTextBox.Location = new System.Drawing.Point(3, 3);
             this.widthTextBox.Multiline = true;
             this.widthTextBox.Name = "widthTextBox";
-            this.widthTextBox.Size = new System.Drawing.Size(106, 44);
+            this.widthTextBox.Size = new System.Drawing.Size(155, 66);
             this.widthTextBox.TabIndex = 0;
             this.widthTextBox.Text = "Width: ";
             // 
             // heightTextBox
             // 
             this.heightTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.heightTextBox.Location = new System.Drawing.Point(115, 3);
+            this.heightTextBox.Location = new System.Drawing.Point(164, 3);
             this.heightTextBox.Multiline = true;
             this.heightTextBox.Name = "heightTextBox";
-            this.heightTextBox.Size = new System.Drawing.Size(106, 44);
+            this.heightTextBox.Size = new System.Drawing.Size(156, 66);
             this.heightTextBox.TabIndex = 1;
             this.heightTextBox.Text = "Height: ";
             // 
             // quantityTextBox
             // 
             this.quantityTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.quantityTextBox.Location = new System.Drawing.Point(3, 53);
+            this.quantityTextBox.Location = new System.Drawing.Point(3, 75);
             this.quantityTextBox.Multiline = true;
             this.quantityTextBox.Name = "quantityTextBox";
-            this.quantityTextBox.Size = new System.Drawing.Size(106, 44);
+            this.quantityTextBox.Size = new System.Drawing.Size(155, 66);
             this.quantityTextBox.TabIndex = 2;
             this.quantityTextBox.Text = "Quantity: ";
             // 
@@ -187,19 +187,19 @@ namespace Simbi.WindowsForms
             // 
             this.priceTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.priceTextBox.Enabled = false;
-            this.priceTextBox.Location = new System.Drawing.Point(115, 53);
+            this.priceTextBox.Location = new System.Drawing.Point(164, 75);
             this.priceTextBox.Multiline = true;
             this.priceTextBox.Name = "priceTextBox";
-            this.priceTextBox.Size = new System.Drawing.Size(106, 44);
+            this.priceTextBox.Size = new System.Drawing.Size(156, 66);
             this.priceTextBox.TabIndex = 3;
             this.priceTextBox.Text = "Price: ";
             // 
             // EnterPurchaseButton
             // 
             this.EnterPurchaseButton.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.EnterPurchaseButton.Location = new System.Drawing.Point(233, 3);
+            this.EnterPurchaseButton.Location = new System.Drawing.Point(332, 3);
             this.EnterPurchaseButton.Name = "EnterPurchaseButton";
-            this.EnterPurchaseButton.Size = new System.Drawing.Size(86, 100);
+            this.EnterPurchaseButton.Size = new System.Drawing.Size(126, 144);
             this.EnterPurchaseButton.TabIndex = 3;
             this.EnterPurchaseButton.Text = "Enter";
             this.EnterPurchaseButton.UseVisualStyleBackColor = true;
@@ -211,14 +211,14 @@ namespace Simbi.WindowsForms
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(3, 3);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(322, 49);
+            this.panel2.Size = new System.Drawing.Size(461, 72);
             this.panel2.TabIndex = 2;
             // 
             // label2
             // 
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(104, 15);
+            this.label2.Location = new System.Drawing.Point(173, 27);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(92, 17);
             this.label2.TabIndex = 1;
@@ -230,11 +230,11 @@ namespace Simbi.WindowsForms
             this.currentOrderDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.currentOrderDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.currentOrderDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.currentOrderDataGridView.Location = new System.Drawing.Point(3, 58);
+            this.currentOrderDataGridView.Location = new System.Drawing.Point(3, 81);
             this.currentOrderDataGridView.Name = "currentOrderDataGridView";
             this.currentOrderDataGridView.RowHeadersWidth = 51;
             this.currentOrderDataGridView.RowTemplate.Height = 27;
-            this.currentOrderDataGridView.Size = new System.Drawing.Size(322, 326);
+            this.currentOrderDataGridView.Size = new System.Drawing.Size(461, 459);
             this.currentOrderDataGridView.TabIndex = 3;
             // 
             // tableLayoutPanel3
@@ -246,21 +246,21 @@ namespace Simbi.WindowsForms
             this.tableLayoutPanel3.Controls.Add(this.tableLayoutPanel6, 0, 1);
             this.tableLayoutPanel3.Controls.Add(this.tableLayoutPanel9, 0, 0);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(671, 67);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(949, 92);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 3;
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 18.28442F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 70.20316F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.30186F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 77.25322F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.32076F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(330, 499);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(468, 699);
             this.tableLayoutPanel3.TabIndex = 4;
             // 
             // button2
             // 
             this.button2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button2.Location = new System.Drawing.Point(3, 444);
+            this.button2.Location = new System.Drawing.Point(3, 622);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(324, 52);
+            this.button2.Size = new System.Drawing.Size(462, 74);
             this.button2.TabIndex = 9;
             this.button2.Text = "Sign out";
             this.button2.UseVisualStyleBackColor = true;
@@ -273,13 +273,13 @@ namespace Simbi.WindowsForms
             this.tableLayoutPanel6.Controls.Add(this.panel4, 0, 0);
             this.tableLayoutPanel6.Controls.Add(this.adminRemarksDataGridView, 0, 1);
             this.tableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel6.Location = new System.Drawing.Point(3, 94);
+            this.tableLayoutPanel6.Location = new System.Drawing.Point(3, 82);
             this.tableLayoutPanel6.Name = "tableLayoutPanel6";
             this.tableLayoutPanel6.RowCount = 2;
-            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15.82278F));
-            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 84.17722F));
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.42322F));
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 88.57678F));
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel6.Size = new System.Drawing.Size(324, 344);
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(462, 534);
             this.tableLayoutPanel6.TabIndex = 7;
             // 
             // panel4
@@ -289,14 +289,14 @@ namespace Simbi.WindowsForms
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel4.Location = new System.Drawing.Point(3, 3);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(318, 48);
+            this.panel4.Size = new System.Drawing.Size(456, 55);
             this.panel4.TabIndex = 3;
             // 
             // label6
             // 
             this.label6.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(65, 15);
+            this.label6.Location = new System.Drawing.Point(134, 18);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(197, 17);
             this.label6.TabIndex = 2;
@@ -309,11 +309,11 @@ namespace Simbi.WindowsForms
             this.adminRemarksDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.adminRemarksDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.adminRemarksDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.adminRemarksDataGridView.Location = new System.Drawing.Point(3, 57);
+            this.adminRemarksDataGridView.Location = new System.Drawing.Point(3, 64);
             this.adminRemarksDataGridView.Name = "adminRemarksDataGridView";
             this.adminRemarksDataGridView.RowHeadersWidth = 51;
             this.adminRemarksDataGridView.RowTemplate.Height = 27;
-            this.adminRemarksDataGridView.Size = new System.Drawing.Size(318, 284);
+            this.adminRemarksDataGridView.Size = new System.Drawing.Size(456, 467);
             this.adminRemarksDataGridView.TabIndex = 4;
             // 
             // tableLayoutPanel9
@@ -328,15 +328,15 @@ namespace Simbi.WindowsForms
             this.tableLayoutPanel9.Name = "tableLayoutPanel9";
             this.tableLayoutPanel9.RowCount = 1;
             this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel9.Size = new System.Drawing.Size(324, 85);
+            this.tableLayoutPanel9.Size = new System.Drawing.Size(462, 73);
             this.tableLayoutPanel9.TabIndex = 8;
             // 
             // confirmOrderButton
             // 
             this.confirmOrderButton.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.confirmOrderButton.Location = new System.Drawing.Point(191, 3);
+            this.confirmOrderButton.Location = new System.Drawing.Point(272, 3);
             this.confirmOrderButton.Name = "confirmOrderButton";
-            this.confirmOrderButton.Size = new System.Drawing.Size(130, 79);
+            this.confirmOrderButton.Size = new System.Drawing.Size(187, 67);
             this.confirmOrderButton.TabIndex = 10;
             this.confirmOrderButton.Text = "Confirm";
             this.confirmOrderButton.UseVisualStyleBackColor = true;
@@ -348,7 +348,7 @@ namespace Simbi.WindowsForms
             this.TotalOrderPriceTextBox.Location = new System.Drawing.Point(3, 3);
             this.TotalOrderPriceTextBox.Multiline = true;
             this.TotalOrderPriceTextBox.Name = "TotalOrderPriceTextBox";
-            this.TotalOrderPriceTextBox.Size = new System.Drawing.Size(182, 79);
+            this.TotalOrderPriceTextBox.Size = new System.Drawing.Size(263, 67);
             this.TotalOrderPriceTextBox.TabIndex = 11;
             this.TotalOrderPriceTextBox.Text = "Total: ";
             // 
@@ -360,7 +360,7 @@ namespace Simbi.WindowsForms
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(3, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(998, 58);
+            this.panel1.Size = new System.Drawing.Size(1414, 83);
             this.panel1.TabIndex = 5;
             // 
             // tableLayoutPanel7
@@ -377,7 +377,7 @@ namespace Simbi.WindowsForms
             this.tableLayoutPanel7.RowCount = 1;
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel7.Size = new System.Drawing.Size(998, 58);
+            this.tableLayoutPanel7.Size = new System.Drawing.Size(1414, 83);
             this.tableLayoutPanel7.TabIndex = 1;
             // 
             // refreshButton
@@ -385,7 +385,7 @@ namespace Simbi.WindowsForms
             this.refreshButton.Dock = System.Windows.Forms.DockStyle.Fill;
             this.refreshButton.Location = new System.Drawing.Point(3, 3);
             this.refreshButton.Name = "refreshButton";
-            this.refreshButton.Size = new System.Drawing.Size(147, 52);
+            this.refreshButton.Size = new System.Drawing.Size(211, 77);
             this.refreshButton.TabIndex = 10;
             this.refreshButton.Text = "Refresh";
             this.refreshButton.UseVisualStyleBackColor = true;
@@ -395,16 +395,16 @@ namespace Simbi.WindowsForms
             this.panel3.BackColor = System.Drawing.Color.PaleGreen;
             this.panel3.Controls.Add(this.titleLabel);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(156, 3);
+            this.panel3.Location = new System.Drawing.Point(220, 3);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(839, 52);
+            this.panel3.Size = new System.Drawing.Size(1191, 77);
             this.panel3.TabIndex = 11;
             // 
             // titleLabel
             // 
             this.titleLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.titleLabel.AutoSize = true;
-            this.titleLabel.Location = new System.Drawing.Point(308, 18);
+            this.titleLabel.Location = new System.Drawing.Point(484, 30);
             this.titleLabel.Name = "titleLabel";
             this.titleLabel.Size = new System.Drawing.Size(154, 17);
             this.titleLabel.TabIndex = 2;
@@ -419,14 +419,14 @@ namespace Simbi.WindowsForms
             this.tableLayoutPanel10.Controls.Add(this.materialsDataGridView, 0, 1);
             this.tableLayoutPanel10.Controls.Add(this.panel5, 0, 0);
             this.tableLayoutPanel10.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel10.Location = new System.Drawing.Point(3, 67);
+            this.tableLayoutPanel10.Location = new System.Drawing.Point(3, 92);
             this.tableLayoutPanel10.Name = "tableLayoutPanel10";
             this.tableLayoutPanel10.RowCount = 2;
             this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.60948F));
             this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 89.39052F));
             this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel10.Size = new System.Drawing.Size(328, 499);
+            this.tableLayoutPanel10.Size = new System.Drawing.Size(467, 699);
             this.tableLayoutPanel10.TabIndex = 6;
             // 
             // materialsDataGridView
@@ -436,13 +436,13 @@ namespace Simbi.WindowsForms
             this.materialsDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.materialsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.materialsDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.materialsDataGridView.Location = new System.Drawing.Point(3, 55);
+            this.materialsDataGridView.Location = new System.Drawing.Point(3, 77);
             this.materialsDataGridView.Name = "materialsDataGridView";
             this.materialsDataGridView.ReadOnly = true;
             this.materialsDataGridView.RowHeadersWidth = 51;
             this.materialsDataGridView.RowTemplate.Height = 27;
             this.materialsDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.materialsDataGridView.Size = new System.Drawing.Size(322, 441);
+            this.materialsDataGridView.Size = new System.Drawing.Size(461, 619);
             this.materialsDataGridView.TabIndex = 3;
             // 
             // panel5
@@ -452,14 +452,14 @@ namespace Simbi.WindowsForms
             this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel5.Location = new System.Drawing.Point(3, 3);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(322, 46);
+            this.panel5.Size = new System.Drawing.Size(461, 68);
             this.panel5.TabIndex = 4;
             // 
             // label1
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(115, 15);
+            this.label1.Location = new System.Drawing.Point(184, 26);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(66, 17);
             this.label1.TabIndex = 2;
@@ -482,7 +482,7 @@ namespace Simbi.WindowsForms
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1004, 569);
+            this.ClientSize = new System.Drawing.Size(1420, 794);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "CashierPage";
             this.Text = "Cashier Page";

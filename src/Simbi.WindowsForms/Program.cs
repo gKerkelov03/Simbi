@@ -43,7 +43,7 @@ static class Program
         var host = Host.CreateDefaultBuilder()
             .ConfigureServices(serviceCollection =>
             {
-                serviceCollection.AddDbContext<ApplicationDbContext>();
+                serviceCollection.AddTransient<ApplicationDbContext, ApplicationDbContext>();
 
                 serviceCollection.AddSingleton<BaseRepository<PurchaseEntity>, PurchasesRepository>();
                 serviceCollection.AddSingleton<BaseRepository<MaterialEntity>, MaterialsRepository>();
