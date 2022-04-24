@@ -1,5 +1,6 @@
 ﻿
 using Simbi.WindowsForms.Models;
+using System;
 using System.Windows.Forms;
 
 namespace Simbi.WindowsForms
@@ -39,7 +40,7 @@ namespace Simbi.WindowsForms
             this.materialsDataGridView = new System.Windows.Forms.DataGridView();
             this.adminRemarksDataGridView = new System.Windows.Forms.DataGridView();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.button2 = new System.Windows.Forms.Button();
+            this.SignOutButton = new System.Windows.Forms.Button();
             this.registerButton = new System.Windows.Forms.Button();
             this.refreshButton = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -52,7 +53,7 @@ namespace Simbi.WindowsForms
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.label5 = new System.Windows.Forms.Label();
+            this.purchsesTitle = new System.Windows.Forms.Label();
             this.tableLayoutPanel9 = new System.Windows.Forms.TableLayoutPanel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
@@ -135,6 +136,7 @@ namespace Simbi.WindowsForms
             this.materialsDataGridView.RowTemplate.Height = 27;
             this.materialsDataGridView.Size = new System.Drawing.Size(386, 157);
             this.materialsDataGridView.TabIndex = 0;
+            this.materialsDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridViewCellContentClick);
             // 
             // adminRemarksDataGridView
             // 
@@ -150,6 +152,7 @@ namespace Simbi.WindowsForms
             this.adminRemarksDataGridView.RowTemplate.Height = 27;
             this.adminRemarksDataGridView.Size = new System.Drawing.Size(386, 222);
             this.adminRemarksDataGridView.TabIndex = 1;
+            this.adminRemarksDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridViewCellContentClick);
             // 
             // tableLayoutPanel2
             // 
@@ -158,7 +161,7 @@ namespace Simbi.WindowsForms
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel2.Controls.Add(this.button2, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.SignOutButton, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.registerButton, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.refreshButton, 0, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -169,15 +172,16 @@ namespace Simbi.WindowsForms
             this.tableLayoutPanel2.Size = new System.Drawing.Size(386, 33);
             this.tableLayoutPanel2.TabIndex = 2;
             // 
-            // button2
+            // SignOutButton
             // 
-            this.button2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button2.Location = new System.Drawing.Point(259, 3);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(124, 27);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "Sign out";
-            this.button2.UseVisualStyleBackColor = true;
+            this.SignOutButton.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.SignOutButton.Location = new System.Drawing.Point(259, 3);
+            this.SignOutButton.Name = "SignOutButton";
+            this.SignOutButton.Size = new System.Drawing.Size(124, 27);
+            this.SignOutButton.TabIndex = 3;
+            this.SignOutButton.Text = "Sign out";
+            this.SignOutButton.UseVisualStyleBackColor = true;
+            this.SignOutButton.Click += new System.EventHandler(this.SignOutButtonClick);
             // 
             // registerButton
             // 
@@ -188,6 +192,7 @@ namespace Simbi.WindowsForms
             this.registerButton.TabIndex = 2;
             this.registerButton.Text = "Register";
             this.registerButton.UseVisualStyleBackColor = true;
+            this.registerButton.Click += new System.EventHandler(this.RegisterButtonClick);
             // 
             // refreshButton
             // 
@@ -198,6 +203,7 @@ namespace Simbi.WindowsForms
             this.refreshButton.TabIndex = 1;
             this.refreshButton.Text = "Refresh";
             this.refreshButton.UseVisualStyleBackColor = true;
+            this.refreshButton.Click += new System.EventHandler(this.RefreshButtonClick);
             // 
             // panel4
             // 
@@ -277,7 +283,7 @@ namespace Simbi.WindowsForms
             this.ordersDataGridView.RowTemplate.Height = 27;
             this.ordersDataGridView.Size = new System.Drawing.Size(504, 208);
             this.ordersDataGridView.TabIndex = 0;
-            this.ordersDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ordersDataGridView_CellContentClick);
+            this.ordersDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridViewCellContentClick);
             // 
             // purchasesDataGridView
             // 
@@ -295,6 +301,7 @@ namespace Simbi.WindowsForms
             this.purchasesDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.purchasesDataGridView.Size = new System.Drawing.Size(504, 212);
             this.purchasesDataGridView.TabIndex = 1;
+            this.purchasesDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridViewCellContentClick);
             // 
             // panel1
             // 
@@ -319,22 +326,22 @@ namespace Simbi.WindowsForms
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.panel2.Controls.Add(this.label5);
+            this.panel2.Controls.Add(this.purchsesTitle);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(3, 242);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(504, 15);
             this.panel2.TabIndex = 3;
             // 
-            // label5
+            // purchsesTitle
             // 
-            this.label5.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(122, -3);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(215, 17);
-            this.label5.TabIndex = 0;
-            this.label5.Text = "Purchases in the selected order";
+            this.purchsesTitle.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.purchsesTitle.AutoSize = true;
+            this.purchsesTitle.Location = new System.Drawing.Point(86, -3);
+            this.purchsesTitle.Name = "purchsesTitle";
+            this.purchsesTitle.Size = new System.Drawing.Size(215, 17);
+            this.purchsesTitle.TabIndex = 0;
+            this.purchsesTitle.Text = "Purchases in the selected order";
             // 
             // tableLayoutPanel9
             // 
@@ -441,6 +448,8 @@ namespace Simbi.WindowsForms
 
         }
 
+        
+
         #endregion
         private Microsoft.Data.SqlClient.SqlCommand sqlCommand1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
@@ -466,8 +475,9 @@ namespace Simbi.WindowsForms
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.BindingSource orderBindingSource;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button SignOutButton;
         private System.Windows.Forms.Button registerButton;
         private System.Windows.Forms.Button refreshButton;
+        private Label purchsesTitle;
     }
 }

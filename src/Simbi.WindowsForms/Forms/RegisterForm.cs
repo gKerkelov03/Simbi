@@ -13,9 +13,7 @@ public partial class RegisterForm : CredentialsForm
     {
         this.usersService = usersService;
         this.InitializeComponent();
-    }
-
-    public RegisterForm() => InitializeComponent();
+    }    
 
     public override void SubmitCredentialsButton_Click(object sender, EventArgs e)
     {

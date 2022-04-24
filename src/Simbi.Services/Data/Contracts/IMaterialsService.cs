@@ -12,5 +12,7 @@ public interface IMaterialsService
 
     Task DeleteById(Guid key);
 
+    Task Update(MaterialServiceModel material);
+
     Task Add(MaterialServiceModel newPurchase);
 }

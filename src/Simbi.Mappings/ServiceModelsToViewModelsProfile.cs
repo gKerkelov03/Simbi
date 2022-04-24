@@ -12,6 +12,6 @@ public class ServiceModelsToViewModelsProfile : Profile
         CreateMap<AdminRemarkServiceModel, AdminRemarkViewModel>().ReverseMap();
         CreateMap<MaterialServiceModel, MaterialViewModel>().ReverseMap();
         CreateMap<OrderServiceModel, OrderViewModel>().ReverseMap();
-        CreateMap<OrderServiceModel, OrderWithoutPurchasesViewModel>().ReverseMap();
+        CreateMap<OrderServiceModel, OrderViewModel>().ReverseMap();
     }
 }

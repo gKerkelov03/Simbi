@@ -40,7 +40,7 @@ public class Redirector
         }
         else if (page == PageName.Admin)
         {
-            newPage = new AdminPage(userManager, this, materialsService, purchasesService, ordersService, adminRemarksService);
+            newPage = new AdminPage(userManager, this, materialsService, ordersService, adminRemarksService);
         }
 
         newPage.Show();

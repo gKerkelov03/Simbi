@@ -1,6 +1,7 @@
 ﻿using Simbi.Common;
 using Simbi.Services;
 using Simbi.Services.Data.Contracts;
+using Simbi.Services.Models;
 using Simbi.WindowsForms.Infrastructure;
 using Simbi.WindowsForms.Models;
 using System;
@@ -18,7 +19,7 @@ public partial class CashierPage : Form
     private readonly IOrdersService ordersService;
     private readonly IAdminRemarksService adminRemarksService;
 
-    private OrderViewModel currentOrder;
+    private OrderServiceModel currentOrder;
 
     public CashierPage(UserManager UserManager, Redirector redirector, IMaterialsService materialsService, IPurchasesService purchasesService, IOrdersService ordersService, IAdminRemarksService adminRemarksService)
     {
@@ -29,8 +30,8 @@ public partial class CashierPage : Form
         this.ordersService = ordersService;
         this.adminRemarksService = adminRemarksService;
 
-        this.currentOrder = new OrderViewModel();
-        this.currentOrder.Purchases = new List<PurchaseViewModel>();
+        this.currentOrder = new OrderServiceModel();
+        this.currentOrder.Purchases = new List<PurchaseServiceModel>();
 
         InitializeComponent();
     }

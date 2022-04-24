@@ -2,7 +2,7 @@
 
 public class PurchaseViewModel : BaseViewModel
 {
-    public string Material { get; set; }
+    public string MaterialName { get; set; }
 
     public double QuantityInKilograms { get; set; }
 

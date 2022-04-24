@@ -2,9 +2,12 @@
 using Simbi.Mappings;
 using Simbi.Services;
 using Simbi.Services.Data.Contracts;
+using Simbi.Services.Models;
 using Simbi.WindowsForms.Infrastructure;
 using Simbi.WindowsForms.Models;
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using System.Windows.Forms;
@@ -16,101 +19,124 @@ public partial class AdminPage : Form
     private UserManager userManager;
     private Redirector redirector;
     private readonly IMaterialsService materialsService;
-    private readonly IPurchasesService purchasesService;
     private readonly IOrdersService ordersService;
     private readonly IAdminRemarksService adminRemarksService;
 
-    public AdminPage(UserManager userManager, Redirector redirector, IMaterialsService materialsService, IPurchasesService purchasesService, IOrdersService ordersService, IAdminRemarksService adminRemarksService)
+    public AdminPage(UserManager userManager, Redirector redirector, IMaterialsService materialsService, IOrdersService ordersService, IAdminRemarksService adminRemarksService)
     {
         this.userManager = userManager;
         this.redirector = redirector;
         this.materialsService = materialsService;
-        this.purchasesService = purchasesService;
         this.ordersService = ordersService;
         this.adminRemarksService = adminRemarksService;
         InitializeComponent();
     }
 
-    private void LogoutButtonClick(object sender, EventArgs e)
+    private async void AdminPage_Load(object sender, EventArgs e)
+    {
+        SetUpDataGridView<OrderViewModel>(ordersDataGridView, await this.ordersService.GetAll(), DataGridViewCRUDOption.Delete);
+        AddColumnToDataGridView(ordersDataGridView, "Purchases", "Select");
+        AddColumnToDataGridView(ordersDataGridView, "Delete", "Delete");        
+
+        SetUpDataGridView<MaterialViewModel>(materialsDataGridView, await this.materialsService.GetAll(), DataGridViewCRUDOption.Delete | DataGridViewCRUDOption.Create | DataGridViewCRUDOption.Update);
+        AddColumnToDataGridView(materialsDataGridView, "Delete", "Delete");
+        materialsDataGridView.UserAddedRow += MaterialsDataGridViewCreateHandler;
+        materialsDataGridView.CellEndEdit += MaterialsDataGridViewEditHandler;
+
+        SetUpDataGridView<AdminRemarkViewModel>(adminRemarksDataGridView, await this.adminRemarksService.GetAll(), DataGridViewCRUDOption.Delete);
+        AddColumnToDataGridView(adminRemarksDataGridView, "Delete", "Delete");
+    }
+
+    private void MaterialsDataGridViewEditHandler(object sender, DataGridViewCellEventArgs e)
+    {
+        var senderGrid = (DataGridView)sender;        
+
+        var test = senderGrid.Rows[e.RowIndex].DataBoundItem;
+
+        this.materialsService.Update(test.To<MaterialServiceModel>());
+    }
+
+    private void MaterialsDataGridViewCreateHandler(object sender, DataGridViewRowEventArgs e)
+    {
+        this.materialsService.Add(e.Row.DataBoundItem.To<MaterialServiceModel>());
+    }
+
+    private async void DataGridViewCellContentClick(object sender, DataGridViewCellEventArgs e)
+    {
+        var senderGrid = (DataGridView)sender;
+
+        if (senderGrid.Columns[e.ColumnIndex] is DataGridViewButtonColumn buttonColumn && e.RowIndex >= 0)
+        {
+            var id = new Guid(senderGrid.Rows[e.RowIndex].Cells["ID"].Value.ToString());
+
+            if (buttonColumn.Text == "Select")
+            {
+                var order = await this.ordersService.GetById(id);
+                SetUpDataGridView<PurchaseViewModel>(purchasesDataGridView, order.Purchases);
+                this.purchsesTitle.Text = $"Purchases in the selected order ({order.ClientName})";
+            }
+            else if (buttonColumn.Text == "Delete")
+            {
+                if(senderGrid == this.ordersDataGridView && this.purchsesTitle.Text.Contains(senderGrid.Rows[e.RowIndex].DataBoundItem.To<OrderViewModel>().ClientName))
+                {
+                    this.purchsesTitle.Text = "Purchases in the selected order";
+                    this.purchasesDataGridView.DataSource = null;
+                }
+
+                senderGrid.Rows.RemoveAt(e.RowIndex);
+            }
+        }
+    }
+
+    private void SignOutButtonClick(object sender, EventArgs e)
     {
         this.userManager.CurrentUserLogout();
         this.redirector.RedirectTo(PageName.Home, this);
     }
 
-    private async void AdminPage_Load(object sender, EventArgs e)
+    private void RegisterButtonClick(object sender, EventArgs e)
     {
-
-        #region Orders
-        var orders = (await this.ordersService.GetAll()).To<OrderWithoutPurchasesViewModel>();
-        var ordersDataSource = new BindingList<OrderWithoutPurchasesViewModel>(orders.ToList());                
-
-        this.ordersDataGridView.DataSource = ordersDataSource;
-
-        ordersDataSource.AllowRemove = true;
-
-        var deleteButtonColumnOrders = new DataGridViewButtonColumn();
-        deleteButtonColumnOrders.Text = "Delete";
-        deleteButtonColumnOrders.HeaderText = "Delete";
-        deleteButtonColumnOrders.UseColumnTextForButtonValue = true;
-
-        var selectPurchasesButtonColumn = new DataGridViewButtonColumn();
-        selectPurchasesButtonColumn.Text = "Select";
-        selectPurchasesButtonColumn.HeaderText = "Purchases";
-        selectPurchasesButtonColumn.UseColumnTextForButtonValue = true;        
-
-        this.ordersDataGridView.Columns.Add(selectPurchasesButtonColumn);
-        this.ordersDataGridView.Columns.Add(deleteButtonColumnOrders);
-        this.ordersDataGridView.Columns["ID"].Visible = false;
-        #endregion
-
-        #region Materials
-        var materials = (await this.materialsService.GetAll()).To<MaterialViewModel>();
-        var materialsDataSource = new BindingList<MaterialViewModel>(materials.ToList());
-
-        materialsDataSource.AllowNew = true;
-        materialsDataSource.AllowRemove = true;
-        materialsDataSource.AllowEdit = true;
-
-        var deleteButtonColumnMaterials = new DataGridViewButtonColumn();
-        deleteButtonColumnMaterials.Text = "Delete";
-        deleteButtonColumnMaterials.HeaderText = "Delete";
-        deleteButtonColumnMaterials.UseColumnTextForButtonValue = true;
-
-        this.materialsDataGridView.DataSource = materialsDataSource;
-        this.materialsDataGridView.Columns.Add(deleteButtonColumnMaterials);
-        this.materialsDataGridView.Columns["ID"].Visible = false;
-        #endregion
-
-        #region AdminRemarks
-        var temp = (await this.adminRemarksService.GetAll()).ToList();
-        var remarks = temp.To<AdminRemarkViewModel>().ToList();
-        var remarksDataSource = new BindingList<AdminRemarkViewModel>(remarks.ToList());
-        
-        remarksDataSource.AllowRemove = true;
-
-        var deleteButtonColumnRemarks = new DataGridViewButtonColumn();
-        deleteButtonColumnRemarks.Text = "Delete";
-        deleteButtonColumnRemarks.HeaderText = "Delete";
-        deleteButtonColumnRemarks.UseColumnTextForButtonValue = true;
-
-        this.adminRemarksDataGridView.DataSource = remarksDataSource;
-        this.adminRemarksDataGridView.Columns.Add(deleteButtonColumnRemarks);
-        this.adminRemarksDataGridView.Columns["ID"].Visible = false;
-        #endregion
+        new RegisterForm(this, userManager).Show();
+        this.Enabled = false;
     }
 
-    private async void ordersDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+    private void RefreshButtonClick(object sender, EventArgs e) => AdminPage_Load(null, null);
+
+    private void SetUpDataGridView<TViewModel>(DataGridView view, IEnumerable data, DataGridViewCRUDOption options = DataGridViewCRUDOption.None)
     {
-        var senderGrid = (DataGridView)sender;
+        var dataSource = new BindingList<TViewModel>(data.To<TViewModel>().ToList());
+        view.DataSource = dataSource;
 
-        if (senderGrid.Columns[e.ColumnIndex] is DataGridViewButtonColumn &&
-            e.RowIndex >= 0)
+        if (options.HasFlag(DataGridViewCRUDOption.Create))
         {
-            var id = new Guid(senderGrid.Rows[e.RowIndex].Cells["ID"].Value.ToString());
-            var purchases = (await this.ordersService.GetById(id)).Purchases.To<PurchaseViewModel>();
-            var purchasesModel = new BindingList<PurchaseViewModel>(purchases.ToList());           
+            dataSource.AllowNew = true;
+        }
 
-            this.purchasesDataGridView.DataSource = purchasesModel;
+        if (options.HasFlag(DataGridViewCRUDOption.Delete))
+        {
+            dataSource.AllowRemove = true;
+        }
+
+        if (options.HasFlag(DataGridViewCRUDOption.Update))
+        {
+            dataSource.AllowEdit = true;
+        }
+
+        view.Columns["ID"].Visible = false;
+    }
+
+    private void AddColumnToDataGridView(DataGridView view, string headerText, string text)
+    {
+        var buttonColumn = new DataGridViewButtonColumn();
+        buttonColumn.Text = text;
+        buttonColumn.HeaderText = headerText;
+        buttonColumn.Name = headerText;
+        buttonColumn.UseColumnTextForButtonValue = true;
+
+
+        if (!view.Columns.Contains(buttonColumn.HeaderText))
+        {
+            view.Columns.Add(buttonColumn);
         }
     }
 }

@@ -20,5 +20,7 @@ public class MaterialsService : IMaterialsService
 
     public async Task<IEnumerable<MaterialServiceModel>> GetAll(Expression<Func<MaterialServiceModel, bool>> filter = null) => (await this.materialsRepository.GetAllAsync(filter?.To<Expression<Func<MaterialEntity, bool>>>())).To<MaterialServiceModel>();
 
-    public async Task DeleteById(Guid key) => await this.materialsRepository.DeleteAsync(key);   
+    public async Task DeleteById(Guid key) => await this.materialsRepository.DeleteAsync(key);
+
+    public async Task Update(MaterialServiceModel material) => await this.materialsRepository.UpdateAsync(material.To<MaterialEntity>());
 }

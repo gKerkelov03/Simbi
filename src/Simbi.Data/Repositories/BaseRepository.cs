@@ -36,7 +36,10 @@ public class BaseRepository<T> where T : ApplicationEntity
 
     public virtual async Task UpdateAsync(T entity)
     {
-        context.Set<T>().Update(entity);
+        var x = context.Entry(entity);        
+        x.State = EntityState.Modified;
+        int a = 5;
+        int b = 10;
         await context.SaveChangesAsync();
     }
 

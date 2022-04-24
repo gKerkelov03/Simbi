@@ -4,5 +4,5 @@ public class AdminRemarkViewModel : BaseViewModel
 {
     public string Text { get; set; }
 
-    public string Creator { get; set; }
+    public string CreatorUsername { get; set; }
 }
