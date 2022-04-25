@@ -4,7 +4,6 @@ using System.Windows.Forms;
 using Microsoft.EntityFrameworkCore;
 using Simbi.Data;
 using Simbi.Data.Seeding;
-
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Simbi.Data.Repositories;
@@ -46,21 +45,21 @@ static class Program
             {
                 serviceCollection.AddTransient<ApplicationDbContext, ApplicationDbContext>();
 
-                serviceCollection.AddSingleton<BaseRepository<PurchaseEntity>, PurchasesRepository>();
-                serviceCollection.AddSingleton<BaseRepository<MaterialEntity>, MaterialsRepository>();
-                serviceCollection.AddSingleton<BaseRepository<AdminRemarkEntity>, AdminRemarksRepository>();
-                serviceCollection.AddSingleton<BaseRepository<OrderEntity>, OrdersRepository>();
-                serviceCollection.AddSingleton<BaseRepository<RoleEntity>, RolesRepository>();
-
-                serviceCollection.AddSingleton<IAdminRemarksService, AdminRemarksService>();
-                serviceCollection.AddSingleton<IMaterialsService, MaterialsService>();
-                serviceCollection.AddSingleton<IOrdersService, OrdersService>();
-                serviceCollection.AddSingleton<IPurchasesService, PurchasesService>();
-                serviceCollection.AddSingleton<UserManager, UserManager>();
-
-                serviceCollection.AddSingleton<Redirector, Redirector>();
-
-                serviceCollection.AddSingleton<HomePage, HomePage>();
+                serviceCollection.AddTransient<BaseRepository<PurchaseEntity>, PurchasesRepository>();
+                serviceCollection.AddTransient<BaseRepository<MaterialEntity>, MaterialsRepository>();
+                serviceCollection.AddTransient<BaseRepository<AdminRemarkEntity>, AdminRemarksRepository>();
+                serviceCollection.AddTransient<BaseRepository<OrderEntity>, OrdersRepository>();
+                serviceCollection.AddTransient<BaseRepository<RoleEntity>, RolesRepository>();
+                                    
+                serviceCollection.AddTransient<IAdminRemarksService, AdminRemarksService>();
+                serviceCollection.AddTransient<IMaterialsService, MaterialsService>();
+                serviceCollection.AddTransient<IOrdersService, OrdersService>();
+                serviceCollection.AddTransient<IPurchasesService, PurchasesService>();
+                serviceCollection.AddTransient<UserManager, UserManager>();
+                                    
+                serviceCollection.AddTransient<Redirector, Redirector>();
+                                     
+                serviceCollection.AddTransient<HomePage, HomePage>();
             })
             .Build();
         #endregion

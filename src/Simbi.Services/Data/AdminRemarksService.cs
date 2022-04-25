@@ -22,4 +22,6 @@ public class AdminRemarksService : IAdminRemarksService
     public async Task<IEnumerable<AdminRemarkServiceModel>> GetAll(Expression<Func<AdminRemarkServiceModel, bool>> filter = null) => (await this.adminRemarksRepository.GetAllAsync(filter?.To<Expression<Func<AdminRemarkEntity, bool>>>())).To<AdminRemarkServiceModel>();               
 
     public async Task DeleteById(Guid key) => await this.adminRemarksRepository.DeleteAsync(key);
+
+    public async Task Update(AdminRemarkServiceModel remark) => await this.adminRemarksRepository.UpdateAsync(remark.To<AdminRemarkEntity>());
 }

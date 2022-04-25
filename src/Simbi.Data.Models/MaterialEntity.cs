@@ -4,6 +4,10 @@ namespace Simbi.Data.Models;
 
 public class MaterialEntity : ApplicationEntity
 {
+    public MaterialEntity()
+    {
+        this.PurchasesContainingIt = new HashSet<PurchaseEntity>();
+    }
     public string Name { get; set; }
 
     public string Description { get; set; }

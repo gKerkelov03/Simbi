@@ -120,10 +120,10 @@ namespace Simbi.Data.Migrations
                     b.Property<Guid?>("OrderEntityId")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<double>("QuantityInKilograms")
+                    b.Property<double>("Price")
                         .HasColumnType("float");
 
-                    b.Property<double>("TotalPrice")
+                    b.Property<double>("QuantityInKilograms")
                         .HasColumnType("float");
 
                     b.Property<double>("Width")

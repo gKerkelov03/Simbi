@@ -14,4 +14,6 @@ public interface IAdminRemarksService
 
     Task Add(AdminRemarkServiceModel newRemark);
 
+    Task Update(AdminRemarkServiceModel remark);
+
 }

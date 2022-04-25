@@ -12,8 +12,8 @@ using Simbi.Data;
 namespace Simbi.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20220425064229_Added_is_deleted_column_on_materials_table")]
-    partial class Added_is_deleted_column_on_materials_table
+    [Migration("20220425162700_Initial")]
+    partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -122,10 +122,10 @@ namespace Simbi.Data.Migrations
                     b.Property<Guid?>("OrderEntityId")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<double>("QuantityInKilograms")
+                    b.Property<double>("Price")
                         .HasColumnType("float");
 
-                    b.Property<double>("TotalPrice")
+                    b.Property<double>("QuantityInKilograms")
                         .HasColumnType("float");
 
                     b.Property<double>("Width")

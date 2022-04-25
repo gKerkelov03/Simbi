@@ -15,7 +15,7 @@ public class PurchasesSeeder : ISeeder
                 Width = 20,
                 Height = 5,
                 QuantityInKilograms = 4,
-                TotalPrice = 120            
+                Price = 120            
             },
             new PurchaseEntity
             {
@@ -23,7 +23,7 @@ public class PurchasesSeeder : ISeeder
                 Width = 15,
                 Height = 10,
                 QuantityInKilograms = 12,
-                TotalPrice = 100
+                Price = 100
             },
             new PurchaseEntity
             {
@@ -31,7 +31,7 @@ public class PurchasesSeeder : ISeeder
                 Width = 30,
                 Height = 30,
                 QuantityInKilograms = 30,
-                TotalPrice = 10
+                Price = 10
             }
         };
 

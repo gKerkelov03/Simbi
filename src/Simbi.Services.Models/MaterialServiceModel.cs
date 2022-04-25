@@ -1,9 +1,9 @@
 ﻿namespace Simbi.Services.Models;
 
-public class MaterialServiceModel
+public class MaterialServiceModel : BaseServiceModel
 {
-    public Guid Id { get; set; }
     public string Name { get; set; }
+
     public string Description { get; set; }
 
     public double QuantityAvailableInKilograms { get; set; }

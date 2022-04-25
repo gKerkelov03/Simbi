@@ -4,6 +4,11 @@ namespace Simbi.Data.Models;
 
 public class UserEntity : ApplicationEntity
 {
+    public UserEntity()
+    {
+        this.Roles = new HashSet<RoleEntity>();
+    }
+
     public string Password { get; set; }
 
     public string Username { get; set; }

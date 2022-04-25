@@ -36,7 +36,7 @@ public class Redirector
         }
         else if (page == PageName.Cashier)
         {
-            newPage = new CashierPage(userManager, this, materialsService, purchasesService, ordersService, adminRemarksService);
+            newPage = new CashierPage(userManager, this, materialsService, ordersService, adminRemarksService);
         }
         else if (page == PageName.Admin)
         {

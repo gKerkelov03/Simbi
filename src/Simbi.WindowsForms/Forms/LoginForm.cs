@@ -22,9 +22,7 @@ public partial class LoginForm : CredentialsForm
     public LoginForm() => InitializeComponent();
     
     public override void SubmitCredentialsButton_Click(object sender, EventArgs e)
-    {
-        this.redirector.RedirectTo(PageName.Admin, this);
-
+    {        
         var enteredUsername = this.usernameTextBox.Text;
         var enteredPassword = this.passwordTextBox.Text;
 

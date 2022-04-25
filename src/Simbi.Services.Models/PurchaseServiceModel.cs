@@ -1,9 +1,7 @@
 ﻿namespace Simbi.Services.Models;
 
-public class PurchaseServiceModel
+public class PurchaseServiceModel : BaseServiceModel
 {
-    public Guid Id { get; set; }
-
     public MaterialServiceModel Material { get; set; }
 
     public double QuantityInKilograms { get; set; }
@@ -12,5 +10,5 @@ public class PurchaseServiceModel
 
     public double Height { get; set; }
 
-    public double TotalPrice { get; set; }
+    public double Price { get; set; }
 }

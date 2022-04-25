@@ -45,5 +45,5 @@ public class UserManager
 
     public IEnumerable<string> CurrentUserRoles() => CurrentUser.Roles.Select(role => role.Name);
     
-    public string CurrentUserUsername() => CurrentUser.Username;
+    public string CurrentUserUsername() => (CurrentUser?.Username) ?? "null";
 }

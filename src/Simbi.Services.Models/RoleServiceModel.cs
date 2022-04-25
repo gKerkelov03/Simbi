@@ -1,9 +1,9 @@
 ﻿
 namespace Simbi.Services.Models;
 
-public class RoleServiceModel
+public class RoleServiceModel : BaseServiceModel
 {
-    public Guid Id { get; set; }
+    public RoleServiceModel() => this.Users = new HashSet<UserServiceModel>();
 
     public string Name { get; set; }
 

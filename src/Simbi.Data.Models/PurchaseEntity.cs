@@ -12,5 +12,5 @@ public class PurchaseEntity : ApplicationEntity
 
     public double Height { get; set; }
 
-    public double TotalPrice { get; set; }
+    public double Price { get; set; }
 }

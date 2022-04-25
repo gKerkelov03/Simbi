@@ -99,7 +99,7 @@ namespace Simbi.WindowsForms
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(914, 484);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(914, 527);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // tableLayoutPanel6
@@ -121,7 +121,7 @@ namespace Simbi.WindowsForms
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4.811716F));
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 47.69875F));
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.949791F));
-            this.tableLayoutPanel6.Size = new System.Drawing.Size(392, 478);
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(392, 521);
             this.tableLayoutPanel6.TabIndex = 8;
             // 
             // materialsDataGridView
@@ -130,11 +130,11 @@ namespace Simbi.WindowsForms
             this.materialsDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.materialsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.materialsDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.materialsDataGridView.Location = new System.Drawing.Point(3, 28);
+            this.materialsDataGridView.Location = new System.Drawing.Point(3, 30);
             this.materialsDataGridView.Name = "materialsDataGridView";
             this.materialsDataGridView.RowHeadersWidth = 51;
             this.materialsDataGridView.RowTemplate.Height = 27;
-            this.materialsDataGridView.Size = new System.Drawing.Size(386, 157);
+            this.materialsDataGridView.Size = new System.Drawing.Size(386, 172);
             this.materialsDataGridView.TabIndex = 0;
             this.materialsDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridViewCellContentClick);
             // 
@@ -145,12 +145,12 @@ namespace Simbi.WindowsForms
             this.adminRemarksDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.adminRemarksDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.adminRemarksDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.adminRemarksDataGridView.Location = new System.Drawing.Point(3, 214);
+            this.adminRemarksDataGridView.Location = new System.Drawing.Point(3, 233);
             this.adminRemarksDataGridView.Name = "adminRemarksDataGridView";
             this.adminRemarksDataGridView.ReadOnly = true;
             this.adminRemarksDataGridView.RowHeadersWidth = 51;
             this.adminRemarksDataGridView.RowTemplate.Height = 27;
-            this.adminRemarksDataGridView.Size = new System.Drawing.Size(386, 222);
+            this.adminRemarksDataGridView.Size = new System.Drawing.Size(386, 243);
             this.adminRemarksDataGridView.TabIndex = 1;
             this.adminRemarksDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridViewCellContentClick);
             // 
@@ -165,11 +165,11 @@ namespace Simbi.WindowsForms
             this.tableLayoutPanel2.Controls.Add(this.registerButton, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.refreshButton, 0, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 442);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 482);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(386, 33);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(386, 36);
             this.tableLayoutPanel2.TabIndex = 2;
             // 
             // SignOutButton
@@ -177,7 +177,7 @@ namespace Simbi.WindowsForms
             this.SignOutButton.Dock = System.Windows.Forms.DockStyle.Fill;
             this.SignOutButton.Location = new System.Drawing.Point(259, 3);
             this.SignOutButton.Name = "SignOutButton";
-            this.SignOutButton.Size = new System.Drawing.Size(124, 27);
+            this.SignOutButton.Size = new System.Drawing.Size(124, 30);
             this.SignOutButton.TabIndex = 3;
             this.SignOutButton.Text = "Sign out";
             this.SignOutButton.UseVisualStyleBackColor = true;
@@ -188,7 +188,7 @@ namespace Simbi.WindowsForms
             this.registerButton.Dock = System.Windows.Forms.DockStyle.Fill;
             this.registerButton.Location = new System.Drawing.Point(131, 3);
             this.registerButton.Name = "registerButton";
-            this.registerButton.Size = new System.Drawing.Size(122, 27);
+            this.registerButton.Size = new System.Drawing.Size(122, 30);
             this.registerButton.TabIndex = 2;
             this.registerButton.Text = "Register";
             this.registerButton.UseVisualStyleBackColor = true;
@@ -199,7 +199,7 @@ namespace Simbi.WindowsForms
             this.refreshButton.Dock = System.Windows.Forms.DockStyle.Fill;
             this.refreshButton.Location = new System.Drawing.Point(3, 3);
             this.refreshButton.Name = "refreshButton";
-            this.refreshButton.Size = new System.Drawing.Size(122, 27);
+            this.refreshButton.Size = new System.Drawing.Size(122, 30);
             this.refreshButton.TabIndex = 1;
             this.refreshButton.Text = "Refresh";
             this.refreshButton.UseVisualStyleBackColor = true;
@@ -212,14 +212,14 @@ namespace Simbi.WindowsForms
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel4.Location = new System.Drawing.Point(3, 3);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(386, 19);
+            this.panel4.Size = new System.Drawing.Size(386, 21);
             this.panel4.TabIndex = 3;
             // 
             // label2
             // 
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(158, -1);
+            this.label2.Location = new System.Drawing.Point(158, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(66, 17);
             this.label2.TabIndex = 0;
@@ -230,16 +230,16 @@ namespace Simbi.WindowsForms
             this.panel5.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.panel5.Controls.Add(this.label6);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel5.Location = new System.Drawing.Point(3, 191);
+            this.panel5.Location = new System.Drawing.Point(3, 208);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(386, 17);
+            this.panel5.Size = new System.Drawing.Size(386, 19);
             this.panel5.TabIndex = 4;
             // 
             // label6
             // 
             this.label6.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(156, 0);
+            this.label6.Location = new System.Drawing.Point(156, 1);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(68, 17);
             this.label6.TabIndex = 0;
@@ -266,7 +266,7 @@ namespace Simbi.WindowsForms
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(510, 478);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(510, 521);
             this.tableLayoutPanel3.TabIndex = 3;
             // 
             // ordersDataGridView
@@ -276,12 +276,12 @@ namespace Simbi.WindowsForms
             this.ordersDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.ordersDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.ordersDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ordersDataGridView.Location = new System.Drawing.Point(3, 28);
+            this.ordersDataGridView.Location = new System.Drawing.Point(3, 30);
             this.ordersDataGridView.Name = "ordersDataGridView";
             this.ordersDataGridView.ReadOnly = true;
             this.ordersDataGridView.RowHeadersWidth = 51;
             this.ordersDataGridView.RowTemplate.Height = 27;
-            this.ordersDataGridView.Size = new System.Drawing.Size(504, 208);
+            this.ordersDataGridView.Size = new System.Drawing.Size(504, 227);
             this.ordersDataGridView.TabIndex = 0;
             this.ordersDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridViewCellContentClick);
             // 
@@ -293,13 +293,13 @@ namespace Simbi.WindowsForms
             this.purchasesDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.purchasesDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.purchasesDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.purchasesDataGridView.Location = new System.Drawing.Point(3, 263);
+            this.purchasesDataGridView.Location = new System.Drawing.Point(3, 285);
             this.purchasesDataGridView.Name = "purchasesDataGridView";
             this.purchasesDataGridView.ReadOnly = true;
             this.purchasesDataGridView.RowHeadersWidth = 51;
             this.purchasesDataGridView.RowTemplate.Height = 27;
             this.purchasesDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.purchasesDataGridView.Size = new System.Drawing.Size(504, 212);
+            this.purchasesDataGridView.Size = new System.Drawing.Size(504, 233);
             this.purchasesDataGridView.TabIndex = 1;
             this.purchasesDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridViewCellContentClick);
             // 
@@ -310,14 +310,14 @@ namespace Simbi.WindowsForms
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(3, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(504, 19);
+            this.panel1.Size = new System.Drawing.Size(504, 21);
             this.panel1.TabIndex = 2;
             // 
             // label1
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(190, 0);
+            this.label1.Location = new System.Drawing.Point(190, 1);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(54, 17);
             this.label1.TabIndex = 0;
@@ -328,16 +328,16 @@ namespace Simbi.WindowsForms
             this.panel2.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.panel2.Controls.Add(this.purchsesTitle);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(3, 242);
+            this.panel2.Location = new System.Drawing.Point(3, 263);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(504, 15);
+            this.panel2.Size = new System.Drawing.Size(504, 16);
             this.panel2.TabIndex = 3;
             // 
             // purchsesTitle
             // 
             this.purchsesTitle.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.purchsesTitle.AutoSize = true;
-            this.purchsesTitle.Location = new System.Drawing.Point(86, -3);
+            this.purchsesTitle.Location = new System.Drawing.Point(86, -2);
             this.purchsesTitle.Name = "purchsesTitle";
             this.purchsesTitle.Size = new System.Drawing.Size(215, 17);
             this.purchsesTitle.TabIndex = 0;
@@ -418,7 +418,7 @@ namespace Simbi.WindowsForms
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(914, 484);
+            this.ClientSize = new System.Drawing.Size(914, 527);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "AdminPage";
             this.Text = "Admin Page";

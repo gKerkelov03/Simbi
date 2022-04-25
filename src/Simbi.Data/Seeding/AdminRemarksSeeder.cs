@@ -18,7 +18,7 @@ public class AdminRemarksSeeder : ISeeder
             new AdminRemarkEntity
             {
                 Creator = dbContext.Users.FirstOrDefault(user => user.Username == "angel"),
-                Text = "Remark test 1"
+                Text = "Remark test 2"
             }
         };
 

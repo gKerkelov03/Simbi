@@ -7,7 +7,6 @@ using Simbi.WindowsForms.Infrastructure;
 using Simbi.WindowsForms.Models;
 using System;
 using System.Collections;
-using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using System.Windows.Forms;
@@ -43,7 +42,7 @@ public partial class AdminPage : Form
         materialsDataGridView.UserAddedRow += MaterialsDataGridViewAddHandler;
         materialsDataGridView.CellEndEdit += MaterialsDataGridViewEditHandler;
 
-        SetUpDataGridView<AdminRemarkViewModel>(adminRemarksDataGridView, await this.adminRemarksService.GetAll(), DataGridViewCRUDOption.Delete);
+        SetUpDataGridView<AdminRemarkViewModel>(adminRemarksDataGridView, (await this.adminRemarksService.GetAll()).OrderBy(remark => remark.Creator.Username), DataGridViewCRUDOption.Delete);
         AddColumnToDataGridView(adminRemarksDataGridView, "Delete", "Delete");
     }
 

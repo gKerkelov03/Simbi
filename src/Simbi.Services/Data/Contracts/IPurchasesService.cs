@@ -13,4 +13,6 @@ public interface IPurchasesService
     Task DeleteById(Guid key);
 
     Task Add(PurchaseServiceModel newPurchase);
+
+    Task Update(PurchaseServiceModel material);
 }

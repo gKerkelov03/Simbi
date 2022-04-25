@@ -10,7 +10,7 @@ using System.Linq.Expressions;
 using System.Threading.Tasks;
 
 namespace Simbi.Services.Data;
-
+//TODO: delete this file if you do not need it
 public class PurchasesService : IPurchasesService
 {
     private readonly BaseRepository<PurchaseEntity> purchasesRepository;
@@ -23,5 +23,7 @@ public class PurchasesService : IPurchasesService
 
     public async Task DeleteById(Guid key) => await this.purchasesRepository.DeleteAsync(key);
 
-    public void AddMultipe(IEnumerable<PurchaseServiceModel> purchasesToAdd) => purchasesToAdd.ToList().ForEach(async purchase => await this.Add(purchase));    
+    public void AddMultipe(IEnumerable<PurchaseServiceModel> purchasesToAdd) => purchasesToAdd.ToList().ForEach(async purchase => await this.Add(purchase));
+
+    public async Task Update(PurchaseServiceModel purchase) => await this.purchasesRepository.UpdateAsync(purchase.To<PurchaseEntity>());
 }
