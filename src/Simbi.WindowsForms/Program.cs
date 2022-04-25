@@ -28,10 +28,10 @@ static class Program
         Application.SetCompatibleTextRenderingDefault(false);
         #endregion
         
-        #region SeedData
+        #region Seed Data
 
         var dbContext = new ApplicationDbContext();
-       //dbContext.Database.EnsureDeleted();
+        dbContext.Database.EnsureDeleted();
         if (dbContext.Database.GetPendingMigrations().Any())
         {
             dbContext.Database.Migrate();
@@ -40,6 +40,7 @@ static class Program
 
         #endregion
 
+        #region Setup Host
         var host = Host.CreateDefaultBuilder()
             .ConfigureServices(serviceCollection =>
             {
@@ -62,6 +63,7 @@ static class Program
                 serviceCollection.AddSingleton<HomePage, HomePage>();
             })
             .Build();
+        #endregion
 
         Application.Run(host.Services.GetRequiredService<HomePage>());
     }

@@ -37,29 +37,19 @@ public partial class AdminPage : Form
         SetUpDataGridView<OrderViewModel>(ordersDataGridView, await this.ordersService.GetAll(), DataGridViewCRUDOption.Delete);
         AddColumnToDataGridView(ordersDataGridView, "Purchases", "Select");
         AddColumnToDataGridView(ordersDataGridView, "Delete", "Delete");        
-
-        SetUpDataGridView<MaterialViewModel>(materialsDataGridView, await this.materialsService.GetAll(), DataGridViewCRUDOption.Delete | DataGridViewCRUDOption.Create | DataGridViewCRUDOption.Update);
+        
+        SetUpDataGridView<MaterialViewModel>(materialsDataGridView, await this.materialsService.GetAll(material => !material.IsDeleted), DataGridViewCRUDOption.Delete | DataGridViewCRUDOption.Create | DataGridViewCRUDOption.Update);
         AddColumnToDataGridView(materialsDataGridView, "Delete", "Delete");
-        materialsDataGridView.UserAddedRow += MaterialsDataGridViewCreateHandler;
+        materialsDataGridView.UserAddedRow += MaterialsDataGridViewAddHandler;
         materialsDataGridView.CellEndEdit += MaterialsDataGridViewEditHandler;
 
         SetUpDataGridView<AdminRemarkViewModel>(adminRemarksDataGridView, await this.adminRemarksService.GetAll(), DataGridViewCRUDOption.Delete);
         AddColumnToDataGridView(adminRemarksDataGridView, "Delete", "Delete");
     }
 
-    private void MaterialsDataGridViewEditHandler(object sender, DataGridViewCellEventArgs e)
-    {
-        var senderGrid = (DataGridView)sender;        
+    private void MaterialsDataGridViewAddHandler(object sender, DataGridViewRowEventArgs e) => this.materialsService.Add(((DataGridView)sender).Rows[e.Row.Index - 1].DataBoundItem.To<MaterialServiceModel>());
 
-        var test = senderGrid.Rows[e.RowIndex].DataBoundItem;
-
-        this.materialsService.Update(test.To<MaterialServiceModel>());
-    }
-
-    private void MaterialsDataGridViewCreateHandler(object sender, DataGridViewRowEventArgs e)
-    {
-        this.materialsService.Add(e.Row.DataBoundItem.To<MaterialServiceModel>());
-    }
+    private void MaterialsDataGridViewEditHandler(object sender, DataGridViewCellEventArgs e) => this.materialsService.Update(((DataGridView)sender).Rows[e.RowIndex].DataBoundItem.To<MaterialServiceModel>());
 
     private async void DataGridViewCellContentClick(object sender, DataGridViewCellEventArgs e)
     {
@@ -77,10 +67,25 @@ public partial class AdminPage : Form
             }
             else if (buttonColumn.Text == "Delete")
             {
-                if(senderGrid == this.ordersDataGridView && this.purchsesTitle.Text.Contains(senderGrid.Rows[e.RowIndex].DataBoundItem.To<OrderViewModel>().ClientName))
+                if(senderGrid == this.ordersDataGridView)
                 {
-                    this.purchsesTitle.Text = "Purchases in the selected order";
-                    this.purchasesDataGridView.DataSource = null;
+                    if (this.purchsesTitle.Text.Contains(senderGrid.Rows[e.RowIndex].DataBoundItem.To<OrderViewModel>().ClientName))
+                    {
+                        this.purchsesTitle.Text = "Purchases in the selected order";
+                        this.purchasesDataGridView.DataSource = null;
+                    }
+
+                    await this.ordersService.DeleteById(id);
+                }
+                else if(senderGrid == this.materialsDataGridView)
+                {
+                    var entity = await this.materialsService.GetById(id);
+                    entity.IsDeleted = true;
+                    await this.materialsService.Update(entity);
+                }
+                else if(senderGrid == this.adminRemarksDataGridView)
+                {
+                    await this.adminRemarksService.DeleteById(id);
                 }
 
                 senderGrid.Rows.RemoveAt(e.RowIndex);

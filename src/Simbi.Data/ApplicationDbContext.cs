@@ -20,5 +20,20 @@ public class ApplicationDbContext : DbContext
     public DbSet<OrderEntity> Orders { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) => optionsBuilder.UseSqlServer("Server=.;Database=Simbi;Trusted_Connection=True;");
-    
+
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
+    {
+        modelBuilder
+            .Entity<PurchaseEntity>()
+            .HasOne<OrderEntity>()
+            .WithMany(order => order.Purchases)
+            .OnDelete(DeleteBehavior.Cascade);
+
+        modelBuilder
+            .Entity<PurchaseEntity>()
+            .HasOne<MaterialEntity>()
+            .WithMany(order => order.PurchasesContainingIt)
+            .OnDelete(DeleteBehavior.Cascade);
+    }
+
 }

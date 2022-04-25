@@ -36,10 +36,19 @@ public class BaseRepository<T> where T : ApplicationEntity
 
     public virtual async Task UpdateAsync(T entity)
     {
-        var x = context.Entry(entity);        
-        x.State = EntityState.Modified;
-        int a = 5;
-        int b = 10;
+        //TODO: understand why this does not work
+        //context.Set<T>().Update(entity);
+        //await context.SaveChangesAsync();
+
+        var dbEntity = await GetByIdAsync(entity.Id);
+
+        if (dbEntity == null)
+        {
+            throw new ArgumentException($"No such {typeof(T)} with id: {entity.Id}");
+        }
+
+        context.Entry(dbEntity).CurrentValues.SetValues(entity);
+
         await context.SaveChangesAsync();
     }
 

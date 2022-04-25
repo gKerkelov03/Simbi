@@ -9,6 +9,8 @@ namespace Simbi.Services.Data.Contracts;
 public interface IMaterialsService
 {
     Task<IEnumerable<MaterialServiceModel>> GetAll(Expression<Func<MaterialServiceModel, bool>> filter = null);
+        
+    Task<MaterialServiceModel> GetById(Guid key);
 
     Task DeleteById(Guid key);
 

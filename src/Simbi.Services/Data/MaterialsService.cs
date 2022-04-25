@@ -23,4 +23,6 @@ public class MaterialsService : IMaterialsService
     public async Task DeleteById(Guid key) => await this.materialsRepository.DeleteAsync(key);
 
     public async Task Update(MaterialServiceModel material) => await this.materialsRepository.UpdateAsync(material.To<MaterialEntity>());
+
+    public async Task<MaterialServiceModel> GetById(Guid key) => (await this.materialsRepository.GetByIdAsync(key)).To<MaterialServiceModel>();
 }
