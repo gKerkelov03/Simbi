@@ -1,4 +1,7 @@
 ﻿
+using System;
+using System.Windows.Forms;
+
 namespace Simbi.WindowsForms
 {
     partial class CredentialsForm
@@ -192,7 +195,14 @@ namespace Simbi.WindowsForms
             this.ResumeLayout(false);
             this.PerformLayout();
 
+            this.KeyDown += KeyboardKeyPressed;
+
+            this.passwordTextBox.KeyDown += KeyboardKeyPressed;
+            this.usernameTextBox.KeyDown += KeyboardKeyPressed;
+
         }
+
+
 
         #endregion
 

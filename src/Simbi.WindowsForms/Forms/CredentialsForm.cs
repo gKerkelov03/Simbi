@@ -54,5 +54,13 @@ public partial class CredentialsForm : Form
     {
         this.Parent.Enabled = true;
         this.Close();            
-    }       
+    }
+
+    private void KeyboardKeyPressed(object sender, KeyEventArgs e)
+    {
+        if(e.KeyCode == Keys.Enter)
+        {
+            this.SubmitCredentialsButton_Click(null, null);
+        }
+    }
 }
