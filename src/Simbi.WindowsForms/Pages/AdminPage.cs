@@ -10,6 +10,7 @@ using System.Collections;
 using System.ComponentModel;
 using System.Linq;
 using System.Windows.Forms;
+using static Simbi.Common.GlobalConstants;
 
 namespace Simbi.WindowsForms;
 
@@ -34,16 +35,16 @@ public partial class AdminPage : Form
     private async void AdminPage_Load(object sender, EventArgs e)
     {
         SetUpDataGridView<OrderViewModel>(ordersDataGridView, await this.ordersService.GetAll(), DataGridViewCRUDOption.Delete);
-        AddColumnToDataGridView(ordersDataGridView, "Purchases", "Select");
-        AddColumnToDataGridView(ordersDataGridView, "Delete", "Delete");        
+        AddColumnToDataGridView(ordersDataGridView, SelectColumnHeaderNameInAdminPageOrdersDataGridView, SelectColumnButtonTextInAdminPageOrdersDataGridView);
+        AddColumnToDataGridView(ordersDataGridView, DeleteColumnHeaderName, DeleteColumnButtonText);        
         
         SetUpDataGridView<MaterialViewModel>(materialsDataGridView, await this.materialsService.GetAll(material => !material.IsDeleted), DataGridViewCRUDOption.Delete | DataGridViewCRUDOption.Create | DataGridViewCRUDOption.Update);
-        AddColumnToDataGridView(materialsDataGridView, "Delete", "Delete");
+        AddColumnToDataGridView(materialsDataGridView, DeleteColumnHeaderName, DeleteColumnButtonText);
         materialsDataGridView.UserAddedRow += MaterialsDataGridViewAddHandler;
         materialsDataGridView.CellEndEdit += MaterialsDataGridViewEditHandler;
 
         SetUpDataGridView<AdminRemarkViewModel>(adminRemarksDataGridView, (await this.adminRemarksService.GetAll()).OrderBy(remark => remark.Creator.Username), DataGridViewCRUDOption.Delete);
-        AddColumnToDataGridView(adminRemarksDataGridView, "Delete", "Delete");
+        AddColumnToDataGridView(adminRemarksDataGridView, DeleteColumnHeaderName, DeleteColumnButtonText);
     }
 
     private void MaterialsDataGridViewAddHandler(object sender, DataGridViewRowEventArgs e) => this.materialsService.Add(((DataGridView)sender).Rows[e.Row.Index - 1].DataBoundItem.To<MaterialServiceModel>());
@@ -58,19 +59,20 @@ public partial class AdminPage : Form
         {
             var id = new Guid(senderGrid.Rows[e.RowIndex].Cells["ID"].Value.ToString());
 
-            if (buttonColumn.Text == "Select")
+            if (buttonColumn.Text == SelectColumnButtonTextInAdminPageOrdersDataGridView)
             {
                 var order = await this.ordersService.GetById(id);
                 SetUpDataGridView<PurchaseViewModel>(purchasesDataGridView, order.Purchases);
-                this.purchsesTitle.Text = $"Purchases in the selected order ({order.ClientName})";
+                this.purchasesDataGridView.Columns["MaterialPrice"].Visible = false;
+                this.purchsesTitle.Text = PurchasesDataGridViewTitleInAdminPage + $" ({order.ClientName}) ";
             }
-            else if (buttonColumn.Text == "Delete")
+            else if (buttonColumn.Text == DeleteColumnButtonText)
             {
                 if(senderGrid == this.ordersDataGridView)
                 {
                     if (this.purchsesTitle.Text.Contains(senderGrid.Rows[e.RowIndex].DataBoundItem.To<OrderViewModel>().ClientName))
                     {
-                        this.purchsesTitle.Text = "Purchases in the selected order";
+                        this.purchsesTitle.Text = PurchasesDataGridViewTitleInAdminPage;
                         this.purchasesDataGridView.DataSource = null;
                     }
 

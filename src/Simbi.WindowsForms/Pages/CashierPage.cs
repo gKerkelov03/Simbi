@@ -7,10 +7,10 @@ using Simbi.WindowsForms.Infrastructure;
 using Simbi.WindowsForms.Models;
 using System;
 using System.Collections;
-using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using System.Windows.Forms;
+using static Simbi.Common.GlobalConstants;
 
 namespace Simbi.WindowsForms;
 
@@ -40,12 +40,12 @@ public partial class CashierPage : Form
 
     private async void CashierPage_Load(object sender, EventArgs e)
     {
-        this.titleLabel.Text = "Keep up the good work " + this.userManager.CurrentUserUsername();
+        this.titleLabel.Text = CashierPageTitle + $" {this.userManager.CurrentUserUsername()} !";
 
         SetUpDataGridView<PurchaseViewModel>(this.purchasesDataGridView, this.currentOrder.Purchases, DataGridViewCRUDOption.Delete | DataGridViewCRUDOption.Create | DataGridViewCRUDOption.Update);
-        AddColumnToDataGridView(this.purchasesDataGridView, "Delete", "Delete");
-        this.purchasesDataGridView.Columns["MaterialName"].ReadOnly = true;
-        this.purchasesDataGridView.Columns["MaterialPrice"].Visible = false;
+        AddColumnToDataGridView(this.purchasesDataGridView, DeleteColumnHeaderName, DeleteColumnButtonText);
+        this.purchasesDataGridView.Columns[DeleteColumnHeaderName].ReadOnly = true;
+        this.purchasesDataGridView.Columns[DeleteColumnHeaderName].Visible = false;
         this.purchasesDataGridView.CellEndEdit += PurchasesDataGridViewEditHandler;
 
 
@@ -59,7 +59,7 @@ public partial class CashierPage : Form
 
 
         SetUpDataGridView<AdminRemarkViewModel>(this.adminRemarksDataGridView, await this.adminRemarksService.GetAll(remark => remark.Creator.Username == this.userManager.CurrentUserUsername()), DataGridViewCRUDOption.Delete | DataGridViewCRUDOption.Create | DataGridViewCRUDOption.Update);
-        AddColumnToDataGridView(this.adminRemarksDataGridView, "Delete", "Delete");
+        AddColumnToDataGridView(this.adminRemarksDataGridView, DeleteColumnHeaderName, DeleteColumnButtonText);
         this.adminRemarksDataGridView.Columns["CreatorUsername"].Visible = false;
         this.adminRemarksDataGridView.UserAddedRow += AdminRemarksDataGridViewAddHandler;
         this.adminRemarksDataGridView.CellEndEdit += AdminRemarksDataGridViewEditHandler;
@@ -83,7 +83,7 @@ public partial class CashierPage : Form
 
         if (senderGrid.Columns[e.ColumnIndex] is DataGridViewButtonColumn buttonColumn && e.RowIndex >= 0)
         {
-            if (buttonColumn.Text == "Delete" && senderGrid == this.adminRemarksDataGridView)
+            if (buttonColumn.Text == DeleteColumnButtonText && senderGrid == this.adminRemarksDataGridView)
             {
                 await this.adminRemarksService.DeleteById(new Guid(senderGrid.Rows[e.RowIndex].Cells["ID"].Value.ToString()));
             }
@@ -92,13 +92,29 @@ public partial class CashierPage : Form
         }
     }
 
-    private void AdminRemarksDataGridViewAddHandler(object sender, DataGridViewRowEventArgs e) => this.adminRemarksService.Add(((DataGridView)sender).Rows[e.Row.Index - 1].DataBoundItem.To<AdminRemarkServiceModel>());
-    private void AdminRemarksDataGridViewEditHandler(object sender, DataGridViewCellEventArgs e) => this.adminRemarksService.Update(((DataGridView)sender).Rows[e.RowIndex].DataBoundItem.To<AdminRemarkServiceModel>());
+    private void AdminRemarksDataGridViewAddHandler(object sender, DataGridViewRowEventArgs e) 
+    {
+        //TODO: fix bug with not creating correct admin remark creator when adding new remark
+        var adminRemarkServiceModel = ((DataGridView)sender).Rows[e.Row.Index - 1].DataBoundItem.To<AdminRemarkServiceModel>();
+
+        var user = this.userManager.FindByUsername(this.userManager.CurrentUserUsername());
+        adminRemarkServiceModel.Creator = user.To<UserServiceModel>();
+
+        this.adminRemarksService.Add(adminRemarkServiceModel); 
+    }
+
+    private void AdminRemarksDataGridViewEditHandler(object sender, DataGridViewCellEventArgs e) 
+    {
+        var adminRemarkServiceModel = ((DataGridView)sender).Rows[e.RowIndex].DataBoundItem.To<AdminRemarkServiceModel>();
+        var user = this.userManager.FindByUsername(this.userManager.CurrentUserUsername());
+        adminRemarkServiceModel.Creator = user.To<UserServiceModel>();
+        this.adminRemarksService.Update(adminRemarkServiceModel); 
+    }
     private void PurchasesDataGridViewEditHandler(object sender, DataGridViewCellEventArgs e)
     {
         var senderGrid = (DataGridView)sender;
 
-        if(senderGrid.Columns[e.ColumnIndex].HeaderText == "QuantityInKilograms")
+        if (senderGrid.Columns[e.ColumnIndex].HeaderText == "QuantityInKilograms")
         {
             double oldQuantity = (double)senderGrid.Rows[e.RowIndex].Cells["Price"].Value / (double)senderGrid.Rows[e.RowIndex].Cells["MaterialPrice"].Value;
             double newQuantity = double.Parse(senderGrid.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString());
@@ -106,9 +122,9 @@ public partial class CashierPage : Form
             var purchasePrice = newQuantity * materialPrice;
             senderGrid.Rows[e.RowIndex].Cells["Price"].Value = purchasePrice;
 
-            var total = double.Parse(this.TotalOrderPriceTextBox.Text.Replace("Total:", string.Empty).Trim()) + purchasePrice - (oldQuantity * materialPrice);
-            this.TotalOrderPriceTextBox.Text = "Total: " + total.ToString();
-        }        
+            var total = double.Parse(this.TotalOrderPriceTextBox.Text.Replace(CashierPageOrderTotalText, string.Empty).Trim()) + purchasePrice - (oldQuantity * materialPrice);
+            this.TotalOrderPriceTextBox.Text = CashierPageOrderTotalText + " " + total.ToString();
+        }
     }
 
     private void RefreshButtonClick(object sender, EventArgs e) => CashierPage_Load(null, null);
@@ -121,7 +137,7 @@ public partial class CashierPage : Form
     {
         if (shouldEnterUserInfoFlag)
         {
-            var clientInfo = this.TotalOrderPriceTextBox.Text.Replace("Client info: ", string.Empty).Trim().Split(new[] { '-', ' ' }, StringSplitOptions.RemoveEmptyEntries);
+            var clientInfo = this.TotalOrderPriceTextBox.Text.Replace(CashierPageClientDetailsText, string.Empty).Trim().Split(new[] { '-', ' ' }, StringSplitOptions.RemoveEmptyEntries);
 
             this.currentOrder.ClientName = clientInfo[0];
             this.currentOrder.ClientPhoneNumber = clientInfo[1];
@@ -130,21 +146,21 @@ public partial class CashierPage : Form
             this.currentOrder = new OrderServiceModel();
 
             this.shouldEnterUserInfoFlag = false;
-            this.confirmOrderButton.Text = "Confirm";
-            this.TotalOrderPriceTextBox.Text = "Total: ";
+            this.confirmOrderButton.Text = CashierPageEnterClientDetailsButtonText;
+            this.TotalOrderPriceTextBox.Text = CashierPageOrderTotalText + " ";
             this.TotalOrderPriceTextBox.Enabled = false;
         }
         else
         {
             var currentPurchases = this.purchasesDataGridView.DataSource;
             this.currentOrder.Purchases = (currentPurchases as ICollection).To<PurchaseServiceModel>().ToList();
-            
+
             this.purchasesDataGridView.DataSource = new BindingList<PurchaseViewModel>();
-            
+
             this.shouldEnterUserInfoFlag = true;
-            this.confirmOrderButton.Text = "Enter Client";
-            this.TotalOrderPriceTextBox.Text = "Client info: ";
-            this.TotalOrderPriceTextBox.Enabled = true;            
+            this.confirmOrderButton.Text = CashierPageEnterClientDetailsButtonText;
+            this.TotalOrderPriceTextBox.Text = CashierPageClientDetailsText + " ";
+            this.TotalOrderPriceTextBox.Enabled = true;
         }
     }
     private void EnterPurchaseButtonClick(object sender, EventArgs e)
@@ -162,7 +178,7 @@ public partial class CashierPage : Form
             Price = purchasePrice ?? 0
         });
 
-        var totalValueString = this.TotalOrderPriceTextBox.Text.Replace("Total:", string.Empty).Trim();
+        var totalValueString = this.TotalOrderPriceTextBox.Text.Replace(CashierPageOrderTotalText, string.Empty).Trim();
 
         if (string.IsNullOrEmpty(totalValueString))
         {
@@ -170,7 +186,7 @@ public partial class CashierPage : Form
         }
 
         var total = double.Parse(totalValueString) + purchasePrice;
-        this.TotalOrderPriceTextBox.Text = "Total: " + total.ToString();
+        this.TotalOrderPriceTextBox.Text = CashierPageOrderTotalText + " " + total.ToString();
 
         this.heightTextBox.Text = "Height: ";
         this.widthTextBox.Text = "Width: ";

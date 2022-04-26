@@ -30,8 +30,18 @@ public partial class LoginForm : CredentialsForm
         this.usernameTextBox.Text = "Username";
         this.passwordTextBox.Text = "Password";
 
+        bool isLoginSuccessful = false;
 
-        bool isLoginSuccessful = userManager.SignIn(enteredUsername, enteredPassword);
+        //TODO: make this without try catch (userManager.SignIn to return proper bool not to throw exception)
+        try
+        {
+            userManager.SignIn(enteredUsername, enteredPassword);
+            isLoginSuccessful = true;
+        }
+        catch (Exception)
+        {
+            isLoginSuccessful = false;            
+        }
 
         if (isLoginSuccessful)
         {

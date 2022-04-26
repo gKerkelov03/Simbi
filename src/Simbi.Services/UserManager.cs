@@ -5,6 +5,8 @@ using System.Linq;
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 using Simbi.Data.Models;
+using Simbi.Services.Models;
+using Simbi.Mappings;
 
 namespace Simbi.Services;
 
@@ -16,9 +18,11 @@ public class UserManager
 
     public UserManager(ApplicationDbContext dbContext) => this.dbContext = dbContext;
 
-    public UserEntity GetUserWithCredentials(string username, string password) => this.dbContext.Users.Where(user => user.Password == Hash(password) && user.Username == username).Include(x => x.Roles).FirstOrDefault();
+    public UserServiceModel GetUserWithCredentials(string username, string password) => this.dbContext.Users.Where(user => user.Password == Hash(password) && user.Username == username).Include(x => x.Roles).FirstOrDefault().To<UserServiceModel>();
 
-    public bool SignIn(string username, string password) => (CurrentUser = GetUserWithCredentials(username, password)) != null;
+    public UserServiceModel FindByUsername(string username) => this.dbContext.Users.Where(user => user.Username == username).Include(x => x.Roles).FirstOrDefault().To<UserServiceModel>();
+
+    public bool SignIn(string username, string password) => (CurrentUser = GetUserWithCredentials(username, password).To<UserEntity>()) != null;
 
     public bool CreateUserWithCredentials(string username, string password)
     {

@@ -1,7 +1,7 @@
 ﻿
 namespace Simbi.Services.Models;
 
-public class UserServiceModel
+public class UserServiceModel : BaseServiceModel
 {
     public UserServiceModel() => this.Roles = new HashSet<RoleServiceModel>();
     public string Password { get; set; }

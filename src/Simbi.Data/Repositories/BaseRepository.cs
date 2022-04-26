@@ -38,8 +38,7 @@ public class BaseRepository<T> where T : ApplicationEntity
     {
         //TODO: understand why this does not work
         //context.Set<T>().Update(entity);
-        //await context.SaveChangesAsync();
-
+        //await context.SaveChangesAsync();        
         var dbEntity = await GetByIdAsync(entity.Id);
 
         if (dbEntity == null)

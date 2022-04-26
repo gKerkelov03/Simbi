@@ -15,7 +15,7 @@ using Simbi.Services.Data.Simbi.Services.Data;
 using Simbi.WindowsForms.Infrastructure;
 
 namespace Simbi.WindowsForms;
-
+//TODO: see why you have column MaterialEntityID in table Purchases in the database
 static class Program
 {  
     [STAThread]
