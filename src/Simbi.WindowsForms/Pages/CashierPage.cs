@@ -8,6 +8,7 @@ using Simbi.WindowsForms.Models;
 using System;
 using System.Collections;
 using System.ComponentModel;
+using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 using static Simbi.Common.GlobalConstants;
@@ -137,7 +138,18 @@ public partial class CashierPage : Form
     {
         if (shouldEnterUserInfoFlag)
         {
-            var clientInfo = this.TotalOrderPriceTextBox.Text.Replace(CashierPageClientDetailsText, string.Empty).Trim().Split(new[] { '-', ' ' }, StringSplitOptions.RemoveEmptyEntries);
+            var clientInfo = this.TotalOrderPriceTextBox.Text.Replace(CashierPageClientDetailsText, string.Empty).Trim().Split(new[] { '-', ' ' }, StringSplitOptions.RemoveEmptyEntries).TakeLast(2).ToArray();
+
+            if(clientInfo.Length < 2)
+            {
+                this.TotalOrderPriceTextBox.ForeColor = Color.Red;
+                this.TotalOrderPriceTextBox.Text = CashierPageClientDetailsWronText;
+                return;
+            }
+            else if(this.TotalOrderPriceTextBox.ForeColor == Color.Red)
+            {
+                this.TotalOrderPriceTextBox.ForeColor = Color.Black;
+            }
 
             this.currentOrder.ClientName = clientInfo[0];
             this.currentOrder.ClientPhoneNumber = clientInfo[1];
@@ -146,7 +158,7 @@ public partial class CashierPage : Form
             this.currentOrder = new OrderServiceModel();
 
             this.shouldEnterUserInfoFlag = false;
-            this.confirmOrderButton.Text = CashierPageEnterClientDetailsButtonText;
+            this.confirmOrderButton.Text = CashierPageConfirmOrderButtonText;
             this.TotalOrderPriceTextBox.Text = CashierPageOrderTotalText + " ";
             this.TotalOrderPriceTextBox.Enabled = false;
         }

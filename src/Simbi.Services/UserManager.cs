@@ -18,7 +18,7 @@ public class UserManager
 
     public UserManager(ApplicationDbContext dbContext) => this.dbContext = dbContext;
 
-    public UserServiceModel GetUserWithCredentials(string username, string password) => this.dbContext.Users.Where(user => user.Password == Hash(password) && user.Username == username).Include(x => x.Roles).FirstOrDefault().To<UserServiceModel>();
+    public UserServiceModel GetUserWithCredentials(string username, string password) => this.dbContext.Users.Where(user => user.Password == Hash(password) && user.Username == username).Include(x => x.Roles).AsNoTracking().FirstOrDefault().To<UserServiceModel>();
 
     public UserServiceModel FindByUsername(string username) => this.dbContext.Users.Where(user => user.Username == username).Include(x => x.Roles).FirstOrDefault().To<UserServiceModel>();
 

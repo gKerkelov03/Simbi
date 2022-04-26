@@ -22,6 +22,8 @@ public class GlobalConstants
     public const string CashierPageTitle = "Keep up the good work";
     public const string CashierPageOrderTotalText = "Total:";
     public const string CashierPageClientDetailsText = "Client info:";
+    public const string CashierPageClientDetailsWronText = "Wrong format try again: ";
+
     public const string CashierPageConfirmOrderButtonText = "Confirm";
     public const string CashierPageEnterClientDetailsButtonText = "Enter Client";
 

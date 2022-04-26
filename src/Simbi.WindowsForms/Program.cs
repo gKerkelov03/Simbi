@@ -54,7 +54,6 @@ static class Program
                 serviceCollection.AddTransient<IAdminRemarksService, AdminRemarksService>();
                 serviceCollection.AddTransient<IMaterialsService, MaterialsService>();
                 serviceCollection.AddTransient<IOrdersService, OrdersService>();
-                serviceCollection.AddTransient<IPurchasesService, PurchasesService>();
                 serviceCollection.AddTransient<UserManager, UserManager>();
                                     
                 serviceCollection.AddTransient<Redirector, Redirector>();

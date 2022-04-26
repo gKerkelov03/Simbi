@@ -12,15 +12,13 @@ namespace Simbi.WindowsForms.Infrastructure;
 public class Redirector
 {
     private readonly UserManager userManager;
-    private readonly IPurchasesService purchasesService;
     private readonly IOrdersService ordersService;
     private readonly IAdminRemarksService adminRemarksService;
     private readonly IMaterialsService materialsService;
 
-    public Redirector(UserManager userManager, IPurchasesService purchasesService, IOrdersService ordersService, IAdminRemarksService adminRemarksService, IMaterialsService materialsService)
+    public Redirector(UserManager userManager, IOrdersService ordersService, IAdminRemarksService adminRemarksService, IMaterialsService materialsService)
     {
         this.userManager = userManager;
-        this.purchasesService = purchasesService;
         this.ordersService = ordersService;
         this.adminRemarksService = adminRemarksService;
         this.materialsService = materialsService;
