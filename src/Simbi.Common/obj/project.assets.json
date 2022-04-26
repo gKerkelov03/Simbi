@@ -8,19 +8,23 @@
     "net6.0": []
   },
   "packageFolders": {
-    "C:\\Users\\35989\\.nuget\\packages\\": {}
+    "C:\\Users\\REPUBLIC OF GAMERS\\.nuget\\packages\\": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\repos\\kursovi raboti\\Simbi\\src\\Simbi.Common\\Simbi.Common.csproj",
+      "projectUniqueName": "H:\\C# Projects\\Simbi\\src\\Simbi.Common\\Simbi.Common.csproj",
       "projectName": "Simbi.Common",
-      "projectPath": "D:\\repos\\kursovi raboti\\Simbi\\src\\Simbi.Common\\Simbi.Common.csproj",
-      "packagesPath": "C:\\Users\\35989\\.nuget\\packages\\",
-      "outputPath": "D:\\repos\\kursovi raboti\\Simbi\\src\\Simbi.Common\\obj\\",
+      "projectPath": "H:\\C# Projects\\Simbi\\src\\Simbi.Common\\Simbi.Common.csproj",
+      "packagesPath": "C:\\Users\\REPUBLIC OF GAMERS\\.nuget\\packages\\",
+      "outputPath": "H:\\C# Projects\\Simbi\\src\\Simbi.Common\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+      ],
       "configFilePaths": [
-        "C:\\Users\\35989\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\REPUBLIC OF GAMERS\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -28,7 +32,10 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "https://api.nuget.org/v3/index.json": {}
+        "D:\\Downloads": {},
+        "https://api.nuget.org/v3/index.json": {},
+        "https://nuget.emzi0767.com/api/v3/index.json": {},
+        "https://www.myget.org/F/discord-net/api/v3/index.json": {}
       },
       "frameworks": {
         "net6.0": {

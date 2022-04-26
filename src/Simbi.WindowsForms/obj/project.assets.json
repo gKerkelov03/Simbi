@@ -2871,19 +2871,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\35989\\.nuget\\packages\\": {}
+    "C:\\Users\\REPUBLIC OF GAMERS\\.nuget\\packages\\": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\repos\\kursovi raboti\\Simbi\\src\\Simbi.WindowsForms\\Simbi.WindowsForms.csproj",
+      "projectUniqueName": "H:\\C# Projects\\Simbi\\src\\Simbi.WindowsForms\\Simbi.WindowsForms.csproj",
       "projectName": "Simbi.WindowsForms",
-      "projectPath": "D:\\repos\\kursovi raboti\\Simbi\\src\\Simbi.WindowsForms\\Simbi.WindowsForms.csproj",
-      "packagesPath": "C:\\Users\\35989\\.nuget\\packages\\",
-      "outputPath": "D:\\repos\\kursovi raboti\\Simbi\\src\\Simbi.WindowsForms\\obj\\",
+      "projectPath": "H:\\C# Projects\\Simbi\\src\\Simbi.WindowsForms\\Simbi.WindowsForms.csproj",
+      "packagesPath": "C:\\Users\\REPUBLIC OF GAMERS\\.nuget\\packages\\",
+      "outputPath": "H:\\C# Projects\\Simbi\\src\\Simbi.WindowsForms\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+      ],
       "configFilePaths": [
-        "C:\\Users\\35989\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\REPUBLIC OF GAMERS\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -2891,26 +2895,29 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "https://api.nuget.org/v3/index.json": {}
+        "D:\\Downloads": {},
+        "https://api.nuget.org/v3/index.json": {},
+        "https://nuget.emzi0767.com/api/v3/index.json": {},
+        "https://www.myget.org/F/discord-net/api/v3/index.json": {}
       },
       "frameworks": {
         "net6.0-windows7.0": {
           "targetAlias": "net6.0-windows",
           "projectReferences": {
-            "D:\\repos\\kursovi raboti\\Simbi\\src\\Simbi.Common\\Simbi.Common.csproj": {
-              "projectPath": "D:\\repos\\kursovi raboti\\Simbi\\src\\Simbi.Common\\Simbi.Common.csproj"
+            "H:\\C# Projects\\Simbi\\src\\Simbi.Common\\Simbi.Common.csproj": {
+              "projectPath": "H:\\C# Projects\\Simbi\\src\\Simbi.Common\\Simbi.Common.csproj"
             },
-            "D:\\repos\\kursovi raboti\\Simbi\\src\\Simbi.Data\\Simbi.Data.csproj": {
-              "projectPath": "D:\\repos\\kursovi raboti\\Simbi\\src\\Simbi.Data\\Simbi.Data.csproj"
+            "H:\\C# Projects\\Simbi\\src\\Simbi.Data\\Simbi.Data.csproj": {
+              "projectPath": "H:\\C# Projects\\Simbi\\src\\Simbi.Data\\Simbi.Data.csproj"
             },
-            "D:\\repos\\kursovi raboti\\Simbi\\src\\Simbi.Mappings\\Simbi.Mappings.csproj": {
-              "projectPath": "D:\\repos\\kursovi raboti\\Simbi\\src\\Simbi.Mappings\\Simbi.Mappings.csproj"
+            "H:\\C# Projects\\Simbi\\src\\Simbi.Mappings\\Simbi.Mappings.csproj": {
+              "projectPath": "H:\\C# Projects\\Simbi\\src\\Simbi.Mappings\\Simbi.Mappings.csproj"
             },
-            "D:\\repos\\kursovi raboti\\Simbi\\src\\Simbi.Services\\Simbi.Services.csproj": {
-              "projectPath": "D:\\repos\\kursovi raboti\\Simbi\\src\\Simbi.Services\\Simbi.Services.csproj"
+            "H:\\C# Projects\\Simbi\\src\\Simbi.Services\\Simbi.Services.csproj": {
+              "projectPath": "H:\\C# Projects\\Simbi\\src\\Simbi.Services\\Simbi.Services.csproj"
             },
-            "D:\\repos\\kursovi raboti\\Simbi\\src\\Simbi.WindowsForms.Models\\Simbi.WindowsForms.Models.csproj": {
-              "projectPath": "D:\\repos\\kursovi raboti\\Simbi\\src\\Simbi.WindowsForms.Models\\Simbi.WindowsForms.Models.csproj"
+            "H:\\C# Projects\\Simbi\\src\\Simbi.WindowsForms.Models\\Simbi.WindowsForms.Models.csproj": {
+              "projectPath": "H:\\C# Projects\\Simbi\\src\\Simbi.WindowsForms.Models\\Simbi.WindowsForms.Models.csproj"
             }
           }
         }

@@ -138,7 +138,7 @@ namespace Simbi.WindowsForms
             this.usernameTextBox.Name = "usernameTextBox";
             this.usernameTextBox.Size = new System.Drawing.Size(216, 35);
             this.usernameTextBox.TabIndex = 9;
-            this.usernameTextBox.Text = "Username";
+            this.usernameTextBox.PlaceholderText = "Username";
             this.usernameTextBox.GotFocus += new System.EventHandler(this.usernameTextBox_Focus);
             this.usernameTextBox.LostFocus += new System.EventHandler(this.usernameTextBox_Blur);
             // 
@@ -153,7 +153,8 @@ namespace Simbi.WindowsForms
             this.passwordTextBox.Name = "passwordTextBox";
             this.passwordTextBox.Size = new System.Drawing.Size(216, 32);
             this.passwordTextBox.TabIndex = 10;
-            this.passwordTextBox.Text = "Password";            
+            this.passwordTextBox.PasswordChar = '*';
+            this.passwordTextBox.PlaceholderText = "Password";            
             this.passwordTextBox.GotFocus += new System.EventHandler(this.passwordTextBox_Focus);
             this.passwordTextBox.LostFocus += new System.EventHandler(this.passwordTextBox_Blur);
             // 
