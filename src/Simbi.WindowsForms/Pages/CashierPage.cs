@@ -99,7 +99,7 @@ public partial class CashierPage : Form
         var adminRemarkServiceModel = ((DataGridView)sender).Rows[e.Row.Index - 1].DataBoundItem.To<AdminRemarkServiceModel>();
 
         var user = this.userManager.FindByUsername(this.userManager.CurrentUserUsername());
-        adminRemarkServiceModel.Creator = user.To<UserServiceModel>();
+        adminRemarkServiceModel.CreatorId = user.Id;
 
         this.adminRemarksService.Add(adminRemarkServiceModel); 
     }

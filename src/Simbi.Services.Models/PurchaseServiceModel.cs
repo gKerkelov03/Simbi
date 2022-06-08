@@ -2,6 +2,7 @@
 
 public class PurchaseServiceModel : BaseServiceModel
 {
+    public Guid MaterialId { get; set; }
     public MaterialServiceModel Material { get; set; }
 
     public double QuantityInKilograms { get; set; }

@@ -22,18 +22,17 @@ public class ApplicationDbContext : DbContext
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) => optionsBuilder.UseSqlServer("Server=.;Database=Simbi;Trusted_Connection=True;");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
-    {
+    {                
         modelBuilder
             .Entity<PurchaseEntity>()
             .HasOne<OrderEntity>()
             .WithMany(order => order.Purchases)
-            .OnDelete(DeleteBehavior.Cascade);
+            .OnDelete(DeleteBehavior.NoAction);
 
         modelBuilder
             .Entity<PurchaseEntity>()
             .HasOne<MaterialEntity>()
             .WithMany(order => order.PurchasesContainingIt)
-            .OnDelete(DeleteBehavior.Cascade);
+            .OnDelete(DeleteBehavior.NoAction);
     }
-
 }

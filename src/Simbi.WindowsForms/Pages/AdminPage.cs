@@ -80,9 +80,9 @@ public partial class AdminPage : Form
                 }
                 else if(senderGrid == this.materialsDataGridView)
                 {
-                    var entity = await this.materialsService.GetById(id);
-                    entity.IsDeleted = true;
-                    await this.materialsService.Update(entity);
+                    var material = await this.materialsService.GetById(id);
+                    material.IsDeleted = true;
+                    await this.materialsService.Update(material);
                 }
                 else if(senderGrid == this.adminRemarksDataGridView)
                 {

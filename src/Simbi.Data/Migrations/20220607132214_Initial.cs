@@ -69,20 +69,21 @@ namespace Simbi.Data.Migrations
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    MaterialId = table.Column<Guid>(type: "uniqueidentifier", nullable: true),
+                    MaterialId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     QuantityInKilograms = table.Column<double>(type: "float", nullable: false),
                     Width = table.Column<double>(type: "float", nullable: false),
                     Height = table.Column<double>(type: "float", nullable: false),
                     Price = table.Column<double>(type: "float", nullable: false),
-                    MaterialEntityId = table.Column<Guid>(type: "uniqueidentifier", nullable: true),
+                    MaterialEntityId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    MaterialEntityId1 = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     OrderEntityId = table.Column<Guid>(type: "uniqueidentifier", nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Purchases", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Purchases_Materials_MaterialEntityId",
-                        column: x => x.MaterialEntityId,
+                        name: "FK_Purchases_Materials_MaterialEntityId1",
+                        column: x => x.MaterialEntityId1,
                         principalTable: "Materials",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
@@ -90,7 +91,8 @@ namespace Simbi.Data.Migrations
                         name: "FK_Purchases_Materials_MaterialId",
                         column: x => x.MaterialId,
                         principalTable: "Materials",
-                        principalColumn: "Id");
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_Purchases_Orders_OrderEntityId",
                         column: x => x.OrderEntityId,
@@ -105,7 +107,7 @@ namespace Simbi.Data.Migrations
                 {
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     Text = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    CreatorId = table.Column<Guid>(type: "uniqueidentifier", nullable: true)
+                    CreatorId = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -114,7 +116,8 @@ namespace Simbi.Data.Migrations
                         name: "FK_AdminRemarks_Users_CreatorId",
                         column: x => x.CreatorId,
                         principalTable: "Users",
-                        principalColumn: "Id");
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -147,9 +150,9 @@ namespace Simbi.Data.Migrations
                 column: "CreatorId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Purchases_MaterialEntityId",
+                name: "IX_Purchases_MaterialEntityId1",
                 table: "Purchases",
-                column: "MaterialEntityId");
+                column: "MaterialEntityId1");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Purchases_MaterialId",

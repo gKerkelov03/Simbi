@@ -1,10 +1,13 @@
 ﻿using Simbi.Data.Common;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Simbi.Data.Models;
 
 public class PurchaseEntity : ApplicationEntity
 {
-    public virtual MaterialEntity Material { get; set; }
+    [ForeignKey("Material")]
+    public Guid? MaterialId { get; set; }
+    public virtual MaterialEntity? Material { get; set; }
 
     public double  QuantityInKilograms { get; set; }
 

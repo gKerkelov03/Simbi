@@ -43,7 +43,7 @@ namespace Simbi.Data.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<Guid?>("CreatorId")
+                    b.Property<Guid>("CreatorId")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Text")
@@ -111,10 +111,13 @@ namespace Simbi.Data.Migrations
                     b.Property<double>("Height")
                         .HasColumnType("float");
 
-                    b.Property<Guid?>("MaterialEntityId")
+                    b.Property<Guid>("MaterialEntityId")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<Guid?>("MaterialId")
+                    b.Property<Guid>("MaterialEntityId1")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("MaterialId")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<Guid?>("OrderEntityId")
@@ -131,7 +134,7 @@ namespace Simbi.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("MaterialEntityId");
+                    b.HasIndex("MaterialEntityId1");
 
                     b.HasIndex("MaterialId");
 
@@ -190,7 +193,9 @@ namespace Simbi.Data.Migrations
                 {
                     b.HasOne("Simbi.Data.Models.UserEntity", "Creator")
                         .WithMany()
-                        .HasForeignKey("CreatorId");
+                        .HasForeignKey("CreatorId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("Creator");
                 });
@@ -199,12 +204,15 @@ namespace Simbi.Data.Migrations
                 {
                     b.HasOne("Simbi.Data.Models.MaterialEntity", null)
                         .WithMany("PurchasesContainingIt")
-                        .HasForeignKey("MaterialEntityId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .HasForeignKey("MaterialEntityId1")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.HasOne("Simbi.Data.Models.MaterialEntity", "Material")
                         .WithMany()
-                        .HasForeignKey("MaterialId");
+                        .HasForeignKey("MaterialId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.HasOne("Simbi.Data.Models.OrderEntity", null)
                         .WithMany("Purchases")
